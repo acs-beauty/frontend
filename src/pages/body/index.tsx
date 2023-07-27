@@ -3,16 +3,15 @@ import type { NextPage } from "next";
 import UserLayout from "@/components/UserLayout";
 import { Container } from "@/components/Common/Container.styled";
 
-const Home: NextPage = () => {
+const Body: NextPage = () => {
   return (
-    <UserLayout title={"Головна"}>
+    <UserLayout title={"Тіло"}>
       <Container>
-        
         <br />
-        <p>Головна</p>
+        <p>Тіло</p>
       </Container>
     </UserLayout>
   );
 };
 
-export default Home;
+export default Body;
