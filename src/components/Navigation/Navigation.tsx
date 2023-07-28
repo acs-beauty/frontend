@@ -10,9 +10,9 @@ const Navigation: FC = () => {
     <NavWrapper>
       <Container>
         <NavList>
-          <li>
+          <NavItem>
             <NavLink href={"/novelties"} text={"Новинки"} />
-          </li>
+          </NavItem>
           <NavItem>
             <NavLink href={"/care"} text={"Догляд"} />
             <Button>
@@ -68,12 +68,12 @@ const Navigation: FC = () => {
               />
             </Button>
           </NavItem>
-          <li>
+          <NavItem>
             <NavLink href={"/brands"} text={"Бренди"} />
-          </li>
-          <li>
+          </NavItem>
+          <NavItem>
             <NavLink href={"/discounts"} text={"Акції"} isDiscount/>
-          </li>
+          </NavItem>
         </NavList>
       </Container>
     </NavWrapper>

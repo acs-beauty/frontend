@@ -2,13 +2,17 @@ import styled from "@emotion/styled";
 
 export const NavList = styled.ul`
   display: flex;
-  justify-content: center;
-  gap: 48px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: 4.8rem;
+  row-gap: 1.8rem;
 `;
 export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
   border: none;
   background-color: transparent;
 `;
@@ -23,6 +27,6 @@ export const NavWrapper = styled.div`
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     display: block;
-    margin-bottom: 42px;
+    margin-bottom: 4.2rem;
   }
 `;

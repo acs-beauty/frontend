@@ -4,12 +4,12 @@ import { css } from "@emotion/react";
 import { IStyledLinkProps, ILinkProps } from "@/types/components";
 
 const linkStyles = ({ theme, isDiscount }: IStyledLinkProps) => css`
-  font-size: ${theme.fontSizes[7]};
+  font-size: 2.4rem;
   font-weight: ${isDiscount
     ? `${theme.fontWeights.bold}`
     : `${theme.fontWeights.medium}`};
   line-height: normal;
-  letter-spacing: 0.72px;
+  letter-spacing: 0.05rem;
   color: ${isDiscount
     ? `${theme.colors.red[300]}`
     : `${theme.colors.grey[300]}`};

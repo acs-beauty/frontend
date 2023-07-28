@@ -11,7 +11,7 @@ export const global = css`
     max-width: 100vw;
     color: #5A5757;
     line-height: 1.2;
-    font-size: 16px;
+    font-size: 62.5%;
     overflow-x: hidden;
   }
 
