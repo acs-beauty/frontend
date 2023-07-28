@@ -4,6 +4,7 @@ declare module "@emotion/react" {
   export interface Theme {
     breakpoints: string[];
     fontSizes: string[];
+    remSizes: string[];
     fontWeights: {
       light: number;
       regular: number;
@@ -11,7 +12,7 @@ declare module "@emotion/react" {
       semibold: number;
       bold: number;
     };
-    radii: { sm: string; lg: string };
+    radii: { sm: string; md: string, lg: string };
 
     colors: {
       white: {

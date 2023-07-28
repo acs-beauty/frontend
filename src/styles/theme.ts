@@ -1,5 +1,5 @@
 export const theme = {
-  breakpoints: ["360px", "1440px"],
+  breakpoints: ["37.5em", "62.5em"],
 
   fontSizes: [
     "11px", //0
@@ -25,8 +25,9 @@ export const theme = {
   },
 
   radii: {
-    sm: "12px",
-    lg: "180px",
+    sm: "1.2rem",
+    md: "5rem",
+    lg: "18rem",
   },
 
   colors: {

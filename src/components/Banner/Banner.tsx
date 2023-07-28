@@ -10,7 +10,7 @@ const Banner: FC = () => {
         src={"/images/hairBanner.png"}
         alt="picture"
         fill
-        sizes="(min-width: 360px) 320px,(min-width: 1440px) 1280px"
+        sizes="(min-width: 28rem) 28rem,(min-width: 100rem) 100rem"
       />
     </ImageContainer>
   );
