@@ -2,10 +2,12 @@ import { FC } from "react";
 import Image from "next/image";
 
 import NavLink from "../NavLink";
+import DropDownMenu from "../DropDownMenu";
+import { ICategory } from "@/types/components";
 import { Container } from "../Common/Container.styled";
 import { NavWrapper, NavList, NavItem, Button } from "./Navigation.styled";
 
-const Navigation: FC = () => {
+const Navigation: FC<{ categories: ICategory[] }> = ({ categories }) => {
   return (
     <NavWrapper>
       <Container>
@@ -13,66 +15,22 @@ const Navigation: FC = () => {
           <NavItem>
             <NavLink href={"/novelties"} text={"Новинки"} />
           </NavItem>
-          <NavItem>
-            <NavLink href={"/care"} text={"Догляд"} />
-            <Button>
-              <Image
-                src={"/icons/navigate_before.svg"}
-                alt={"arrow-down"}
-                width={32}
-                height={32}
-              />
-            </Button>
-          </NavItem>
-          <NavItem>
-            <NavLink href={"/makeup"} text={"Макіяж"} />
-            <Button>
-              <Image
-                src={"/icons/navigate_before.svg"}
-                alt={"arrow-down"}
-                width={32}
-                height={32}
-              />
-            </Button>
-          </NavItem>
-          <NavItem>
-            <NavLink href={"/hair"} text={"Волосся"} />
-            <Button>
-              <Image
-                src={"/icons/navigate_before.svg"}
-                alt={"arrow-down"}
-                width={32}
-                height={32}
-              />
-            </Button>
-          </NavItem>
-          <NavItem>
-            <NavLink href={"/body"} text={"Тіло"} />
-            <Button>
-              <Image
-                src={"/icons/navigate_before.svg"}
-                alt={"arrow-down"}
-                width={32}
-                height={32}
-              />
-            </Button>
-          </NavItem>
-          <NavItem>
-            <NavLink href={"/accessories"} text={"Аксесуари"} />
-            <Button>
-              <Image
-                src={"/icons/navigate_before.svg"}
-                alt={"arrow-down"}
-                width={32}
-                height={32}
-              />
-            </Button>
-          </NavItem>
+          {categories.map((category) => {
+            return (
+              <NavItem key={category.categoryId}>
+                <NavLink href={category.linkKey} text={category.name} />
+                <DropDownMenu
+                  menuItems={category.subcategory}
+                  menuId={category.categoryId}
+                />
+              </NavItem>
+            );
+          })}
           <NavItem>
             <NavLink href={"/brands"} text={"Бренди"} />
           </NavItem>
           <NavItem>
-            <NavLink href={"/discounts"} text={"Акції"} isDiscount/>
+            <NavLink href={"/discounts"} text={"Акції"} isDiscount />
           </NavItem>
         </NavList>
       </Container>

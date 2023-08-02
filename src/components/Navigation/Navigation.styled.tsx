@@ -18,6 +18,7 @@ export const Button = styled.button`
 `;
 
 export const NavItem = styled.li`
+position: relative;
   display: flex;
   align-items: center;
 `;

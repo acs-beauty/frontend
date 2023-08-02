@@ -4,7 +4,7 @@ import Head from "next/head";
 import Navigation from "../Navigation";
 import { UserLayoutPropsType } from "@/types/components";
 
-const UserLayout: FC<UserLayoutPropsType> = ({ title, children }) => {
+const UserLayout: FC<UserLayoutPropsType> = ({ title, children, categories }) => {
   return (
     <>
       <Head>
@@ -13,7 +13,7 @@ const UserLayout: FC<UserLayoutPropsType> = ({ title, children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation />
+      <Navigation categories={categories}/>
       <main>{children}</main>
     </>
   );
