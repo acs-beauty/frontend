@@ -6,3 +6,13 @@ export interface ICategory {
   linkKey: string;
   subcategory: IMenu[];
 }
+
+export interface ICategoryData {
+  categoryId: number;
+  name: string;
+  linkKey: string;
+  imageBannerName: string;
+  minPrice: string;
+  maxPrice: string;
+  subcategory: IMenu[];
+}

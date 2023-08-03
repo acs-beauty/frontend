@@ -42,6 +42,41 @@ export const categories = [
                 "subcategoryId": 3,
                 "name": "Бальзами, кондиціонери",
                 "linkKey": "balms"
+            },
+            {
+                "subcategoryId": 4,
+                "name": "Бальзами, кондиціонери",
+                "linkKey": "balms"
+            },
+            {
+                "subcategoryId": 5,
+                "name": "Бальзами, кондиціонери",
+                "linkKey": "balms"
+            },
+            {
+                "subcategoryId": 6,
+                "name": "Бальзами, кондиціонери",
+                "linkKey": "balms"
+            },
+            {
+                "subcategoryId": 7,
+                "name": "Бальзами, кондиціонери",
+                "linkKey": "balms"
+            },
+            {
+                "subcategoryId": 8,
+                "name": "Бальзами, кондиціонери",
+                "linkKey": "balms"
+            },
+            {
+                "subcategoryId": 9,
+                "name": "Бальзами, кондиціонери",
+                "linkKey": "balms"
+            },
+            {
+                "subcategoryId": 10,
+                "name": "Бальзами, кондиціонери",
+                "linkKey": "balms"
             }
         ]
     },

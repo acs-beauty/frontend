@@ -17,13 +17,13 @@ const Navigation: FC<{ categories: ICategory[] }> = ({ categories }) => {
           </NavItem>
           {categories.map((category) => {
             return (
-              <NavItem key={category.categoryId}>
-                <NavLink href={category.linkKey} text={category.name} />
-                <DropDownMenu
-                  menuItems={category.subcategory}
-                  menuId={category.categoryId}
-                />
-              </NavItem>
+              <DropDownMenu
+                key={category.categoryId}
+                href={category.linkKey}
+                text={category.name}
+                menuItems={category.subcategory}
+                menuId={category.categoryId}
+              />
             );
           })}
           <NavItem>

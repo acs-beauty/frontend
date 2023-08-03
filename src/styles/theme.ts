@@ -40,6 +40,7 @@ export const theme = {
       200: "#C1BABA", //cards' border color
       300: "#5A5757", //main text color
       400: "rgba(90, 87, 87, 0.80)", // footer contacts' text color
+      500: "#F8F8F8",
     },
     black: {
       100: "#453E42", // new and hit color

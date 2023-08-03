@@ -2,37 +2,60 @@ import { FC, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import NavLink from "../NavLink";
 import { IMenu } from "@/types/components";
-import { Button, DropDownList } from "./DropDownMenu.styled";
+import { Container } from "../Common/Container.styled";
+import {
+  Button,
+  DropDownList,
+  NavItem,
+  SubMenuItem,
+} from "./DropDownMenu.styled";
 
-const DropDownMenu: FC<{ menuItems: IMenu[]; menuId: number }> = ({
-  menuItems,
-  menuId,
-}) => {
+const DropDownMenu: FC<{
+  menuItems: IMenu[];
+  menuId: number;
+  href: string;
+  text: string;
+}> = ({ menuItems, href, text }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleMouseEnter = () => {
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownOpen(false);
+  };
+
+  const handleFocus = () => {
+    setDropdownOpen(true);
+  };
+
+  const handleBlur = () => {
+    setDropdownOpen(false);
+  };
+
   return (
-    <>
+    <NavItem
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      isActive={dropdownOpen}
+    >
+      <NavLink href={`/${href}`} text={text} />
       {dropdownOpen ? (
-        <Button
-          type="button"
-          aria-haspopup="menu"
-          aria-expanded={dropdownOpen ? "true" : "false"}
-          onClick={() => setDropdownOpen(false)}
-        >
+        <Button type="button">
           <Image
-            src={"/icons/navigate_before.svg"}
+            src={"/icons/navigate_after.svg"}
             alt={"arrow-down"}
             width={32}
             height={32}
           />
         </Button>
       ) : (
-        <Button
-          type="button"
-          aria-haspopup="menu"
-          aria-expanded={dropdownOpen ? "true" : "false"}
-          onClick={() => setDropdownOpen(true)}
-        >
+        <Button type="button">
           <Image
             src={"/icons/navigate_before.svg"}
             alt={"arrow-down"}
@@ -44,16 +67,16 @@ const DropDownMenu: FC<{ menuItems: IMenu[]; menuId: number }> = ({
 
       {dropdownOpen && (
         <DropDownList>
-          {menuItems.map((menu, index) => (
-            <li key={index}>
-              <Link href={menu.linkKey} passHref legacyBehavior>
-                <a>{menu.name}</a>
+          {menuItems.map((item, index) => (
+            <SubMenuItem key={index}>
+              <Link href={`/${href}/${item.linkKey}`} passHref legacyBehavior>
+                <a>{item.name}</a>
               </Link>
-            </li>
+            </SubMenuItem>
           ))}
         </DropDownList>
       )}
-    </>
+    </NavItem>
   );
 };
 

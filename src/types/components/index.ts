@@ -4,3 +4,6 @@ export type { ILinkProps } from "./ILinkProps";
 export type { IPriceFilterProps } from "./IPriceFilterProps";
 export type { IMenu } from "./IMenu";
 export type { ICategory } from "./ICategory";
+export type { ICategoryData } from "./ICategory";
+export type { ISubcategoryData } from "./ISubcategory";
+export type { INavItemProps } from "./INavItemProps";
