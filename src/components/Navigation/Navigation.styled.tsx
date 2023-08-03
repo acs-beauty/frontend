@@ -18,6 +18,7 @@ export const Button = styled.button`
 `;
 
 export const NavItem = styled.li`
+position: relative;
   display: flex;
   align-items: center;
 `;
@@ -26,6 +27,7 @@ export const NavWrapper = styled.div`
   display: none;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    position: relative;
     display: block;
     margin-bottom: 4.2rem;
   }

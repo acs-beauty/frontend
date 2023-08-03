@@ -1,17 +1,17 @@
 import type { NextPage } from "next";
 
 import UserLayout from "@/components/UserLayout";
+import { categories } from "@/data/categories";
 import { Container } from "@/components/Common/Container.styled";
 
-const Body: NextPage = () => {
+const Product: NextPage = () => {
   return (
-    <UserLayout title={"Тіло"}>
+    <UserLayout title={"Один продукт"} categories={categories}>
       <Container>
-        <br />
-        <p>Тіло</p>
+        <p>Один продукт</p>
       </Container>
     </UserLayout>
   );
 };
 
-export default Body;
+export default Product;
