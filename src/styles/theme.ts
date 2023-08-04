@@ -41,6 +41,7 @@ export const theme = {
       300: "#5A5757", //main text color
       400: "rgba(90, 87, 87, 0.80)", // footer contacts' text color
       500: "#F8F8F8",
+      600: "#453E42",
     },
     black: {
       100: "#453E42", // new and hit color

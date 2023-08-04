@@ -4,8 +4,9 @@ import UserLayout from "@/components/UserLayout";
 import { categories } from "@/data/categories";
 import { category } from "@/data/category";
 import Banner from "@/components/Banner";
-import FilterBlock from "@/components/FilterBlock/FilterBlock";
 import { Container } from "@/components/Common/Container.styled";
+import CategoryPageMainBlock from "@/components/CategoryPageMainBlock";
+import FilterBlock from "@/components/FilterBlock/FilterBlock";
 import { SectionTitle } from "@/components/Common/SectionTitle.styled";
 import { getCategoryPageData } from "@/services/pageOperations";
 import { getAllCategories } from "@/services/operations";
@@ -35,11 +36,9 @@ const Category: NextPage<CategoryPagePropsType> = () => {
     <UserLayout title={category.name} categories={categories}>
       <Container>
         <SectionTitle>{category.name}</SectionTitle>
-        <Banner />
-        <div>
-          <FilterBlock minPrice={category.minPrice} maxPrice={category.maxPrice}/>
-        </div>
       </Container>
+      <Banner />
+      <CategoryPageMainBlock category={category} />
     </UserLayout>
   );
 };
