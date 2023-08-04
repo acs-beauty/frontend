@@ -12,7 +12,7 @@ declare module "@emotion/react" {
       semibold: number;
       bold: number;
     };
-    radii: { sm: string; md: string, lg: string };
+    radii: { sm: string; md: string; lg: string };
 
     colors: {
       white: {
@@ -25,6 +25,7 @@ declare module "@emotion/react" {
         300: string;
         400: string;
         500: string;
+        600: string;
       };
       black: {
         100: string;
