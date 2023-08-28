@@ -7,3 +7,6 @@ export type { ICategory } from "./ICategory";
 export type { ICategoryData } from "./ICategory";
 export type { ISubcategoryData } from "./ISubcategory";
 export type { INavItemProps } from "./INavItemProps";
+export type { IPreviewProduct } from "./IPreviewProduct";
+export type { IProducts } from "./IProducts";
+export type { IStyledLabelProps } from "./IStyledLabelProps";
