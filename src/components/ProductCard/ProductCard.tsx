@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { IPreviewProduct } from "@/types/components";
 import CardLabel from "../CardLabel";
@@ -9,6 +10,12 @@ import {
   ContentWrapper,
   HeartContainer,
   LabelWrapper,
+  Title,
+  Price,
+  LinksWrapper,
+  ProductLink,
+  Cart,
+  CartWrapper
 } from "./ProductCard.styled";
 
 const ProductCard: FC<IPreviewProduct> = (props) => {
@@ -46,20 +53,26 @@ const ProductCard: FC<IPreviewProduct> = (props) => {
         <Image src={"/icons/heart.svg"} alt={"heart"} width={24} height={24} />
       </HeartContainer>
       <ContentWrapper>
-        <h3>{titleName}</h3>
-        <p>{price}</p>
-        <div>
-          <div>
+        <Title>{titleName}</Title>
+        <Price>{price} грн</Price>
+        <LinksWrapper>
+          <CartWrapper>
             <Image
               src={"/icons/shopping.svg"}
               alt={"heart"}
               width={24}
               height={24}
             />
-            <button role="button">В кошик</button>
-          </div>
-          <button role="button">Детальніше</button>
-        </div>
+            <Cart role="button">В кошик</Cart>
+          </CartWrapper>
+          <Link
+            href={`/${categoryLinkKey}/${subcategoryLinkKey}/${productId}`}
+            passHref
+            legacyBehavior
+          >
+            <ProductLink>Детальніше</ProductLink>
+          </Link>
+        </LinksWrapper>
       </ContentWrapper>
     </CardWrapper>
   );

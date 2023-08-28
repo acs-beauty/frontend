@@ -2,7 +2,7 @@ export const allProducts = {
   totalProducts: 10,
   products: [
     {
-      productId: 3,
+      productId: 1,
       titleName:
         "Ензимна пудра Papa Recipe Blemish Enzyme Powder Cleanser 50 g",
       mainImageName: "/images/product.png",
