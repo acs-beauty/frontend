@@ -1,0 +1,70 @@
+export const category = {
+  categoryId: 1,
+  name: "Волосся",
+  linkKey: "hair",
+  imageBannerName: "category_banner_test.webp",
+  minPrice: "50.00",
+  maxPrice: "999.00",
+  subcategory: [
+    {
+      subcategoryId: 1,
+      name: "Шампуні",
+      categoryLinkKey: "hair",
+      linkKey: "shampoo",
+    },
+    {
+      subcategoryId: 2,
+      name: "Маски",
+      categoryLinkKey: "hair",
+      linkKey: "masks",
+    },
+    {
+      subcategoryId: 3,
+      name: "Бальзами, кондиціонери",
+      categoryLinkKey: "hair",
+      linkKey: "balms",
+    },
+    {
+      subcategoryId: 4,
+      name: "Бальзами, кондиціонери",
+      categoryLinkKey: "hair",
+      linkKey: "balms",
+    },
+    {
+      subcategoryId: 5,
+      name: "Бальзами, кондиціонери",
+      categoryLinkKey: "hair",
+      linkKey: "balms",
+    },
+    {
+      subcategoryId: 6,
+      name: "Бальзами, кондиціонери",
+      categoryLinkKey: "hair",
+      linkKey: "balms",
+    },
+    {
+      subcategoryId: 7,
+      name: "Бальзами, кондиціонери",
+      categoryLinkKey: "hair",
+      linkKey: "balms",
+    },
+    {
+      subcategoryId: 8,
+      name: "Бальзами, кондиціонери",
+      categoryLinkKey: "hair",
+      linkKey: "balms",
+    },
+    {
+      subcategoryId: 9,
+      name: "Бальзами, кондиціонери",
+      categoryLinkKey: "hair",
+      linkKey: "balms",
+    },
+    {
+      subcategoryId: 10,
+      name: "Бальзами, кондиціонери",
+      categoryLinkKey: "hair",
+      linkKey: "balms",
+    },
+  ],
+};
