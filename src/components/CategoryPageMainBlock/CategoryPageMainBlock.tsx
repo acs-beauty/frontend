@@ -31,7 +31,7 @@ const CategoryPageMainBlock: FC<{ category: ICategoryData }> = ({
           <MenuContainer>
             <MenuWrapper>
               <MenuText>Cортувати: </MenuText>
-              <SortingSelect/>             
+              <SortingSelect categoryName={category.linkKey}/>             
             </MenuWrapper>
             <MenuWrapper>
               <MenuText>Товарів на сторінці: </MenuText>

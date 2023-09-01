@@ -1,19 +1,17 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import Select from "react-select";
 
 import { OptionType } from "@/types/components";
+import { selectStyles } from "./SortingSelect.styled";
+import { SORTING_OPTIONS } from "@/constants";
 
-const options: OptionType[] = [
-  { value: "за популярністю", label: "за популярністю" },
-  { value: "спочатку дешевше", label: "спочатку дешевше" },
-  { value: "спочатку дорожче", label: "спочатку дорожче" },
-  { value: "за назвою", label: "за назвою" },
-];
+const options: OptionType[] = SORTING_OPTIONS;
 
-const SortingSelect: FC = () => {
+const SortingSelect: FC<{ categoryName: string }> = ({ categoryName }) => {
   const [selectedOption, setSelectedOption] = useState<OptionType | null>(
     options[0]
   );
+
   const handleChange = (option: OptionType | null) => {
     setSelectedOption(option);
   };
@@ -23,42 +21,7 @@ const SortingSelect: FC = () => {
         defaultValue={selectedOption}
         onChange={(option) => handleChange(option)}
         options={options}
-        styles={{
-          control: (baseStyles) => ({
-            ...baseStyles,
-            padding: 0,
-            outline: "none",
-            backgroundColor: "none",
-            border: "none",
-            fontSize: "16px",
-            fontWeight: 400,
-            lineHeight: "normal",
-            letterSpacing: "0.48px",
-            boxShadow: "none",
-          }),
-          container: (provided) => ({
-            ...provided,
-            "&:focus": {
-              border: "none",
-              borderColor: "transparent",
-            },
-          }),
-          indicatorSeparator: () => ({
-            display: "none",
-          }),
-          dropdownIndicator: (provided) => ({
-            ...provided,
-            padding: "4px",
-            color: "#5A5757",
-            "&:hover": {
-              color: "#5A5757",
-            },
-          }),
-          valueContainer: (provided) => ({
-            ...provided,
-            padding: "0",
-          }),
-        }}
+        styles={selectStyles}
       />
     </div>
   );
