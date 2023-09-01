@@ -1,4 +1,4 @@
-export const selectStyles = {
+export const pageSelectStyles = {
     control: (baseStyles: any) => ({
       ...baseStyles,
       padding: 0,
@@ -35,7 +35,7 @@ export const selectStyles = {
     }),
     menu: (provided: any) => ({
       ...provided,
-      width: "21rem",
+      width: "5rem",
       margin: 0,            
       fontSize: "1.6rem",
       fontWeight: 500,
