@@ -2,11 +2,10 @@ import { FC } from "react";
 
 import FilterBlock from "../FilterBlock";
 import SubcategoriesList from "../SubcategoriesList";
-import SmallDropDownMenu from "../SmallDropDownMenu";
+import SortingSelect from "../SortingSelect";
+import PageSelect from "../PageSelect";
 import ProductGallery from "../ProductGallery";
 import { ICategoryData } from "@/types/components";
-import { sortMenuItems } from "@/data/sortMenu";
-import { sortPage } from "@/data/sortPage";
 import { allProducts } from "@/data/products";
 import { Container } from "../Common/Container.styled";
 import {
@@ -31,11 +30,11 @@ const CategoryPageMainBlock: FC<{ category: ICategoryData }> = ({
           <MenuContainer>
             <MenuWrapper>
               <MenuText>Cортувати: </MenuText>
-              <SmallDropDownMenu menuItems={sortMenuItems} />
+              <SortingSelect categoryName={category.linkKey}/>             
             </MenuWrapper>
             <MenuWrapper>
               <MenuText>Товарів на сторінці: </MenuText>
-              <SmallDropDownMenu menuItems={sortPage} />
+              <PageSelect/>
             </MenuWrapper>
           </MenuContainer>
           <ProductGallery {...allProducts} />

@@ -10,3 +10,4 @@ export type { INavItemProps } from "./INavItemProps";
 export type { IPreviewProduct } from "./IPreviewProduct";
 export type { IProducts } from "./IProducts";
 export type { IStyledLabelProps } from "./IStyledLabelProps";
+export type { OptionType } from "./OptionType";
