@@ -13,35 +13,37 @@ import {
   MenuWrapper,
   MenuText,
   MenuContainer,
+  Wrapper
 } from "./CategoryPageMainBlock.styled";
 
 const CategoryPageMainBlock: FC<{ category: ICategoryData }> = ({
   category,
 }) => {
   return (
-    <Container>
-      <BlockWrapper>
-        <FilterBlock
-          minPrice={category.minPrice}
-          maxPrice={category.maxPrice}
-        />
-        <div>
-          <SubcategoriesList subcategories={category.subcategory} />
-          <MenuContainer>
-            <MenuWrapper>
-              <MenuText>Cортувати: </MenuText>
-              <SortingSelect categoryName={category.linkKey}/>             
-            </MenuWrapper>
-            <MenuWrapper>
-              <MenuText>Товарів на сторінці: </MenuText>
-              <PageSelect/>
-            </MenuWrapper>
-          </MenuContainer>
-          <ProductGallery {...allProducts} />
-        </div>
-        
-      </BlockWrapper>
-    </Container>
+    <Wrapper>
+      <Container>
+        <BlockWrapper>
+          <FilterBlock
+            minPrice={category.minPrice}
+            maxPrice={category.maxPrice}
+          />
+          <div>
+            <SubcategoriesList subcategories={category.subcategory} />
+            <MenuContainer>
+              <MenuWrapper>
+                <MenuText>Cортувати: </MenuText>
+                <SortingSelect categoryName={category.linkKey} />
+              </MenuWrapper>
+              <MenuWrapper>
+                <MenuText>Товарів на сторінці: </MenuText>
+                <PageSelect />
+              </MenuWrapper>
+            </MenuContainer>
+            <ProductGallery {...allProducts} />
+          </div>
+        </BlockWrapper>
+      </Container>
+    </Wrapper>
   );
 };
 

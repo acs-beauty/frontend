@@ -23,3 +23,7 @@ export const MenuContainer = styled.div`
   justify-content: space-between;
   margin-bottom: 18px;
 `;
+
+export const Wrapper = styled.div`
+  margin-bottom: 300px;
+`;
