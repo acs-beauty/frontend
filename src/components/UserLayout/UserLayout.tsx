@@ -2,6 +2,7 @@ import { FC } from "react";
 import Head from "next/head";
 
 import Navigation from "../Navigation";
+import Footer from "../Footer";
 import { UserLayoutPropsType } from "@/types/components";
 
 const UserLayout: FC<UserLayoutPropsType> = ({ title, children, categories }) => {
@@ -15,6 +16,7 @@ const UserLayout: FC<UserLayoutPropsType> = ({ title, children, categories }) =>
       </Head>
       <Navigation categories={categories}/>
       <main>{children}</main>
+      <Footer/>
     </>
   );
 };
