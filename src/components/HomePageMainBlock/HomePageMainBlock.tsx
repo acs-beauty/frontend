@@ -1,11 +1,15 @@
 import { FC } from "react";
 import DeliveryBanner from "../DeliveryBanner";
+import CarouselBanner from "../CarouselBanner";
 import { Wrapper, Title, WrapCategory, Figcaption, Figure } from "./HomePageMainBlock.styled";
+
+const imagePaths = ['./images/mainBanner.webp', './images/hairBanner.webp', './images/hairBanner.webp', './images/hairBanner.webp', './images/hairBanner.webp'];
 
 const HomePageMainBlock: FC = () => {
   return (
     <Wrapper>
       <DeliveryBanner />
+      <CarouselBanner images = {imagePaths} />
       <Title>Популярні категорії</Title>
       <WrapCategory>
         <Figure>
@@ -29,7 +33,7 @@ const HomePageMainBlock: FC = () => {
             <path d="M85.5 80.3999V85.3999" stroke="#453E42" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M85.5 91.6001V106.2" stroke="#453E42" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <Figcaption>Сироватки та<br/> флюїди</Figcaption>
+          <Figcaption>Сироватки та<br /> флюїди</Figcaption>
         </Figure>
         <Figure>
           <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +47,7 @@ const HomePageMainBlock: FC = () => {
             <path d="M64.8004 66.4C64.8004 66.4 63.6004 56.4 74.4004 53C74.4004 53 79.0005 65.4 100.6 66.4" stroke="#453E42" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M66.7998 58.6001C66.7998 58.6001 68.1999 61.2001 70.5999 61.8001" stroke="#453E42" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <Figcaption>Креми <br/> для обличчя</Figcaption>
+          <Figcaption>Креми <br /> для обличчя</Figcaption>
         </Figure>
         <Figure>
           <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +58,7 @@ const HomePageMainBlock: FC = () => {
             <path d="M89 110.4H73C71.4 110.4 70 109 70 107.4V95.6001H92V107.4C91.8 109.2 90.6 110.4 89 110.4Z" stroke="#453E42" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M66.417 55H81.217" stroke="#453E42" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <Figcaption>Захист від <br/>сонця SPF</Figcaption>
+          <Figcaption>Захист від <br />сонця SPF</Figcaption>
         </Figure>
         <Figure>
           <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +69,7 @@ const HomePageMainBlock: FC = () => {
             <path d="M79.2109 101.3H99.2109V72.1002C99.2109 69.1002 96.811 66.7002 93.811 66.7002H85.2109C82.8109 66.7002 80.6109 68.3002 80.0109 70.7002" stroke="#453E42" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M95.6108 66.7H83.0107V55.9C87.2107 54.7 91.4108 54.7 95.6108 55.9V66.7Z" stroke="#453E42" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <Figcaption>Незмивний <br/> догляд</Figcaption>
+          <Figcaption>Незмивний <br /> догляд</Figcaption>
         </Figure>
         <Figure>
           <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
