@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const CarouselContainer = styled.div`
   /* Стилі для зовнішнього контейнера каруселі */
-  
+  position: relative;
 `;
 
 export const CarouselImage = styled.img`
@@ -26,10 +26,17 @@ export const Dot = styled.div`
   display: flex;
   width: 1rem;
   height: 1rem;
-  background-color: #FFFFFF;
+  background-color: #BEBEBE;
   border-radius: 50%;
   margin: 1rem; /* Додайте потрібний відступ між кружечками */
   cursor: pointer;
   z-index: 2;
+
+  &.active {
+    /* Стилі для активного кружечка */
+    background-color: #FFFFFF; 
+  }
 `;
+
+
 
