@@ -2,7 +2,6 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { Container } from "../Common/Container.styled";
 import {
   StyledFooter,
   FlexContainer,
@@ -12,15 +11,100 @@ import {
   ContactWrapper,
   Text,
   ContactsLink,
-  IconsList
+  IconsList,
+  ImageWrapper,
+  FooterContainer,
+  IconWrapper,
+  InfoWrapper,
+  ContactsList,
+  TabletIconsList,
+  ImageBox,
 } from "./Footer.styled";
 
 const Footer: FC = () => {
   return (
     <StyledFooter>
-      <Container>
+      <FooterContainer>
         <FlexContainer>
-          <div>
+          <ImageWrapper>
+            <Link href={"/"}>
+              <ImageBox>
+                <Image
+                  src="/images/logo.svg"
+                  alt="логотип Acs beauty"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(min-width: 360px) 105px, (min-width: 768px) 167px"
+                />
+              </ImageBox>
+            </Link>
+          </ImageWrapper>
+          <ContactWrapper>
+            <Title>Зв`язок з нами</Title>
+            <ContactsList>
+              <li>
+                <Text>ФОП Дуда О.С.</Text>
+              </li>
+              <li>
+                <ContactsLink href="tel:+380661111111">
+                  +38066 111 11 11
+                </ContactsLink>
+              </li>
+              <li>
+                <ContactsLink href="mailto:ascbeauty@gmail.com">
+                  ascbeauty@gmail.com
+                </ContactsLink>
+              </li>
+              <li>
+                <Text>Щодня з 10:00 - 20:00</Text>
+              </li>
+            </ContactsList>
+            <TabletIconsList>
+              <li>
+                <IconWrapper>
+                  <Image
+                    src="/icons/instagram.svg"
+                    alt="instagram"
+                    width={48}
+                    height={48}
+                  />
+                </IconWrapper>
+              </li>
+              <li>
+                <IconWrapper>
+                  <Image
+                    src="/icons/tictoc.svg"
+                    alt="tweeter"
+                    width={48}
+                    height={48}
+                  />
+                </IconWrapper>
+              </li>
+            </TabletIconsList>
+          </ContactWrapper>
+          <IconsList>
+            <li>
+              <IconWrapper>
+                <Image
+                  src="/icons/instagram.svg"
+                  alt="instagram"
+                  width={48}
+                  height={48}
+                />
+              </IconWrapper>
+            </li>
+            <li>
+              <IconWrapper>
+                <Image
+                  src="/icons/tictoc.svg"
+                  alt="tweeter"
+                  width={48}
+                  height={48}
+                />
+              </IconWrapper>
+            </li>
+          </IconsList>
+          <InfoWrapper>
             <Title>Інформація</Title>
             <LinkList>
               <li>
@@ -49,58 +133,9 @@ const Footer: FC = () => {
                 </Link>
               </li>
             </LinkList>
-          </div>
-          <div>
-            <Image
-              src="/images/logo.png"
-              alt="логотип Acs beauty"
-              width={196}
-              height={151}
-            />
-          </div>
-          <div>
-            <ContactWrapper>
-              <Title>Зв`язок з нами</Title>
-              <LinkList>
-                <li>
-                  <Text>ФОП Дуда О.С.</Text>
-                </li>
-                <li>
-                  <ContactsLink href="">+38066 111 11 11</ContactsLink>
-                </li>
-                <li>
-                  <ContactsLink href="">ascbeauty@gmail.com</ContactsLink>
-                </li>
-                <li>
-                  <Text>Щодня з 10:00 - 20:00</Text>
-                </li>
-              </LinkList>
-            </ContactWrapper>
-            <IconsList>
-              <li>
-                <div>
-                  <Image
-                    src="/icons/instagram.svg"
-                    alt="instagram"
-                    width={48}
-                    height={48}
-                  />
-                </div>
-              </li>
-              <li>
-                <div>
-                  <Image
-                    src="/images/tweeter.png"
-                    alt="tweeter"
-                    width={48}
-                    height={48}
-                  />
-                </div>
-              </li>
-            </IconsList>
-          </div>
+          </InfoWrapper>
         </FlexContainer>
-      </Container>
+      </FooterContainer>
     </StyledFooter>
   );
 };
