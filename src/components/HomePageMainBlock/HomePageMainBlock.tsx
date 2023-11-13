@@ -8,7 +8,7 @@ const imagePaths = ['./images/mainBanner.webp', './images/hairBanner.webp', './i
 const HomePageMainBlock: FC = () => {
   return (
     <Wrapper>
-      <DeliveryBanner />
+      {/* <DeliveryBanner /> */}
       <CarouselBanner images = {imagePaths} />
       <Title>Популярні категорії</Title>
       <WrapCategory>
