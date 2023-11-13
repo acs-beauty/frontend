@@ -2,10 +2,16 @@ import { FC } from "react";
 import Head from "next/head";
 
 import Navigation from "../Navigation";
+import DeliveryBanner from "../DeliveryBanner";
+import Header from "../Header";
 import Footer from "../Footer";
 import { UserLayoutPropsType } from "@/types/components";
 
-const UserLayout: FC<UserLayoutPropsType> = ({ title, children, categories }) => {
+const UserLayout: FC<UserLayoutPropsType> = ({
+  title,
+  children,
+  categories,
+}) => {
   return (
     <>
       <Head>
@@ -14,9 +20,11 @@ const UserLayout: FC<UserLayoutPropsType> = ({ title, children, categories }) =>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation categories={categories}/>
+      <DeliveryBanner/>
+      <Header />
+      <Navigation categories={categories} />
       <main>{children}</main>
-      <Footer/>
+      <Footer />
     </>
   );
 };
