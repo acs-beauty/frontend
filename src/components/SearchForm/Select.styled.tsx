@@ -2,20 +2,30 @@ import { StylesConfig } from "react-select";
 
 import { OptionType } from "@/types/components";
 
+const breakpoints = [360, 768, 1440];
+
+const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+
 export const searchSelectStyles: StylesConfig<OptionType> = {
   control: (baseStyles) => ({
     ...baseStyles,
     width: "32.8rem",
     height: "3.2rem",
     paddingLeft: "3.6rem",
-    paddingRight: "0.8rem",
-    paddingTop: "0.4rem",
-    paddingBottom: "0.4rem",
     outline: "none",
     backgroundColor: "#fff",
     border: "1px solid #C1BABA",
     boxShadow: "none",
     borderRadius: "4px",
+    [mq[1]]: {
+      width: "39.7rem",
+      height: "4.4rem",
+      borderRadius: "12px",
+    },
+    [mq[2]]: {
+      width: "51.9rem",      
+      borderRadius: "12px",
+    },
   }),
   container: (provided) => ({
     ...provided,
@@ -30,11 +40,35 @@ export const searchSelectStyles: StylesConfig<OptionType> = {
   dropdownIndicator: (provided) => ({
     ...provided,
     display: "none",
+    [mq[1]]: {
+      display: "block",
+      backgroundColor: "#453E42",
+    },
   }),
   indicatorsContainer: (provided) => ({
     ...provided,
     display: "none",
+    [mq[1]]: {
+      display: "block",
+      backgroundColor: "#453E42",
+      width: "10.5rem",
+      height: "4.3rem",
+      borderTopRightRadius: "12px",
+      borderBottomRightRadius: "12px",
+    },
+    "& > div": {
+      borderTopRightRadius: "12px",
+      borderBottomRightRadius: "12px",
+      paddingLeft: "1.9rem",
+      paddingTop: "1.2rem",
+      paddingRight: "0",
+    },
   }),
+  loadingIndicator: (provided) => ({
+    ...provided,
+    display: "none",
+  }),
+
   valueContainer: (provided) => ({
     ...provided,
     padding: "0",

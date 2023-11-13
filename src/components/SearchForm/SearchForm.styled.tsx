@@ -11,3 +11,14 @@ export const ImageWrapper = styled.div`
   transform: translateY(-50%);
   z-index: 10;
 `;
+
+export const IndicatorText = styled.p`
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+    font-weight: 500;
+  }
+`;

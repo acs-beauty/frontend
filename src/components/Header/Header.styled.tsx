@@ -1,22 +1,98 @@
 import styled from "@emotion/styled";
 
-export const FlexContainer = styled.header`
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
+export const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 2.4rem 30rem;
+  grid-template-rows: 2.4rem 3.8rem;
+  grid-row-gap: 1.6rem;
+  margin: 0 auto;
+  width: 36rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    grid-template-columns: 3.2rem 53.6rem 13.6rem;
+    grid-template-rows: 4.4rem;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    width: 76.8rem;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+    grid-template-columns: 10.8rem 99rem 18.2rem;
+    grid-template-rows: 9.5rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    width: 144rem;
+  }
 `;
 
 export const StyledHeader = styled.header`
   padding-top: 1.6rem;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
 `;
 
 export const IconsWrapper = styled.div`
   display: flex;
   gap: 1.6rem;
+  grid-row: 1;
+  grid-column: 2;
+  justify-content: end;
+  align-self: center;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    gap: 2rem;
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+    gap: 4.3rem;
+    grid-row: 1;
+    grid-column: 3;
+  }
 `;
 
-export const IconsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
+export const MenuContainer = styled.div`
+  grid-row: 1;
+  grid-column: 1;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+    display: none;
+  }
+`;
+
+export const SearchWrapper = styled.div`
+  grid-column: 1 / 2;
+  grid-row: 2;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: center;
+    align-self: center;
+  }
+`;
+
+export const ImageBox = styled.div`
+  display: none;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+    position: relative;
+    display: block;
+    grid-row: 1;
+    grid-column: 1;
+    width: 10.8rem;
+    height: 9.5rem;
+  }
 `;
