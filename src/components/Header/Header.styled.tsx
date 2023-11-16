@@ -66,6 +66,7 @@ export const IconsWrapper = styled.div`
 export const MenuContainer = styled.div`
   grid-row: 1;
   grid-column: 1;
+  align-self: center;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     display: none;

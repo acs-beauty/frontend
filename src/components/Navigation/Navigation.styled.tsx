@@ -26,7 +26,7 @@ position: relative;
 export const NavWrapper = styled.div`
   display: none;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     position: relative;
     display: block;
     margin-bottom: 4.2rem;
