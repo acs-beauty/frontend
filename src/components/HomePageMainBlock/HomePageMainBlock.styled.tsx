@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.div`
   font-style: Montserrat;
-  font-size: 3.6rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   text-align: center;
   margin-top: 8rem;
@@ -14,15 +14,20 @@ export const Title = styled.div`
 
 export const WrapCategory = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   text-align: center;
-  margin-inline: 6rem;
-  margin-top: 3.6rem;
+  margin-inline: 2.4rem;
 `;
+
+export const Wrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+`
 
 export const Figcaption = styled.div`
   font-style: Montserrat;
-  font-size: 2.4rem;
+  font-size: 1.2rem;
   margin-top: 1.2rem;
 `;
 
