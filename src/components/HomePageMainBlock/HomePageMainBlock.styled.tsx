@@ -17,6 +17,7 @@ export const Title = styled.div`
 
   @media (min-width: 774px) {
     font-size: 3.6rem;
+    margin-top: 12rem;
   }
 `;
 
