@@ -10,6 +10,14 @@ export const Title = styled.div`
   text-transform: uppercase;
   text-align: center;
   margin-top: 8rem;
+
+  @media (min-width: 361px) {
+    font-size: 2.8rem;
+  }
+
+  @media (min-width: 774px) {
+    font-size: 3.6rem;
+  }
 `;
 
 export const WrapCategory = styled.div`
@@ -17,6 +25,12 @@ export const WrapCategory = styled.div`
   flex-direction: column;
   text-align: center;
   margin-inline: 2.4rem;
+  margin-bottom: 2.4rem;
+
+  @media (min-width: 774px) {
+    flex-direction: row;
+    margin-bottom: 3.6rem;
+  }
 `;
 
 export const Wrap = styled.div`
@@ -28,9 +42,29 @@ export const Wrap = styled.div`
 export const Figcaption = styled.div`
   font-style: Montserrat;
   font-size: 1.2rem;
-  margin-top: 1.2rem;
+  margin-top: 0.6rem;
+
+  @media(min-width: 601px) {
+    font-size: 1.8rem;
+  }
+
+  @media(min-width: 1200px) {
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
 `;
 
 export const Figure = styled.div`
   margin-inline: 1rem;
+  margin-bottom: 2rem;
+`;
+
+export const StyledSVG = styled.svg`
+  width: 68px;
+  height: 68px;
+
+  @media(min-width: 361px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
