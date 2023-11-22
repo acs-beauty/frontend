@@ -1,15 +1,18 @@
 import { StylesConfig } from "react-select";
 
 import { OptionType } from "@/types/components";
+import { SCREENS } from "@/constants";
 
-const breakpoints = [360, 768, 1440];
+const breakpoints = [`${SCREENS.tablet}`, `${SCREENS.desktop}`];
 
-const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+const mq = breakpoints.map((bp) => `@media (min-width: ${bp})`);
 
 export const searchSelectStyles: StylesConfig<OptionType> = {
   control: (baseStyles) => ({
     ...baseStyles,
-    width: "32.8rem",
+    minWidth: "28.8rem",
+    width: "100%",
+    maxWidth: "73.5rem",
     height: "3.2rem",
     paddingLeft: "3.6rem",
     outline: "none",
@@ -17,13 +20,13 @@ export const searchSelectStyles: StylesConfig<OptionType> = {
     border: "1px solid #C1BABA",
     boxShadow: "none",
     borderRadius: "4px",
-    [mq[1]]: {
+    [mq[0]]: {
       width: "39.7rem",
       height: "4.4rem",
       borderRadius: "12px",
     },
-    [mq[2]]: {
-      width: "51.9rem",      
+    [mq[1]]: {
+      width: "51.9rem",
       borderRadius: "12px",
     },
   }),
@@ -40,7 +43,7 @@ export const searchSelectStyles: StylesConfig<OptionType> = {
   dropdownIndicator: (provided) => ({
     ...provided,
     display: "none",
-    [mq[1]]: {
+    [mq[0]]: {
       display: "block",
       backgroundColor: "#453E42",
     },
@@ -48,7 +51,7 @@ export const searchSelectStyles: StylesConfig<OptionType> = {
   indicatorsContainer: (provided) => ({
     ...provided,
     display: "none",
-    [mq[1]]: {
+    [mq[0]]: {
       display: "block",
       backgroundColor: "#453E42",
       width: "10.5rem",

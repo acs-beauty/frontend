@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import { categories } from "@/data/categories";
 
 import UserLayout from "@/components/UserLayout";
-import DeliveryPageMainBlock from "@/components/DeliveryPageMainBlock";
+import DeliveryPageMainBlock from "@/UI/DeliveryPageMainBlock";
 
 const Delivery: NextPage = () => {
   return (

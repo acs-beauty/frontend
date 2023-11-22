@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import Select from "react-select";
 
 import { OptionType } from "@/types/components";
@@ -16,14 +16,12 @@ const PageSelect: FC = () => {
     setSelectedOption(option);
   };
   return (
-    <div>
-      <Select<OptionType>
-        defaultValue={selectedOption}
-        onChange={(option) => handleChange(option)}
-        options={options}
-        styles={pageSelectStyles}
-      />
-    </div>
+    <Select<OptionType>
+      defaultValue={selectedOption}
+      onChange={handleChange}
+      options={options}
+      styles={pageSelectStyles}
+    />
   );
 };
 

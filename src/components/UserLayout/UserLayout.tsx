@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import Navigation from "../Navigation";
 import DeliveryBanner from "../DeliveryBanner";
-import Header from "../Header";
+import Header from "../../UI/Header";
 import Footer from "../Footer";
 import { UserLayoutPropsType } from "@/types/components";
 
@@ -20,7 +20,7 @@ const UserLayout: FC<UserLayoutPropsType> = ({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DeliveryBanner/>
+      <DeliveryBanner />
       <Header />
       <Navigation categories={categories} />
       <main>{children}</main>

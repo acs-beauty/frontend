@@ -1,7 +1,5 @@
 export const SCREENS = {
-  mobileStart: "360px",
-  mobileEnd: "767px",
-  tabletStart: "768px",
-  tabletEnd: "1439px",
+  mobile: "320px",
+  tablet: "768px",
   desktop: "1440px",
 };

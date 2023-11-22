@@ -4,8 +4,7 @@ export const Wrapper = styled.div`
   margin-bottom: 32.9rem;
 `;
 
-export const Title = styled.div`
-  font-style: Montserrat;
+export const Title = styled.div`  
   font-size: 1.8rem;
   text-transform: uppercase;
   text-align: center;
@@ -41,7 +40,6 @@ export const Wrap = styled.div`
 `
 
 export const Figcaption = styled.div`
-  font-style: Montserrat;
   font-size: 1.2rem;
   margin-top: 0.6rem;
 

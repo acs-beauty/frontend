@@ -4,7 +4,8 @@ import Image from "next/image";
 
 import NavLink from "../NavLink";
 import { IMenu } from "@/types/components";
-import { Container } from "../Common/Container.styled";
+
+import { Container } from "@/styles/commonStyles";
 import {
   Button,
   DropDownList,

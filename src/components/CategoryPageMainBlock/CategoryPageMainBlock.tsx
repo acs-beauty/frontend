@@ -7,7 +7,7 @@ import PageSelect from "../PageSelect";
 import ProductGallery from "../ProductGallery";
 import { ICategoryData } from "@/types/components";
 import { allProducts } from "@/data/products";
-import { Container } from "../Common/Container.styled";
+import { Container } from "@/styles/commonStyles";
 import {
   BlockWrapper,
   MenuWrapper,

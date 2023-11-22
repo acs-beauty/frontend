@@ -1,25 +1,24 @@
 import styled from "@emotion/styled";
 
 export const Text = styled.p`
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     margin-bottom: 16px;
     font-size: 2.4rem;
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
-    line-height: 1.2;
+    font-weight: 500;   
     letter-spacing: 0.72px;
     color: ${({ theme }) => theme.colors.grey[300]};
   }
 `;
 
 export const Input = styled.input`
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 11.2rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     text-align: center;
     border: 1px solid ${({ theme }) => theme.colors.grey[200]};
     font-size: 2rem;
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
+    font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.6px;
     color: ${({ theme }) => theme.colors.grey[300]};
@@ -27,7 +26,7 @@ export const Input = styled.input`
 `;
 
 export const InputWrapper = styled.div`
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     display: flex;
     gap: 4.4rem;
     margin-bottom: 1.6rem;
@@ -88,11 +87,11 @@ export const SliderInput = styled.input`
     pointer-events: all;
     width: 1.6rem;
     height: 1.6rem;
-    border-radius: ${({theme}) => theme.radii.md};
+    border-radius: ${({ theme }) => theme.radii.md};
     border: 0 none;
     cursor: grab;
     background-color: transparent;
-    top: 55%;   
+    top: 55%;
     transform: translate3d(0, -55%, 0);
     &:active {
       cursor: grabbing;
@@ -104,11 +103,11 @@ export const SliderInput = styled.input`
     pointer-events: all;
     width: 2.4rem;
     height: 2.4rem;
-    border-radius: ${({theme}) => theme.radii.md};
+    border-radius: ${({ theme }) => theme.radii.md};
     border: 0 none;
     cursor: grab;
     background-color: transparent;
-    top: 55%;     
+    top: 55%;
     transform: translate3d(0, -50%, 0);
 
     &:active {
@@ -121,11 +120,11 @@ export const SliderInput = styled.input`
     pointer-events: all;
     width: 2.4rem;
     height: 2.4rem;
-    border-radius: ${({theme}) => theme.radii.md};
+    border-radius: ${({ theme }) => theme.radii.md};
     border: 0 none;
     cursor: grab;
     background-color: transparent;
-    top: 55%;    
+    top: 55%;
     transform: translate3d(0, -50%, 0);
 
     &:active {

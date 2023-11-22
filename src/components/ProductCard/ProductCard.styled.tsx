@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const ImageContainer = styled.div`
   position: relative;
   overflow: hidden;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 30.5rem;
     height: 23.9rem;
     margin-bottom: 0.4rem;
@@ -16,7 +16,7 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between; */
   border: 1px solid ${({ theme }) => theme.colors.grey[200]};
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 30.5rem;
     height: 43.2rem;
   }
@@ -29,7 +29,7 @@ export const ContentWrapper = styled.div`
 export const HeartContainer = styled.div`
   position: absolute;
   overflow: hidden;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 2.4rem;
     height: 2.4rem;
     top: 2rem;
@@ -49,14 +49,14 @@ export const Title = styled.h3`
   margin-bottom: 1em;
   padding: 0 1.8rem;
   font-size: 1.6rem;
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  font-weight: 400;
   text-align: center;
 `;
 
 export const Price = styled.p`
   margin-bottom: 1.7rem;
   font-size: 2.4rem;
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-weight: 500;
   text-align: center;
 `;
 export const LinksWrapper = styled.div`
@@ -68,7 +68,7 @@ export const LinksWrapper = styled.div`
 
 export const ProductLink = styled.a`
   font-size: 1.8rem;
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-weight: 500;
   text-align: center;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.grey[300]};
@@ -80,7 +80,7 @@ export const Cart = styled.button`
   border: none;
   color: ${({ theme }) => theme.colors.grey[300]};
   font-size: 1.8rem;
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-weight: 500;
   line-height: 1.15;
   text-align: center;
   text-transform: uppercase;

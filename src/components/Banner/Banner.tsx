@@ -2,7 +2,8 @@ import { FC } from "react";
 import Image from "next/image";
 
 import { ImageContainer } from "./Banner.styled";
-import { Container } from "../Common/Container.styled";
+
+import { Container } from "@/styles/commonStyles";
 
 const Banner: FC = () => {
   return (

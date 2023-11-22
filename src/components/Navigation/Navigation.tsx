@@ -1,10 +1,9 @@
 import { FC } from "react";
-import Image from "next/image";
 
 import NavLink from "../NavLink";
 import DropDownMenu from "../DropDownMenu";
 import { ICategory } from "@/types/components";
-import { Container } from "../Common/Container.styled";
+import { Container } from "@/styles/commonStyles";
 import { NavWrapper, NavList, NavItem, Button } from "./Navigation.styled";
 
 const Navigation: FC<{ categories: ICategory[] }> = ({ categories }) => {
@@ -15,17 +14,15 @@ const Navigation: FC<{ categories: ICategory[] }> = ({ categories }) => {
           <NavItem>
             <NavLink href={"/novelties"} text={"Новинки"} />
           </NavItem>
-          {categories.map((category) => {
-            return (
-              <DropDownMenu
-                key={category.categoryId}
-                href={category.linkKey}
-                text={category.name}
-                menuItems={category.subcategory}
-                menuId={category.categoryId}
-              />
-            );
-          })}
+          {categories.map((category) => (
+            <DropDownMenu
+              key={category.categoryId}
+              href={category.linkKey}
+              text={category.name}
+              menuItems={category.subcategory}
+              menuId={category.categoryId}
+            />
+          ))}
           <NavItem>
             <NavLink href={"/brands"} text={"Бренди"} />
           </NavItem>

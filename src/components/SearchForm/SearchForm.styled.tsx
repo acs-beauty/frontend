@@ -18,7 +18,7 @@ export const IndicatorText = styled.p`
   font-weight: 600;
   text-transform: uppercase;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     font-weight: 500;
   }
 `;

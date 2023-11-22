@@ -16,7 +16,7 @@ export const Wrapper = styled.div<{ isSale: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 8.8rem;
     height: 4.4rem;
     font-size: 2rem;

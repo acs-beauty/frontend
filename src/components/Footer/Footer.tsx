@@ -20,8 +20,11 @@ import {
   TabletIconsList,
   ImageBox,
 } from "./Footer.styled";
+import { generateImageSizesString } from "@/helpers";
 
 const Footer: FC = () => {
+  const imageSizes = generateImageSizesString("105px", "167px", "167px");
+
   return (
     <StyledFooter>
       <FooterContainer>
@@ -34,7 +37,7 @@ const Footer: FC = () => {
                   alt="логотип Acs beauty"
                   fill
                   style={{ objectFit: "cover" }}
-                  sizes="(min-width: 360px) 105px, (min-width: 768px) 167px"
+                  sizes={imageSizes}
                 />
               </ImageBox>
             </Link>

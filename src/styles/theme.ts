@@ -1,28 +1,6 @@
 export const theme = {
-  breakpoints: ["360px", "769px", "1440px"],
-
-  fontSizes: [
-    "11px", //0
-    "12px", //1
-    "14px", //2
-    "15px", //3
-    "16px", //4
-    "18px", //5
-    "20px", //6
-    "24px", //7
-    "28px", //8
-    "32px", //9
-    "36px", //10
-    "40px", //11
-  ],
-
-  fontWeights: {
-    light: 300,
-    regular: 400,
-    medium: 500,
-    semibold: 600,
-    bold: 700,
-  },
+  tablet_768: "768px",
+  desktop_1440: "1440px",
 
   radii: {
     sm: "1.2rem",

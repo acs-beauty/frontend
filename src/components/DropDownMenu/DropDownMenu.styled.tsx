@@ -15,7 +15,7 @@ export const Button = styled.button`
 export const DropDownList = styled.ul`
   display: none;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@ export const DropDownList = styled.ul`
     padding: 3.6rem 8rem;
     font-size: 2.4rem;
     letter-spacing: 0.72px;
-    font-weight: ${({ theme }) => theme.fontWeights.medium};
+    font-weight: 500;
     background-color: ${({ theme }) => theme.colors.grey[500]};
     width: 100%;
     max-width: 144rem;
@@ -53,10 +53,10 @@ export const NavItem = styled.li<{ isActive: boolean }>`
 
 export const SubMenuItem = styled.li`
   width: calc(100% / 3);
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-weight: 500;
   transition: font-weight 250ms ease-out;
   &:hover,
   &:focus {
-    font-weight: ${({ theme }) => theme.fontWeights.bold};
+    font-weight: 700;
   }
 `;
