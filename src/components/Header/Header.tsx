@@ -11,13 +11,14 @@ import {
   ImageBox,
 } from "./Header.styled";
 import SearchForm from "../SearchForm";
-import Heart from "../icons/Heart";
-import Cart from "../icons/Cart";
-import BurgerMenu from "../icons/BurgerMenu";
-import Account from "../icons/Account";
+import HeartIcon from "../../UI/icons/HeartIcon";
+import CartIcon from "../../UI/icons/CartIcon";
+import BurgerMenuIcon from "../../UI/icons/BurgerMenuIcon";
+import AccountIcon from "../../UI/icons/AccountIcon";
 
 const Header: FC = () => {
-  const { isMobile } = useScreen();
+  const { isTablet } = useScreen();
+ 
   return (
     <StyledHeader>
       <GridContainer>
@@ -31,30 +32,30 @@ const Header: FC = () => {
           />
         </ImageBox>
         <MenuContainer>
-          <BurgerMenu
-            width={isMobile ? "24" : "32"}
-            height={isMobile ? "24" : "32"}
+          <BurgerMenuIcon
+            width={isTablet ? "32" : "24"}
+            height={isTablet ? "32" : "24"}
           />
         </MenuContainer>
         <IconsWrapper>
           <div>
-            <Account
-              width={isMobile ? "24" : "32"}
-              height={isMobile ? "24" : "32"}
+            <AccountIcon
+              width={isTablet ? "32" : "24"}
+              height={isTablet ? "32" : "24"}
             />
           </div>
           <div>
-            <Heart
+            <HeartIcon
               color="#575A57"
               opacity="1"
-              width={isMobile ? "24" : "32"}
-              height={isMobile ? "24" : "32"}
+              width={isTablet ? "32" : "24"}
+              height={isTablet ? "32" : "24"}
             />
           </div>
           <div>
-            <Cart
-              width={isMobile ? "24" : "32"}
-              height={isMobile ? "24" : "32"}
+            <CartIcon
+              width={isTablet ? "32" : "24"}
+              height={isTablet ? "32" : "24"}
             />
           </div>
         </IconsWrapper>

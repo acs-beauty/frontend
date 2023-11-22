@@ -6,7 +6,7 @@ import axios from "axios";
 import { searchSelectStyles } from "./Select.styled";
 import { Wrapper, ImageWrapper, IndicatorText } from "./SearchForm.styled";
 import { IPreviewProduct, OptionType } from "@/types/components";
-import Magnify from "../icons/Magnify";
+import MagnifyIcon from "../../UI/icons/MagnifyIcon";
 import { useScreen } from "@/hooks";
 
 const CustomDropdownIndicator = (props: any) => {
@@ -18,7 +18,7 @@ const CustomDropdownIndicator = (props: any) => {
 };
 
 const SearchForm: FC = () => {
-  const { isMobile } = useScreen();
+  const { isTablet } = useScreen();
   const [selectedValue, setSelectedValue] = useState<OptionType | null>(null);
   const [inputValue, setInputValue] = useState("");
 
@@ -44,9 +44,9 @@ const SearchForm: FC = () => {
   return (
     <Wrapper>
       <ImageWrapper>
-        <Magnify
-          width={isMobile ? "24" : "32"}
-          height={isMobile ? "24" : "32"}
+        <MagnifyIcon
+          width={isTablet ? "32" : "24"}
+          height={isTablet ? "32" : "24"}
         />
       </ImageWrapper>
       <AsyncSelect

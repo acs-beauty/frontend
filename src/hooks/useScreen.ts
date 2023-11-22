@@ -3,24 +3,21 @@ import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 
 export const useScreen = () => {
-  const [query, setQuery] = useState({
-    isMobile: false,
+  const [query, setQuery] = useState({  
     isTablet: false,
     isDesktop: false,
   });
-  const isMobile = useMediaQuery({
-    query: `(min-width: ${SCREENS.mobileStart}) and (max-width: ${SCREENS.mobileEnd})`,
-  });
+ 
   const isTablet = useMediaQuery({
-    query: `(min-width: ${SCREENS.tabletStart}) and (max-width: ${SCREENS.tabletEnd})`,
+    query: `(min-width: ${SCREENS.tablet}) `,
   });
   const isDesktop = useMediaQuery({
     query: `(min-width: ${SCREENS.desktop}) `,
   });
 
   useEffect(() => {
-    setQuery({ isMobile, isTablet, isDesktop });
-  }, [isMobile, isTablet, isDesktop]);
+    setQuery({ isTablet, isDesktop });
+  }, [isTablet, isDesktop]);
 
   return query;
 };
