@@ -5,10 +5,9 @@ import { categories } from "@/data/categories";
 import { subcategory } from "@/data/subcategory";
 import Banner from "@/components/Banner";
 import FilterBlock from "@/components/FilterBlock/FilterBlock";
-import { Container } from "@/components/Common/Container.styled";
-import { SectionTitle } from "@/components/Common/SectionTitle.styled";
+import { Container, SectionTitle } from "@/styles/commonStyles";
 import { getSubcategoryPageData } from "@/services/pageOperations";
-import { getAllCategories } from "@/services/operations";
+import { getCategories } from "@/services/operations";
 
 
 // export const getStaticProps = async (context: GetStaticPropsContext) => {
@@ -18,7 +17,7 @@ import { getAllCategories } from "@/services/operations";
 // };
 
 // export const getStaticPaths: GetStaticPaths = async () => {
-//   const categories = await getAllCategories();
+//   const categories = await getCategories();
 // const paths = [];
   
 //   categories.forEach((category) => {

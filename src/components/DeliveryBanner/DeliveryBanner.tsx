@@ -1,6 +1,7 @@
 import { FC } from "react";
 
-import { Container } from "../Common/Container.styled";
+
+import { Container } from "@/styles/commonStyles";
 import { Wrapper, Title, Section } from "./DeliveryBanner.styled";
 
 const DeliveryBanner: FC = () => {

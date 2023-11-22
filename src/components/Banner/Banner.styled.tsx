@@ -10,7 +10,7 @@ export const ImageContainer = styled.div`
   margin-bottom: 1.6rem;
   overflow: hidden;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     min-width: 84rem;
     max-width: 128rem;
     height: 36rem;

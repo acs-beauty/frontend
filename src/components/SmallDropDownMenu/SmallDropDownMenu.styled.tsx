@@ -22,7 +22,7 @@ export const DropDownList = styled.ul`
   padding: 3.2rem 3.2rem 3.2rem 4.2rem;
   font-size: 2rem;
   letter-spacing: 0.6px;
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-weight: 500;
   background-color: ${({ theme }) => theme.colors.white[100]};
   border: 1px solid ${({ theme }) => theme.colors.grey[200]};
 `;

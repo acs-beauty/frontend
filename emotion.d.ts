@@ -2,16 +2,19 @@ import "@emotion/react";
 
 declare module "@emotion/react" {
   export interface Theme {
-    breakpoints: string[];
-    fontSizes: string[];
-    remSizes: string[];
-    fontWeights: {
-      light: number;
-      regular: number;
-      medium: number;
-      semibold: number;
-      bold: number;
-    };
+    // breakpoints: string[];
+    // fontSizes: string[];
+    // remSizes: string[];
+    // fontWeights: {
+    //   light: number;
+    //   regular: number;
+    //   medium: number;
+    //   semibold: number;
+    //   bold: number;
+    // };
+    tablet_768: string;
+    desktop_1440: string;
+
     radii: { sm: string; md: string; lg: string };
 
     colors: {

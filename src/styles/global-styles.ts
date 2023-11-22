@@ -7,9 +7,8 @@ export const global = css`
   html,
   body {
     font-family: ${montserrat.style.fontFamily};
-    font-weight: 400;
     max-width: 100vw;
-    color: #5A5757;
+    color: #5a5757;
     line-height: 1.2;
     font-size: 62.5%;
     overflow-x: hidden;

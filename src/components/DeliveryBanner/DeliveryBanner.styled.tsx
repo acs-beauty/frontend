@@ -6,11 +6,11 @@ export const Wrapper = styled.div`
   align-items: center;
   height: 3.2rem;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     height: 5rem;
   }
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     height: 6rem;
   }
 `;
@@ -20,7 +20,7 @@ export const Title = styled.h3`
   font-size: 1.2rem;
   font-weight: 500;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     font-size: 1.6rem;
     letter-spacing: 0.48px;
     line-height: normal;
@@ -35,11 +35,11 @@ export const Section = styled.section`
   height: 3.2rem;
   background: #453e42;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     height: 5rem;
   }
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     height: 6rem;
   }
 `;

@@ -24,6 +24,6 @@ export const Item = styled.li`
 
 export const LinkText = styled.a`
   font-size: 1.6rem;
-  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-weight: 500;
   letter-spacing: 0.48px;
 `;

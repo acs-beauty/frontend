@@ -4,12 +4,12 @@ import UserLayout from "@/components/UserLayout";
 import { categories } from "@/data/categories";
 import { category } from "@/data/category";
 import Banner from "@/components/Banner";
-import { Container } from "@/components/Common/Container.styled";
+
+import { Container, SectionTitle } from "@/styles/commonStyles";
 import CategoryPageMainBlock from "@/components/CategoryPageMainBlock";
 import FilterBlock from "@/components/FilterBlock/FilterBlock";
-import { SectionTitle } from "@/components/Common/SectionTitle.styled";
 import { getCategoryPageData } from "@/services/pageOperations";
-import { getAllCategories } from "@/services/operations";
+import { getCategories } from "@/services/operations";
 import { CategoryPagePropsType } from "@/types/pages/CategoryPagePropsType";
 
 // export const getStaticProps = async (context: GetStaticPropsContext) => {
@@ -20,7 +20,7 @@ import { CategoryPagePropsType } from "@/types/pages/CategoryPagePropsType";
 // };
 
 // export const getStaticPaths: GetStaticPaths = async () => {
-//   const categories = await getAllCategories();
+//   const categories = await getCategories();
 //   const paths = categories.map((category) => ({
 //     params: { category: category.linkKey },
 //   }));

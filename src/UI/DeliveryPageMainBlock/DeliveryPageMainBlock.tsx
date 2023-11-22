@@ -3,7 +3,8 @@ import { FC } from "react";
 import UkrPost from "../UkrPost";
 import NewPost from "../NewPost";
 import Payment from "../Payment";
-import { Container } from "../../components/Common/Container.styled";
+
+import { Container } from "@/styles/commonStyles";
 import {
   Title,
   TitleWrapper,

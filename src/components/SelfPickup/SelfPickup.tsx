@@ -1,7 +1,8 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import { Container } from "../Common/Container.styled";
+
+import { Container } from "@/styles/commonStyles";
 import { Text, Section, Title, TitleWrapper, Wrapper } from "./SelfPickup.styled";
 
 const SelfPickup: FC = () => {

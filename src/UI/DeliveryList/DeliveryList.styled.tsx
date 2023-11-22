@@ -5,7 +5,7 @@ export const List = styled.ul`
   flex-direction: column;
   gap: 1.6rem;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     gap: 3.4rem;
   }
 `;
@@ -15,7 +15,7 @@ export const ListItem = styled.li`
   align-items: center;
   gap: 0.8rem;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     gap: 1.2rem;
   }
 `;
@@ -26,7 +26,7 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: normal;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     font-size: 1.8rem;
     letter-spacing: -0.1px;
   }

@@ -2,8 +2,7 @@ import styled from "@emotion/styled";
 
 export const Text = styled.p`
   align-self: flex-start;
-  color: #5a5757;
-  font-family: Montserrat;
+  color: #5a5757;  
   font-size: 2rem;
   font-weight: 400;
 `;
@@ -13,8 +12,7 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.h3`
-  color: #5a5757;
-  font-family: Montserrat;
+  color: #5a5757; 
   font-size: 3.2rem;
   font-weight: 500;
   letter-spacing: 3.2px;

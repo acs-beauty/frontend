@@ -16,14 +16,12 @@ const SortingSelect: FC<{ categoryName: string }> = ({ categoryName }) => {
     setSelectedOption(option);
   };
   return (
-    <div>
-      <Select<OptionType>
-        defaultValue={selectedOption}
-        onChange={(option) => handleChange(option)}
-        options={options}
-        styles={selectStyles}
-      />
-    </div>
+    <Select<OptionType>
+      defaultValue={selectedOption}
+      onChange={handleChange}
+      options={options}
+      styles={selectStyles}
+    />
   );
 };
 

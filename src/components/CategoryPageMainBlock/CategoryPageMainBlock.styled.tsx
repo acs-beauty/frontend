@@ -14,7 +14,7 @@ export const MenuWrapper = styled.div`
 
 export const MenuText = styled.p`
   font-size: 1.6rem;
-  font-weight: ${({ theme }) => theme.fontWeights.regular};
+  font-weight: 400;
   letter-spacing: 0.48px;
 `;
 
