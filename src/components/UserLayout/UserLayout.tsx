@@ -4,7 +4,7 @@ import Head from "next/head";
 import Navigation from "../Navigation";
 import DeliveryBanner from "../DeliveryBanner";
 import Header from "../../UI/Header";
-import Footer from "../Footer";
+import Footer from "../../UI/Footer";
 import { UserLayoutPropsType } from "@/types/components";
 
 const UserLayout: FC<UserLayoutPropsType> = ({

@@ -13,7 +13,7 @@ export const Text = styled.p`
 `;
 
 export const Section = styled.div`
-  min-width: 32rem;
+ width: 100%;
   min-height: 14rem;
   background-color: #453e42;
   padding: 2.5rem 5rem 1.6rem 5rem;
