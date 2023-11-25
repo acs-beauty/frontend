@@ -2,8 +2,10 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import CartIcon from "@/UI/icons/CartIcon";
+import HeartIcon from "@/UI/icons/HeartIcon";
 import { IPreviewProduct } from "@/types/components";
-import CardLabel from "../CardLabel";
+import CardLabel from "../../UI/CardLabel";
 import {
   ImageContainer,
   CardWrapper,
@@ -13,12 +15,14 @@ import {
   Title,
   Price,
   LinksWrapper,
-  ProductLink,
-  Cart,
-  CartWrapper
+  CartButton,
 } from "./ProductCard.styled";
+import { generateImageSizesString } from "@/helpers";
 
-const ProductCard: FC<IPreviewProduct> = (props) => {
+const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
+  product,
+  isHeartIcon,
+}) => {
   const {
     productId,
     titleName,
@@ -30,51 +34,46 @@ const ProductCard: FC<IPreviewProduct> = (props) => {
     hit,
     subcategoryLinkKey,
     categoryLinkKey,
-  } = props;
-  return (
-    <CardWrapper>
-      {(novelty || hit || discountPrice) && (
-        <LabelWrapper>
-          {novelty && <CardLabel text="New" isSale={false} />}
-          {hit && <CardLabel text="Hit" isSale={false} />}
-          {discountPrice && <CardLabel text="Sale" isSale={true} />}
-        </LabelWrapper>
-      )}
+  } = product;
 
-      <ImageContainer>
-        <Image
-          src={mainImageName}
-          alt={titleName}
-          fill
-          sizes="(min-width: 28rem) 13.1rem,(min-width: 100rem) 30.5rem"
-        />
-      </ImageContainer>
-      <HeartContainer>
-        <Image src={"/icons/heart.svg"} alt={"heart"} width={24} height={24} />
-      </HeartContainer>
-      <ContentWrapper>
-        <Title>{titleName}</Title>
-        <Price>{price} грн</Price>
-        <LinksWrapper>
-          <CartWrapper>
-            <Image
-              src={"/icons/shopping.svg"}
-              alt={"heart"}
-              width={24}
-              height={24}
-            />
-            <Cart role="button">В кошик</Cart>
-          </CartWrapper>
-          <Link
-            href={`/${categoryLinkKey}/${subcategoryLinkKey}/${productId}`}
-            passHref
-            legacyBehavior
-          >
-            <ProductLink>Детальніше</ProductLink>
-          </Link>
-        </LinksWrapper>
-      </ContentWrapper>
-    </CardWrapper>
+  const iconProps = {
+    width: "24",
+    height: "24",
+  };
+
+  const imageSizes = generateImageSizesString("156px", "344px", "305px");
+
+  return (
+    <Link href={`/${categoryLinkKey}/${subcategoryLinkKey}/${productId}`}>
+      <CardWrapper>
+        {(novelty || hit || discountPrice) && (
+          <LabelWrapper>
+            {novelty && <CardLabel text="New" isSale={false} />}
+            {hit && <CardLabel text="Hit" isSale={false} />}
+            {discountPrice && <CardLabel text="Sale" isSale={true} />}
+          </LabelWrapper>
+        )}
+
+        <ImageContainer>
+          <Image src={mainImageName} alt={titleName} fill sizes={imageSizes} />
+        </ImageContainer>
+        {isHeartIcon && (
+          <HeartContainer>
+            <HeartIcon color="black" opacity="0.5" {...iconProps} />
+          </HeartContainer>
+        )}
+
+        <ContentWrapper>
+          <Title>{titleName}</Title>
+          <Price>{price} грн</Price>
+          <LinksWrapper>
+            <CartButton role="button">
+              <CartIcon {...iconProps} />В кошик
+            </CartButton>
+          </LinksWrapper>
+        </ContentWrapper>
+      </CardWrapper>
+    </Link>
   );
 };
 

@@ -3,10 +3,13 @@ import styled from "@emotion/styled";
 export const ImageContainer = styled.div`
   position: relative;
   overflow: hidden;
+  width: 15.6rem;
+  height: 14.3rem;
+  margin-bottom: 0.4rem;
+
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 30.5rem;
     height: 23.9rem;
-    margin-bottom: 0.4rem;
   }
 `;
 
@@ -28,10 +31,17 @@ export const ContentWrapper = styled.div`
 
 export const HeartContainer = styled.div`
   position: absolute;
-  overflow: hidden;
+  top: 0.8rem;
+  right: 0.8rem;
+  width: 2.4rem;
+  height: 2.4rem;
+
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    width: 2.4rem;
-    height: 2.4rem;
+    top: 2.2rem;
+    right: 4rem;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     top: 2rem;
     right: 2rem;
   }
@@ -66,15 +76,7 @@ export const LinksWrapper = styled.div`
   align-items: center;
 `;
 
-export const ProductLink = styled.a`
-  font-size: 1.8rem;
-  font-weight: 500;
-  text-align: center;
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.grey[300]};
-`;
-
-export const Cart = styled.button`
+export const CartButton = styled.button`
   display: inline-block;
   background-color: transparent;
   border: none;
@@ -84,10 +86,4 @@ export const Cart = styled.button`
   line-height: 1.15;
   text-align: center;
   text-transform: uppercase;
-`;
-
-export const CartWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
 `;

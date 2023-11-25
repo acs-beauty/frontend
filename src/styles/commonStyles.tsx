@@ -31,14 +31,19 @@ export const SectionTitle = styled.h2`
   text-transform: uppercase;
   font-size: 1.8rem;
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.6rem;
   letter-spacing: 0.9px;
   color: ${({ theme }) => theme.colors.grey[300]};
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+    margin-bottom: 2.4rem;
+    font-size: 3.2rem;
+    line-height: normal;
+    letter-spacing: 3.2px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     margin-bottom: 3.6rem;
-    font-size: 4rem;
-    letter-spacing: 4px;
   }
 `;
 
