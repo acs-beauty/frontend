@@ -12,14 +12,18 @@ const wrapperStyles = ({ theme, isSale }: IStyledLabelProps) => css`
 
 export const Wrapper = styled.div<{ isSale: boolean }>`
   ${wrapperStyles}
-  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 4.2rem;
+  height: 2.7rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 8.8rem;
     height: 4.4rem;
     font-size: 2rem;
-    text-transform: uppercase;
   }
 `;

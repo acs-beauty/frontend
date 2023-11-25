@@ -8,13 +8,13 @@ const ProductGallery: FC<IProducts> = (props) => {
   const { products } = props;
   return (
     <div>
-      < ProductList>
-        {products.map((item, index) => (
-          <li key={index}>
-            <ProductCard {...item} />
+      <ProductList>
+        {products.map((item) => (
+          <li key={item.productId}>
+            <ProductCard product={item} isHeartIcon={true} />
           </li>
         ))}
-      </ ProductList>
+      </ProductList>
     </div>
   );
 };
