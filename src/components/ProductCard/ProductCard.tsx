@@ -14,7 +14,6 @@ import {
   LabelWrapper,
   Title,
   Price,
-  LinksWrapper,
   CartButton,
 } from "./ProductCard.styled";
 import { generateImageSizesString } from "@/helpers";
@@ -43,6 +42,11 @@ const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
 
   const imageSizes = generateImageSizesString("156px", "344px", "305px");
 
+  const handleAddToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    alert("Товар доданий в кошик!");
+  };
+
   return (
     <Link href={`/${categoryLinkKey}/${subcategoryLinkKey}/${productId}`}>
       <CardWrapper>
@@ -66,11 +70,9 @@ const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
         <ContentWrapper>
           <Title>{titleName}</Title>
           <Price>{price} грн</Price>
-          <LinksWrapper>
-            <CartButton role="button">
-              <CartIcon {...iconProps} />В кошик
-            </CartButton>
-          </LinksWrapper>
+          <CartButton role="button"  onClick={handleAddToCart}>
+            <CartIcon {...iconProps} />В кошик
+          </CartButton>
         </ContentWrapper>
       </CardWrapper>
     </Link>

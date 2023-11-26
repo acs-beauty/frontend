@@ -15,9 +15,8 @@ export const ImageContainer = styled.div`
 
 export const CardWrapper = styled.div`
   position: relative;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
+  width: 15.6rem;
+  height: 28.1rem;
   border: 1px solid ${({ theme }) => theme.colors.grey[200]};
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 30.5rem;
@@ -26,7 +25,14 @@ export const CardWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  padding: 0 1.7rem 2.3rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.2rem 0.8rem 1.2rem;
+
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+    padding: 0 5.4rem 2.3rem 5.4rem;
+  }
 `;
 
 export const HeartContainer = styled.div`
@@ -55,35 +61,39 @@ export const LabelWrapper = styled.div`
 `;
 
 export const Title = styled.h3`
-  min-height: 7.7rem;
-  margin-bottom: 1em;
-  padding: 0 1.8rem;
-  font-size: 1.6rem;
+  width: 13.1rem;
+  height: 6.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  text-overflow: ellipsis;
+
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
   font-weight: 400;
+  line-height: normal;
   text-align: center;
 `;
 
 export const Price = styled.p`
-  margin-bottom: 1.7rem;
-  font-size: 2.4rem;
+  margin-bottom: 1.1rem;
+  font-size: 1.6rem;
   font-weight: 500;
+  line-height: normal;
   text-align: center;
-`;
-export const LinksWrapper = styled.div`
-  display: flex;
-  gap: 1.6rem;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 export const CartButton = styled.button`
-  display: inline-block;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
   background-color: transparent;
   border: none;
   color: ${({ theme }) => theme.colors.grey[300]};
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  line-height: 1.15;
+  line-height: normal;
   text-align: center;
   text-transform: uppercase;
 `;
