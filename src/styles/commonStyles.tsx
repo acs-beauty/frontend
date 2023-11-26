@@ -31,7 +31,6 @@ export const SectionTitle = styled.h2`
   text-transform: uppercase;
   font-size: 1.8rem;
   font-weight: 500;
-  line-height: 1.6rem;
   letter-spacing: 0.9px;
   color: ${({ theme }) => theme.colors.grey[300]};
 

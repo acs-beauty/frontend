@@ -12,7 +12,7 @@ const NavigateBeforeIcon: FC = () => {
       <path
         d="M39.2623 41.475L35.7373 45L20.7373 30L35.7373 15L39.2623 18.525L27.8123 30L39.2623 41.475Z"
         fill="black"
-        fill-opacity="0.4"
+        fillOpacity="0.4"
       />
     </svg>
   );
