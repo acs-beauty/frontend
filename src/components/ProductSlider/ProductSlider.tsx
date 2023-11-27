@@ -9,6 +9,9 @@ import ArrowButtonNext from "@/UI/ArrowButtonNext";
 import ArrowButtonPrevious from "@/UI/ArrowButtonPrevious";
 import { SCREENS } from "@/constants";
 
+console.log(parseInt(SCREENS.tablet, 10))
+console.log(parseInt(SCREENS.desktop, 10))
+
 const settings = {
   speed: 500,
   slidesToShow: 2,

@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useId, useState } from "react";
 import AsyncSelect from "react-select/async";
 import { components } from "react-select";
 import axios from "axios";
@@ -50,6 +50,7 @@ const SearchForm: FC = () => {
         />
       </ImageWrapper>
       <AsyncSelect
+        instanceId={useId()}
         cacheOptions
         defaultOptions
         loadOptions={loadOptions}

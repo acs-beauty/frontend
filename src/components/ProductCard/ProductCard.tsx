@@ -70,7 +70,7 @@ const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
         <ContentWrapper>
           <Title>{titleName}</Title>
           <Price>{price} грн</Price>
-          <CartButton role="button"  onClick={handleAddToCart}>
+          <CartButton role="button" onClick={handleAddToCart}>
             <CartIcon {...iconProps} />В кошик
           </CartButton>
         </ContentWrapper>
