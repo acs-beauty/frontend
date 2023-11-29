@@ -1,28 +1,40 @@
 import styled from "@emotion/styled";
+import Link from "next/link";
 
 export const ImageContainer = styled.div`
   position: relative;
+
   overflow: hidden;
   width: 15.6rem;
   height: 14.3rem;
   margin-bottom: 0.4rem;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    width: 30.5rem;
+    width: 100%;
     height: 23.9rem;
   }
 `;
 
 export const CardWrapper = styled.div`
   position: relative;
-  width: 15.6rem;
+  display: flex;
+  justify-content: center;
+  width: calc(100 - 16px);
   height: 28.1rem;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
   border: 1px solid ${({ theme }) => theme.colors.grey[200]};
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    width: 34.4rem;
     height: 43.2rem;
-    padding: 0 1.9rem;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
+    width: calc(100 - 20px);
+    height: 43.2rem;
+    padding: 0;
+    margin-left: 1%;
+    margin-right: 1rem;
   }
 `;
 
@@ -60,6 +72,7 @@ export const LabelWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-self: flex-start;
 `;
 
 export const Title = styled.h3`
@@ -91,6 +104,11 @@ export const Price = styled.p`
   font-weight: 500;
   line-height: normal;
   text-align: center;
+
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+    margin-bottom: 1.7rem;
+    font-size: 2.4rem;
+  }
 `;
 
 export const CartButton = styled.button`
@@ -105,4 +123,15 @@ export const CartButton = styled.button`
   line-height: normal;
   text-align: center;
   text-transform: uppercase;
+
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+    font-size: 1.8rem;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

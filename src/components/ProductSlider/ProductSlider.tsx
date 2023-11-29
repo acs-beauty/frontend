@@ -8,35 +8,28 @@ import ProductCard from "../ProductCard";
 import ArrowButtonNext from "@/UI/ArrowButtonNext";
 import ArrowButtonPrevious from "@/UI/ArrowButtonPrevious";
 import { SCREENS } from "@/constants";
-
-console.log(parseInt(SCREENS.tablet, 10))
-console.log(parseInt(SCREENS.desktop, 10))
+import { StyledSlider } from "./ProductList.styled";
 
 const settings = {
   speed: 500,
-  slidesToShow: 2,
+  slidesToShow: 4,
   slidesToScroll: 1,
   initialSlide: 0,
   dots: false,
   infinite: true,
   arrows: true,
   nextArrow: <ArrowButtonNext />,
-  prevArrow: <ArrowButtonPrevious  />,
+  prevArrow: <ArrowButtonPrevious />,
+  className: "slider-goods",
   responsive: [
-    {
-      breakpoint: parseInt(SCREENS.tablet, 10),
-      settings: {
-        speed: 500,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
-    },
     {
       breakpoint: parseInt(SCREENS.desktop, 10),
       settings: {
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 2,
         slidesToScroll: 1,
+        initialSlide: 0,
+        arrows: false,
       },
     },
   ],
@@ -45,17 +38,11 @@ const settings = {
 const ProductSlider: FC<{ productList: IProducts }> = ({ productList }) => {
   const { products } = productList;
   return (
-    <div>
-      <Slider {...settings}>
-        {products.map((item) => (
-          <ProductCard
-            product={item}
-            isHeartIcon={false}
-            key={item.productId}
-          />
-        ))}
-      </Slider>
-    </div>
+    <StyledSlider {...settings}>
+      {products.map((item, index) => (
+        <ProductCard product={item} isHeartIcon={false} key={index} />
+      ))}
+    </StyledSlider>
   );
 };
 

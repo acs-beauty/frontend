@@ -27,7 +27,7 @@ export const FlexContainer = styled.div`
 
 export const List = styled.ul`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     gap: 6.1rem;
