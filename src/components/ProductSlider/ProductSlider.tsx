@@ -8,7 +8,7 @@ import ProductCard from "../ProductCard";
 import ArrowButtonNext from "@/UI/ArrowButtonNext";
 import ArrowButtonPrevious from "@/UI/ArrowButtonPrevious";
 import { SCREENS } from "@/constants";
-import { StyledSlider } from "./ProductList.styled";
+import { StyledSlider } from "./ProductSlider.styled";
 
 const settings = {
   speed: 500,
