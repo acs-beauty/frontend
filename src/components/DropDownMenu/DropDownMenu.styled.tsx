@@ -13,8 +13,6 @@ export const Button = styled.button`
 `;
 
 export const DropDownList = styled.ul`
-  display: none;
-
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     position: absolute;
     display: flex;
@@ -41,7 +39,8 @@ export const DropDownList = styled.ul`
 
 const navItemStyles = ({ theme, isActive }: INavItemProps) => css`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  /* align-items: center; */
   background-color: ${isActive
     ? `${theme.colors.grey[500]}`
     : `${theme.colors.white[100]}`};
@@ -59,4 +58,8 @@ export const SubMenuItem = styled.li`
   &:focus {
     font-weight: 700;
   }
+`;
+
+export const NavLinkContainer = styled.div`
+  display: flex;
 `;

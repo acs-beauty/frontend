@@ -31,5 +31,8 @@ export const global = css`
 
   button {
     cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
   }
 `;

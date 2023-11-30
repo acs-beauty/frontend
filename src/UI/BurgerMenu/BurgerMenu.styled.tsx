@@ -1,7 +1,14 @@
 import styled from "@emotion/styled";
 
+export const MenuWrapper = styled.div`
+  width: 100%;
+  background-color: #fff;
+`;
+
 export const NavList = styled.ul`
-  display: flex; 
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
   justify-content: flex-start;
   flex-wrap: wrap;
   column-gap: 4.8rem;
@@ -20,15 +27,9 @@ export const Button = styled.button`
 export const NavItem = styled.li`
   position: relative;
   display: flex;
-  align-items: center;
 `;
 
 export const NavWrapper = styled.div`
-  display: none;
-
-  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-    position: relative;
-    display: block;
-    margin-bottom: 4.2rem;
-  }
+  /* position: relative; */
+  display: block;
 `;

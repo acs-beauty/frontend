@@ -11,6 +11,7 @@ import {
   DropDownList,
   NavItem,
   SubMenuItem,
+  NavLinkContainer
 } from "./DropDownMenu.styled";
 
 const DropDownMenu: FC<{
@@ -37,35 +38,42 @@ const DropDownMenu: FC<{
     setDropdownOpen(false);
   };
 
+  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation(); // Stop the event propagation here
+    setDropdownOpen(!dropdownOpen);
+  };
+
   return (
     <NavItem
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
+      // onMouseEnter={handleMouseEnter}
+      // onMouseLeave={handleMouseLeave}
+      // onFocus={handleFocus}
+      // onBlur={handleBlur}
+
       isActive={dropdownOpen}
     >
-      <NavLink href={`/${href}`} text={text} />
-      {dropdownOpen ? (
-        <Button type="button">
-          <Image
-            src={"/icons/navigate_after.svg"}
-            alt={"arrow-down"}
-            width={32}
-            height={32}
-          />
-        </Button>
-      ) : (
-        <Button type="button">
-          <Image
-            src={"/icons/navigate_before.svg"}
-            alt={"arrow-down"}
-            width={32}
-            height={32}
-          />
-        </Button>
-      )}
-
+      <NavLinkContainer>
+        <NavLink href={`/${href}`} text={text} />
+        {dropdownOpen ? (
+          <Button type="button" onClick={handleButtonClick}>
+            <Image
+              src={"/icons/navigate_before.svg"}
+              alt={"arrow-down"}
+              width={32}
+              height={32}
+            />
+          </Button>
+        ) : (
+          <Button type="button" onClick={handleButtonClick}>
+            <Image
+              src={"/icons/navigate_after.svg"}
+              alt={"arrow-down"}
+              width={32}
+              height={32}
+            />
+          </Button>
+        )}
+      </NavLinkContainer>
       {dropdownOpen && (
         <DropDownList>
           {menuItems.map((item, index) => (

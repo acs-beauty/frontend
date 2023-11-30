@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Image from "next/image";
 
 import { useScreen } from "@/hooks";
@@ -12,14 +12,19 @@ import {
 } from "./Header.styled";
 import { IconWrapper } from "@/styles/commonStyles";
 import SearchForm from "../../components/SearchForm";
+import ModalPortal from "@/components/ModalPortal";
+import BurgerMenu from "../BurgerMenu";
 import HeartIcon from "../icons/HeartIcon";
 import CartIcon from "../icons/CartIcon";
 import BurgerMenuIcon from "../icons/BurgerMenuIcon";
+import CloseIcon from "../icons/CloseIcon";
 import AccountIcon from "../icons/AccountIcon";
 import { generateImageSizesString } from "@/helpers";
+import { categories } from "@/data/categories";
 
 const Header: FC = () => {
   const { isTablet } = useScreen();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const props = {
     width: isTablet ? "32" : "24",
@@ -28,38 +33,57 @@ const Header: FC = () => {
 
   const imageSizes = generateImageSizesString("108px", "108px", "108px");
 
-  return (
-    <StyledHeader>
-      <GridContainer>
-        <ImageBox>
-          <Image
-            src="/icons/logo_header.svg"
-            alt="логотип Acs beauty"
-            fill
-            style={{ objectFit: "cover" }}
-            sizes={imageSizes}
-          />
-        </ImageBox>
-        <MenuContainer>
-          <BurgerMenuIcon {...props} />
-        </MenuContainer>
-        <IconsWrapper>
-          <IconWrapper>
-            <AccountIcon {...props} />
-          </IconWrapper>
-          <IconWrapper>
-            <HeartIcon color="#575A57" opacity="1" {...props} />
-          </IconWrapper>
-          <IconWrapper>
-            <CartIcon {...props} />
-          </IconWrapper>
-        </IconsWrapper>
+  const onMenuToggle = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
-        <SearchWrapper>
-          <SearchForm />
-        </SearchWrapper>
-      </GridContainer>
-    </StyledHeader>
+  return (
+    <>
+      <StyledHeader>
+        <GridContainer>
+          <ImageBox>
+            <Image
+              src="/icons/logo_header.svg"
+              alt="логотип Acs beauty"
+              fill
+              style={{ objectFit: "cover" }}
+              sizes={imageSizes}
+            />
+          </ImageBox>
+          <MenuContainer>
+            {isMenuOpen ? (
+              <button onClick={onMenuToggle}>
+                <CloseIcon {...props} />
+              </button>
+            ) : (
+              <button onClick={onMenuToggle}>
+                <BurgerMenuIcon {...props} />
+              </button>
+            )}
+          </MenuContainer>
+          <IconsWrapper>
+            <IconWrapper>
+              <AccountIcon {...props} />
+            </IconWrapper>
+            <IconWrapper>
+              <HeartIcon color="#575A57" opacity="1" {...props} />
+            </IconWrapper>
+            <IconWrapper>
+              <CartIcon {...props} />
+            </IconWrapper>
+          </IconsWrapper>
+
+          <SearchWrapper>
+            <SearchForm />
+          </SearchWrapper>
+        </GridContainer>
+      </StyledHeader>
+      {isMenuOpen && (
+        <ModalPortal onCloseMenu={onMenuToggle} isOpen={isMenuOpen}>
+          <BurgerMenu categories={categories} />
+        </ModalPortal>
+      )}
+    </>
   );
 };
 
