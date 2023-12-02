@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-import { INavItemProps } from "@/types/components";
 
 export const Button = styled.button`
   display: flex;
@@ -13,6 +12,12 @@ export const Button = styled.button`
 `;
 
 export const DropDownList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 1.6rem;
+  margin-top: 1.4rem;
+
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     position: absolute;
     display: flex;
@@ -37,29 +42,19 @@ export const DropDownList = styled.ul`
   }
 `;
 
-const navItemStyles = ({ theme, isActive }: INavItemProps) => css`
+export const NavItem = styled.li`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  background-color: ${isActive
-    ? `${theme.colors.grey[500]}`
-    : `${theme.colors.white[100]}`};
-`;
-
-export const NavItem = styled.li<{ isActive: boolean }>`
-  ${navItemStyles}
 `;
 
 export const SubMenuItem = styled.li`
-  width: calc(100% / 3);
+  font-size: 1.6rem;
   font-weight: 500;
-  transition: font-weight 250ms ease-out;
-  &:hover,
-  &:focus {
-    font-weight: 700;
-  }
 `;
 
 export const NavLinkContainer = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 `;
