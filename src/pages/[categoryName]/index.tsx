@@ -10,7 +10,7 @@ import CategoryPageMainBlock from "@/components/CategoryPageMainBlock";
 import FilterBlock from "@/components/FilterBlock/FilterBlock";
 import { getCategoryPageData } from "@/services/pageOperations";
 import { getCategories } from "@/services/operations";
-import { CategoryPagePropsType } from "@/types/pages/CategoryPagePropsType";
+import { CategoryPagePropsType } from "@/types/pages/CategoryPageProps";
 
 // export const getStaticProps = async (context: GetStaticPropsContext) => {
 //   const categoryName = context.params?.categoryName as string;

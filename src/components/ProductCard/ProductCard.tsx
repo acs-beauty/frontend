@@ -1,6 +1,5 @@
 import { FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 import CartIcon from "@/UI/icons/CartIcon";
 import HeartIcon from "@/UI/icons/HeartIcon";
@@ -14,8 +13,8 @@ import {
   LabelWrapper,
   Title,
   Price,
-  LinksWrapper,
   CartButton,
+  StyledLink
 } from "./ProductCard.styled";
 import { generateImageSizesString } from "@/helpers";
 
@@ -41,11 +40,18 @@ const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
     height: "24",
   };
 
-  const imageSizes = generateImageSizesString("156px", "344px", "305px");
+  const imageSizes = generateImageSizesString("156px", "305px", "305px");
+
+  const handleAddToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    alert("Товар доданий в кошик!");
+  };
 
   return (
-    <Link href={`/${categoryLinkKey}/${subcategoryLinkKey}/${productId}`}>
+   
+    
       <CardWrapper>
+        <StyledLink href={`/${categoryLinkKey}/${subcategoryLinkKey}/${productId}`}>
         {(novelty || hit || discountPrice) && (
           <LabelWrapper>
             {novelty && <CardLabel text="New" isSale={false} />}
@@ -66,14 +72,13 @@ const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
         <ContentWrapper>
           <Title>{titleName}</Title>
           <Price>{price} грн</Price>
-          <LinksWrapper>
-            <CartButton role="button">
-              <CartIcon {...iconProps} />В кошик
-            </CartButton>
-          </LinksWrapper>
+          <CartButton role="button" onClick={handleAddToCart}>
+            <CartIcon {...iconProps} />В кошик
+          </CartButton>
         </ContentWrapper>
+        </StyledLink>
       </CardWrapper>
-    </Link>
+    
   );
 };
 

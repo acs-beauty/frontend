@@ -1,5 +1,5 @@
 import { ICategory } from "../components";
 
-export type HomePagePropsType = {
+export type HomePageProps = {
   categories: ICategory[];
 };
