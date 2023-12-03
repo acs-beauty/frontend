@@ -1,6 +1,6 @@
 import { ICategory, ICategoryData } from "../components";
 
-export type CategoryPagePropsType = {
+export type CategoryPageProps = {
   categories: ICategory[];
   category: ICategoryData;
 };

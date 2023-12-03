@@ -80,10 +80,14 @@ export const StyledLink = styled.a`
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
+  padding-bottom: 0;
+  border-bottom: none;
+  transition: padding-bottom 250ms ease-out, border-bottom 250ms ease-out;
 
   &:hover,
   &:focus {
-    text-decoration: underline;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #fff;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
@@ -129,10 +133,14 @@ export const ContactsLink = styled.a`
   color: #fff;
   font-size: 1.4rem;
   font-weight: 600;
+  padding-bottom: 0;
+  border-bottom: none;
+  transition: padding-bottom 250ms ease-out, border-bottom 250ms ease-out;
 
   &:hover,
   &:focus {
-    text-decoration: underline;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #fff;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
