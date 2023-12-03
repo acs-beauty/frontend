@@ -67,9 +67,9 @@ export const MenuContainer = styled.div`
   grid-column: 1;
   align-self: center;
 
-  /* @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     display: none;
-  } */
+  }
 `;
 
 export const SearchWrapper = styled.div`
@@ -87,12 +87,12 @@ export const SearchWrapper = styled.div`
 export const ImageBox = styled.div`
   display: none;
 
-  /* @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     position: relative;
     display: block;
     grid-row: 1;
     grid-column: 1;
     width: 10.8rem;
     height: 9.5rem;
-  } */
+  }
 `;

@@ -18,7 +18,7 @@ export const DropDownList = styled.ul`
   padding-left: 1.6rem;
   margin-top: 1.4rem;
 
-  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     position: absolute;
     display: flex;
     flex-direction: column;

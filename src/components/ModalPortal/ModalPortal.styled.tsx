@@ -7,8 +7,12 @@ export const Overlay = styled.div`
   left: 0;
   width: 100%; 
   height: calc(100% - 8.6rem);
-  background-color: rgba(128, 128, 128, 0.3);
-  
+  background-color: rgba(128, 128, 128, 0.3);  
   z-index: 10;
-  border: 1px solid red;
+
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+    top: 14.8rem;
+    height: calc(100% - 14.8rem);
+  }
+ 
 `;
