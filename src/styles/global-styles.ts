@@ -9,7 +9,7 @@ export const global = css`
     font-family: ${montserrat.style.fontFamily};
     max-width: 100vw;
     color: #5a5757;
-    line-height: 1.2;
+    line-height: normal;
     font-size: 62.5%;
     overflow-x: hidden;
   }

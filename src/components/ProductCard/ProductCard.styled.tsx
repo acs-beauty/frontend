@@ -87,7 +87,6 @@ export const Title = styled.h3`
   margin-bottom: 0.8rem;
   font-size: 1.1rem;
   font-weight: 400;
-  line-height: normal;
   text-align: center;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
@@ -102,7 +101,6 @@ export const Price = styled.p`
   margin-bottom: 1.1rem;
   font-size: 1.6rem;
   font-weight: 500;
-  line-height: normal;
   text-align: center;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
