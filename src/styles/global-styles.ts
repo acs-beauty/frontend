@@ -32,4 +32,6 @@ export const global = css`
   button {
     cursor: pointer;
   }
+
+ 
 `;

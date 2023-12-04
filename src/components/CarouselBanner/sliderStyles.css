@@ -1,0 +1,23 @@
+.slick-dots li.slick-active button:before {
+    color: #FFF
+  }
+
+  .banner-slider .slick-dots {
+    
+    bottom: 1.2rem;
+
+    &>li {
+      width: 1.2rem;
+      height: 1.2rem;
+
+      &>button{
+        width: 1.2rem;
+      height: 1.2rem;
+
+      &::before{
+        width: 1.2rem;
+      height: 1.2rem;
+      }
+      }
+    }
+  }
