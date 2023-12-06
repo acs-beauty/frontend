@@ -1,26 +1,36 @@
-import React, { useState } from "react";
-import Slider from "react-slick";
+import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { generateImageSizesString } from "@/helpers";
 import { Section, ImageContainer, StyledSlider } from "./CarouselBanner.styled";
 
-type CarouselProps = {
-  images: string[];
+type Image = {
+  id: string;
+  path: string;
+  title: string;
+  link: string;
 };
 
-const CarouselBanner: React.FC<CarouselProps> = ({ images }) => {
+type CarouselProps = {
+  images: Image[];
+};
+
+const CarouselBanner: FC<CarouselProps> = ({ images }) => {
   const imageSizes = generateImageSizesString("100%", "768px", "1440px");
 
   const settings = {
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
     dots: true,
     infinite: true,
     arrows: false,
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 10000,
+    cssEase: "linear",
+    pauseOnHover: true,
     className: "banner-slider",
   };
 
@@ -28,15 +38,14 @@ const CarouselBanner: React.FC<CarouselProps> = ({ images }) => {
     <Section>
       <div>
         <StyledSlider {...settings}>
-          {images.map((item, index) => (
-            <Link href="/brands" key={index}>
+          {images.map(item => (
+            <Link href={item.link} key={item.id}>
               <ImageContainer>
                 <Image
-                  src={"/images/mainBanner.webp"}
-                  alt="banner"
+                  src={item.path}
+                  alt={item.title}
                   width={320}
                   height={445}
-                  // fill
                   sizes={imageSizes}
                   layout="responsive"
                 />

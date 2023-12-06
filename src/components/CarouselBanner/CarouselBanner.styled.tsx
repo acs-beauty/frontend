@@ -5,6 +5,7 @@ export const ImageContainer = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;
+  background-color: #453e42;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 76.8rem;
@@ -40,19 +41,58 @@ export const StyledSlider = styled(Slider)`
   &.banner-slider.slick-slider {
     position: relative;
 
-    .slick-slide > div {
-      width: 100%;
+    .slick-dots {
+      bottom: 6.7%;
+
+      @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+        bottom: 3.2rem;
+      }
 
       @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-        width: 32.5rem !important;
+        bottom: 4.1rem;
       }
     }
-    .slick-dots {
-      bottom: 1.2rem;
+    .slick-dots li {
+      width: 0.4rem;
+      height: 0.4rem;
+      margin: 0 0.4rem;
+
+      @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0 1.2rem;
+      }
     }
 
-    &.slick-dots li.slick-active button:before {
+    .slick-dots li button {
+      width: 0.4rem;
+      height: 0.4rem;
+
+      @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+
+    .slick-dots li button:before {
+      position: static;
+      display: inline-block;
+      width: 0.4rem;
+      height: 0.4rem;
+      color: #d9d9d9;
+      font-size: 0.4rem;
+      opacity: 1;
+
+      @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    .slick-dots li.slick-active button:before {
       color: #fff;
+      opacity: 1;
     }
   }
 `;
