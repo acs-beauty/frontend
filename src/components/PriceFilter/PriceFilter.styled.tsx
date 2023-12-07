@@ -4,7 +4,7 @@ export const Text = styled.p`
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     margin-bottom: 16px;
     font-size: 2.4rem;
-    font-weight: 500;   
+    font-weight: 500;
     letter-spacing: 0.72px;
     color: ${({ theme }) => theme.colors.grey[300]};
   }
@@ -22,6 +22,11 @@ export const Input = styled.input`
     line-height: 1.2;
     letter-spacing: 0.6px;
     color: ${({ theme }) => theme.colors.grey[300]};
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
   }
 `;
 
