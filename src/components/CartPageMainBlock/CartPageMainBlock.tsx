@@ -2,7 +2,12 @@ import { FC } from "react";
 import Image from "next/image";
 
 import { Container } from "@/styles/commonStyles";
-import { useAppDispatch, useCartGoods } from "@/hooks";
+import {
+  useAppDispatch,
+  useCartGoods,
+  useTotalAmount,
+  useTotalPrice,
+} from "@/hooks";
 import { IGoodsItem } from "@/types/components";
 import { generateImageSizesString } from "@/helpers";
 import {
@@ -24,12 +29,17 @@ import {
   TitleText,
   Item,
   Wrapper,
+  SubTitle,
+  Text,
+  SumWrapper
 } from "./CartPageMainBlock.styled";
 import Link from "next/link";
 
 const CartPageMainBlock: FC = () => {
   const goods = useCartGoods();
   const dispatch = useAppDispatch();
+  const totalAmount = useTotalAmount();
+  const totalPrice = useTotalPrice();
   const imageSizes = generateImageSizesString("86px", "105px", "109px");
 
   const handleDeleteItem = (id: string) => {
@@ -95,14 +105,14 @@ const CartPageMainBlock: FC = () => {
           </ul>
         )}
         <div>
-          <div>
-            <p>Всього товарів</p>
-            <p>3 шт</p>
-          </div>
-          <div>
-            <p>Загальна сума</p>
-            <p>996 грн</p>
-          </div>
+          <SumWrapper>
+            <SubTitle>Всього товарів</SubTitle>
+            <Text>{totalAmount}</Text>
+          </SumWrapper>
+          <SumWrapper>
+            <SubTitle>Загальна сума</SubTitle>
+            <Text>{totalPrice} грн</Text>
+          </SumWrapper>
         </div>
         <Link href={"/order"}>ОФОРМИТИ ЗАМОВЛЕННЯ</Link>
       </Container>

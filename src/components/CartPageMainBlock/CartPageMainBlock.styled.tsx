@@ -81,3 +81,20 @@ export const Wrapper = styled.div`
   grid-template-rows: repeat(4, 1fr);
   grid-row-gap: 0.8rem;
 `;
+
+export const SubTitle = styled.p`
+  font-size: 1.4rem;
+  font-weight: 500;
+`;
+
+export const Text = styled.p`
+  font-size: 1.4rem;
+`;
+
+export const SumWrapper = styled.div`
+  display: grid;
+  grid-template-columns: auto 8rem;
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: space-between;
+  width: 100%;
+`;
