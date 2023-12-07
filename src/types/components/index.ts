@@ -11,3 +11,7 @@ export type { IPreviewProduct } from "./IPreviewProduct";
 export type { IProducts } from "./IProducts";
 export type { IStyledLabelProps } from "./IStyledLabelProps";
 export type { OptionType } from "./OptionType";
+export type { IGoodsItem } from "./IGoodsItem";
+export type { ICartState } from "./ICartState";
+export type { RootStateType } from "./RootStateType";
+export type { AppDispatchType } from "./AppDispatchType";

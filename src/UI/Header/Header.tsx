@@ -17,6 +17,7 @@ import CartIcon from "../icons/CartIcon";
 import BurgerMenuIcon from "../icons/BurgerMenuIcon";
 import AccountIcon from "../icons/AccountIcon";
 import { generateImageSizesString } from "@/helpers";
+import Link from "next/link";
 
 const Header: FC = () => {
   const { isTablet } = useScreen();
@@ -50,9 +51,11 @@ const Header: FC = () => {
           <IconWrapper>
             <HeartIcon color="#575A57" opacity="1" {...props} />
           </IconWrapper>
-          <IconWrapper>
-            <CartIcon {...props} />
-          </IconWrapper>
+          <Link href={"/cart"}>
+            <IconWrapper>
+              <CartIcon {...props} />
+            </IconWrapper>
+          </Link>
         </IconsWrapper>
 
         <SearchWrapper>

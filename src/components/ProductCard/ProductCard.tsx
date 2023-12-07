@@ -14,9 +14,11 @@ import {
   Title,
   Price,
   CartButton,
-  StyledLink
+  StyledLink,
 } from "./ProductCard.styled";
 import { generateImageSizesString } from "@/helpers";
+import { useAppDispatch } from "@/hooks";
+import { addItem } from "@/redux/cart/slice";
 
 const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
   product,
@@ -30,6 +32,7 @@ const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
     discountPrice,
     quantityStatus,
     novelty,
+    article,
     hit,
     subcategoryLinkKey,
     categoryLinkKey,
@@ -40,18 +43,31 @@ const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
     height: "24",
   };
 
+  const dispatch = useAppDispatch();
+
   const imageSizes = generateImageSizesString("156px", "305px", "305px");
 
   const handleAddToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
+    dispatch(
+      addItem({
+        id: productId,
+        title: titleName,
+        article: article,
+        price: price,
+        discountPrice: discountPrice,
+        image: mainImageName,
+        amount: 1,
+      })
+    );
     alert("Товар доданий в кошик!");
   };
 
   return (
-   
-    
-      <CardWrapper>
-        <StyledLink href={`/${categoryLinkKey}/${subcategoryLinkKey}/${productId}`}>
+    <CardWrapper>
+      <StyledLink
+        href={`/${categoryLinkKey}/${subcategoryLinkKey}/${productId}`}
+      >
         {(novelty || hit || discountPrice) && (
           <LabelWrapper>
             {novelty && <CardLabel text="New" isSale={false} />}
@@ -76,9 +92,8 @@ const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
             <CartIcon {...iconProps} />В кошик
           </CartButton>
         </ContentWrapper>
-        </StyledLink>
-      </CardWrapper>
-    
+      </StyledLink>
+    </CardWrapper>
   );
 };
 

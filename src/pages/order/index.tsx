@@ -11,12 +11,12 @@ export const getStaticProps = async () => {
   return result;
 };
 
-const News: NextPage<HomePageProps> = () => {
+const Order: NextPage<HomePageProps> = () => {
   return (
-    <UserLayout title={"Новини"} categories={categories}>
-      <p>Сторінка з новинами</p>
+    <UserLayout title={"Оформити замовлення"} categories={categories}>
+      <p>Оформити замовлення</p>
     </UserLayout>
   );
 };
 
-export default News;
+export default Order;
