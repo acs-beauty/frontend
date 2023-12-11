@@ -1,63 +1,98 @@
 import styled from "@emotion/styled";
+import Slider from "react-slick";
 
-export const CarouselContainer = styled.div`
-  /* Стилі для зовнішнього контейнера каруселі */
+export const ImageContainer = styled.div`
   position: relative;
-`;
-
-export const CarouselImage = styled.img`
-  /* Стилі для зображення в каруселі */
-  position: relative;
-  width: 100%;
-  height: 110%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.6rem;
   overflow: hidden;
-`;
+  width: 100%;
+  background-color: #453e42;
 
-export const DotsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: -3.6rem;
-
-  @media (min-width: 601px) {
-    margin-top: -4.8rem;
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+    width: 76.8rem;
   }
 
-  @media (min-width: 774px) {
-    margin-top: -5.4rem;
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
+    width: 144rem;
   }
 `;
 
-export const Dot = styled.div`
-  /* Стилі для кружечків в каруселі */
-  display: flex;
-  width: 0.4rem;
-  height: 0.4rem;
-  background-color: #BEBEBE;
-  border-radius: 50%;
-  margin: 0.4rem; /* Додайте потрібний відступ між кружечками */
-  cursor: pointer;
-  z-index: 2;
+export const Section = styled.section`
+  margin: 0 auto;
+  min-width: 32rem;
+  max-width: 76.7rem;
+  margin-bottom: 2.1rem;
 
-  @media (min-width: 601px) {
-    width: 0.6rem;
-    height: 0.6rem;
-    margin: 0.6rem;
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+    width: 76.8rem;
+    min-width: 76.8rem;
+    max-width: 76.8rem;
+    margin-bottom: 6rem;
   }
 
-  @media (min-width: 774px) {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin: 1rem;
-  }
-
-  &.active {
-    /* Стилі для активного кружечка */
-    background-color: #FFFFFF; 
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
+    width: 144rem;
+    min-width: 144rem;
+    max-width: 144rem;
+    margin-bottom: 8rem;
   }
 `;
 
+export const StyledSlider = styled(Slider)`
+  &.banner-slider.slick-slider {
+    position: relative;
 
+    .slick-dots {
+      bottom: 6.7%;
 
+      @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+        bottom: 3.2rem;
+      }
+
+      @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
+        bottom: 4.1rem;
+      }
+    }
+    .slick-dots li {
+      width: 0.4rem;
+      height: 0.4rem;
+      margin: 0 0.4rem;
+
+      @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0 1.2rem;
+      }
+    }
+
+    .slick-dots li button {
+      width: 0.4rem;
+      height: 0.4rem;
+
+      @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+
+    .slick-dots li button:before {
+      position: static;
+      display: inline-block;
+      width: 0.4rem;
+      height: 0.4rem;
+      color: #d9d9d9;
+      font-size: 0.4rem;
+      opacity: 1;
+
+      @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    .slick-dots li.slick-active button:before {
+      color: #fff;
+      opacity: 1;
+    }
+  }
+`;

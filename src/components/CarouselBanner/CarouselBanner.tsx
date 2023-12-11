@@ -1,33 +1,61 @@
-import React, { useState } from "react";
-import { CarouselContainer, CarouselImage, Dot, DotsContainer } from './CarouselBanner.styled';
-import ButtonBanner from './../ButtonBanner/ButtonBanner'
+import { FC } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
-type CarouselProps = {
-  images: string[];
+import { generateImageSizesString } from "@/helpers";
+import { Section, ImageContainer, StyledSlider } from "./CarouselBanner.styled";
+
+type Image = {
+  id: string;
+  path: string;
+  title: string;
+  link: string;
 };
 
-const CarouselBanner: React.FC<CarouselProps> = ({ images }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+type CarouselProps = {
+  images: Image[];
+};
 
-  const handleDotClick = (index: number) => {
-    setActiveIndex(index);
+const CarouselBanner: FC<CarouselProps> = ({ images }) => {
+  const imageSizes = generateImageSizesString("100%", "768px", "1440px");
+
+  const settings = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    dots: true,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 10000,
+    cssEase: "linear",
+    pauseOnHover: true,
+    className: "banner-slider",
   };
 
   return (
-    <CarouselContainer>
-      <CarouselImage src={images[activeIndex]} alt={`Image ${activeIndex}`} />
-      <ButtonBanner />
-      <DotsContainer>
-        {images.map((_, index) => (
-          <Dot
-            key={index}
-            className={index === activeIndex ? 'active' : ''}
-            onClick={() => handleDotClick(index)}
-          />
-        ))}
-      </DotsContainer>
-    </CarouselContainer>
+    <Section>
+      <div>
+        <StyledSlider {...settings}>
+          {images.map(item => (
+            <Link href={item.link} key={item.id}>
+              <ImageContainer>
+                <Image
+                  src={item.path}
+                  alt={item.title}
+                  width={320}
+                  height={445}
+                  sizes={imageSizes}
+                  layout="responsive"
+                />
+              </ImageContainer>
+            </Link>
+          ))}
+        </StyledSlider>
+      </div>
+    </Section>
   );
 };
 
-export default CarouselBanner
+export default CarouselBanner;

@@ -42,4 +42,6 @@ export const global = css`
       touch-action: manipulation;
     }
   }
+
+ 
 `;

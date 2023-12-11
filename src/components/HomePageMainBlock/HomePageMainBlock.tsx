@@ -7,11 +7,18 @@ import { IProducts } from "@/types/components";
 import { Wrapper } from "./HomePageMainBlock.styled";
 
 const imagePaths = [
-  "./images/mainBanner.webp",
-  "./images/hairBanner.webp",
-  "./images/hairBanner.webp",
-  "./images/hairBanner.webp",
-  "./images/hairBanner.webp",
+  {
+    id: "1",
+    path: "/images/mainBanner.webp",
+    title: "one",
+    link: "/brands",
+  },
+  {
+    id: "2",
+    path: "/images/mainBanner.webp",
+    title: "one",
+    link: "/brands",
+  },
 ];
 
 const HomePageMainBlock: FC<{ productList: IProducts }> = ({ productList }) => {
