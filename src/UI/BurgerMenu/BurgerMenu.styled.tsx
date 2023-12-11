@@ -31,12 +31,11 @@ export const MenuWrapper = styled.div`
 export const NavList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
   justify-content: flex-start;
   flex-wrap: wrap;
   column-gap: 4.8rem;
-  row-gap: 1.8rem;
-`;
+  `;
+
 export const Button = styled.button`
   display: flex;
   justify-content: center;
@@ -50,6 +49,8 @@ export const Button = styled.button`
 export const NavItem = styled.li`
   position: relative;
   display: flex;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
 `;
 
 export const NavWrapper = styled.div``;

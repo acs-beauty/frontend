@@ -51,15 +51,13 @@ const Header: FC = () => {
             />
           </ImageBox>
           <MenuContainer>
-            {isMenuOpen ? (
-              <button onClick={onMenuToggle}>
+            <button onClick={onMenuToggle}>
+              {isMenuOpen ? (
                 <CloseIcon {...props} />
-              </button>
-            ) : (
-              <button onClick={onMenuToggle}>
+              ) : (
                 <BurgerMenuIcon {...props} />
-              </button>
-            )}
+              )}
+            </button>
           </MenuContainer>
           <IconsWrapper>
             <IconWrapper>

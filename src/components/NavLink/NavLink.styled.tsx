@@ -4,6 +4,9 @@ import { css } from "@emotion/react";
 import { IStyledLinkProps, ILinkProps } from "@/types/components";
 
 const linkStyles = ({ theme, isDiscount }: IStyledLinkProps) => css`
+  display: block;
+  width: 100%;
+  height: 100%;
   font-size: 1.8rem;
   font-weight: ${isDiscount ? `700` : `500`};
   line-height: normal;

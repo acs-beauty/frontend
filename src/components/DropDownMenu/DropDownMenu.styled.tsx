@@ -14,10 +14,8 @@ export const Button = styled.button`
 export const DropDownList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   padding-left: 1.6rem;
-  margin-top: 1.4rem;
-
+ 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     position: absolute;
     display: flex;
@@ -50,6 +48,8 @@ export const NavItem = styled.li`
 export const SubMenuItem = styled.li`
   font-size: 1.6rem;
   font-weight: 500;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 `;
 
 export const NavLinkContainer = styled.div`
@@ -57,4 +57,12 @@ export const NavLinkContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+`;
+
+export const SubMenuLink = styled.a`
+  display: block;
+  width: 100%;
+  height: 100%;
 `;

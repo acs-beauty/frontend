@@ -11,6 +11,7 @@ import {
   NavItem,
   SubMenuItem,
   NavLinkContainer,
+  SubMenuLink
 } from "./DropDownMenu.styled";
 
 const DropDownMenu: FC<{
@@ -30,22 +31,16 @@ const DropDownMenu: FC<{
     <NavItem>
       <NavLinkContainer>
         <NavLink href={`/${href}`} text={text} />
-        {dropdownOpen ? (
-          <Button type="button" onClick={handleButtonClick}>
-            <CloseSubMenuIcon />
-          </Button>
-        ) : (
-          <Button type="button" onClick={handleButtonClick}>
-            <OpenSubMenuIcon />
-          </Button>
-        )}
+        <Button type="button" onClick={handleButtonClick}>
+          {dropdownOpen ? <CloseSubMenuIcon /> : <OpenSubMenuIcon />}
+        </Button>
       </NavLinkContainer>
       {dropdownOpen && (
         <DropDownList>
           {menuItems.map((item, index) => (
             <SubMenuItem key={index}>
               <Link href={`/${href}/${item.linkKey}`} passHref legacyBehavior>
-                <a>{item.name}</a>
+                <SubMenuLink>{item.name}</SubMenuLink>
               </Link>
             </SubMenuItem>
           ))}
