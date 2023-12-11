@@ -27,7 +27,7 @@ export const theme = {
     red: {
       100: "#F4DCE3", //button-up background
       200: "#D7310D", // sale color
-      300: "#F52323", // active link color
+      300: "#FB4994", // active link color
     },
     green: {
       100: "#56A86D",

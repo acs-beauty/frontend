@@ -34,5 +34,15 @@ export const global = css`
     display: block;
     background-color: transparent;
     border: none;
+    outline: none;
+      
+    &:focus {
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+    }
   }
+
+ 
 `;

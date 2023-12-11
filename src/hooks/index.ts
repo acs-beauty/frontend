@@ -4,3 +4,5 @@ export { useAppSelector } from "./useAppSelector";
 export { useCartGoods } from "./useCartGoods";
 export { useTotalAmount } from "./useTotalAmount";
 export { useTotalPrice } from "./useTotalPrice";
+export { useToggleScroll } from "./useToggleScroll";
+export { useKeyPress } from "./useKeyPress";

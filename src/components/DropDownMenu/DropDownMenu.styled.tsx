@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-import { INavItemProps } from "@/types/components";
 
 export const Button = styled.button`
   display: flex;
@@ -13,9 +12,11 @@ export const Button = styled.button`
 `;
 
 export const DropDownList = styled.ul`
-  display: none;
-
-  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.6rem;
+ 
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -39,24 +40,29 @@ export const DropDownList = styled.ul`
   }
 `;
 
-const navItemStyles = ({ theme, isActive }: INavItemProps) => css`
+export const NavItem = styled.li`
   display: flex;
-  align-items: center;
-  background-color: ${isActive
-    ? `${theme.colors.grey[500]}`
-    : `${theme.colors.white[100]}`};
-`;
-
-export const NavItem = styled.li<{ isActive: boolean }>`
-  ${navItemStyles}
+  flex-direction: column;
 `;
 
 export const SubMenuItem = styled.li`
-  width: calc(100% / 3);
+  font-size: 1.6rem;
   font-weight: 500;
-  transition: font-weight 250ms ease-out;
-  &:hover,
-  &:focus {
-    font-weight: 700;
-  }
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+`;
+
+export const NavLinkContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+`;
+
+export const SubMenuLink = styled.a`
+  display: block;
+  width: 100%;
+  height: 100%;
 `;
