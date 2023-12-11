@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const NavList = styled.ul`
-  display: flex;
+  display: flex; 
   justify-content: flex-start;
   flex-wrap: wrap;
   column-gap: 4.8rem;
@@ -18,7 +18,7 @@ export const Button = styled.button`
 `;
 
 export const NavItem = styled.li`
-position: relative;
+  position: relative;
   display: flex;
   align-items: center;
 `;
