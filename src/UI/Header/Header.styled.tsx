@@ -42,6 +42,7 @@ export const StyledHeader = styled.header`
 `;
 
 export const IconsWrapper = styled.div`
+  position: relative;
   display: flex;
   gap: 1.6rem;
   grid-row: 1;
@@ -94,5 +95,35 @@ export const ImageBox = styled.div`
     grid-column: 1;
     width: 10.8rem;
     height: 9.5rem;
+  }
+`;
+
+export const AmountContainer = styled.div`
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #453e42;
+  border-radius: 50%;
+
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+    right: -10px;
+    right: -10px;
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+`;
+
+export const AmountText = styled.p`
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+
+  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+   font-size: 1.2rem;
   }
 `;

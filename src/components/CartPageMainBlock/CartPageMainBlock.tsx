@@ -31,7 +31,8 @@ import {
   Wrapper,
   SubTitle,
   Text,
-  SumWrapper
+  SumWrapper,
+  CanButton
 } from "./CartPageMainBlock.styled";
 import Link from "next/link";
 
@@ -57,9 +58,9 @@ const CartPageMainBlock: FC = () => {
   return (
     <section>
       <Container>
-        <div>
+      
           <Title>Кошик</Title>
-        </div>
+        
         {goods.length > 0 && (
           <ul>
             {goods.map((item: IGoodsItem) => (
@@ -93,12 +94,12 @@ const CartPageMainBlock: FC = () => {
                       <AddItemIcon />
                     </button>
                   </AmountWrapper>
-                  <button
-                    role="button"
+                  <CanButton
+                    type="button"
                     onClick={() => handleDeleteItem(item.id)}
                   >
                     <TrashCanIcon />
-                  </button>
+                  </CanButton>
                 </Wrapper>
               </Item>
             ))}
@@ -114,7 +115,7 @@ const CartPageMainBlock: FC = () => {
             <Text>{totalPrice} грн</Text>
           </SumWrapper>
         </div>
-        <Link href={"/order"}>ОФОРМИТИ ЗАМОВЛЕННЯ</Link>
+        <Link href={"/order"}>Оформити замовлення</Link>
       </Container>
     </section>
   );
