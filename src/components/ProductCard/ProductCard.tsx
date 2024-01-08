@@ -1,10 +1,10 @@
-import { FC } from "react";
-import Image from "next/image";
+import { FC } from "react"
+import Image from "next/image"
 
-import CartIcon from "@/UI/icons/CartIcon";
-import HeartIcon from "@/UI/icons/HeartIcon";
-import { IPreviewProduct } from "@/types/components";
-import CardLabel from "../../UI/CardLabel";
+import CartIcon from "@/UI/icons/CartIcon"
+import HeartIcon from "@/UI/icons/HeartIcon"
+import { IProduct } from "@/types/components"
+import CardLabel from "../../UI/CardLabel"
 import {
   ImageContainer,
   CardWrapper,
@@ -15,40 +15,29 @@ import {
   Price,
   CartButton,
   StyledLink,
-} from "./ProductCard.styled";
-import { generateImageSizesString } from "@/helpers";
-import { useAppDispatch } from "@/hooks";
-import { addItem } from "@/redux/cart/slice";
+} from "./ProductCard.styled"
+import { generateImageSizesString } from "@/helpers"
+import { useAppDispatch } from "@/hooks"
+import { addItem } from "@/redux/cart/slice"
 
-const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
+const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({
   product,
   isHeartIcon,
 }) => {
-  const {
-    productId,
-    titleName,
-    mainImageName,
-    price,
-    discountPrice,
-    quantityStatus,
-    novelty,
-    article,
-    hit,
-    subcategoryLinkKey,
-    categoryLinkKey,
-  } = product;
+  const { productId, titleName, mainImageName, price, discountPrice, novelty, article, hit, slug } =
+    product
 
   const iconProps = {
     width: "24",
     height: "24",
-  };
+  }
 
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
-  const imageSizes = generateImageSizesString("156px", "305px", "305px");
+  const imageSizes = generateImageSizesString("156px", "305px", "305px")
 
   const handleAddToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
+    event.preventDefault()
     dispatch(
       addItem({
         id: productId,
@@ -59,15 +48,13 @@ const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
         image: mainImageName,
         amount: 1,
       })
-    );
-    alert("Товар доданий в кошик!");
-  };
+    )
+    alert("Товар доданий в кошик!")
+  }
 
   return (
     <CardWrapper>
-      <StyledLink
-        href={`/${categoryLinkKey}/${subcategoryLinkKey}/${productId}`}
-      >
+      <StyledLink href={`/product/${slug}`}>
         {(novelty || hit || discountPrice) && (
           <LabelWrapper>
             {novelty && <CardLabel text="New" isSale={false} />}
@@ -94,7 +81,7 @@ const ProductCard: FC<{ product: IPreviewProduct; isHeartIcon: boolean }> = ({
         </ContentWrapper>
       </StyledLink>
     </CardWrapper>
-  );
-};
+  )
+}
 
-export default ProductCard;
+export default ProductCard

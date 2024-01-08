@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
 export const ImageContainer = styled.div`
   position: relative;
@@ -17,7 +17,7 @@ export const ImageContainer = styled.div`
     width: 10.9rem;
     height: 10.9rem;
   }
-`;
+`
 
 export const Title = styled.h1`
   margin-top: 0;
@@ -37,7 +37,7 @@ export const Title = styled.h1`
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     margin-bottom: 2.4rem;
   }
-`;
+`
 
 export const AmountWrapper = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ export const AmountWrapper = styled.div`
     grid-row: 1;
     grid-column: 2;
   }
-`;
+`
 
 export const AmountText = styled.p`
   width: 2rem;
@@ -60,14 +60,13 @@ export const AmountText = styled.p`
     width: 2.8rem;
     font-size: 2rem;
   }
-`;
+`
 
 export const PriceText = styled.p`
   grid-row: 3;
   grid-column: 1 / span 2;
   font-size: 1.4rem;
   font-weight: 700;
-  line-height: 1.15;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     grid-row: 3;
@@ -75,7 +74,7 @@ export const PriceText = styled.p`
     font-size: 1.6rem;
     letter-spacing: 0.4px;
   }
-`;
+`
 
 export const ArticleText = styled.p`
   grid-row: 2;
@@ -86,7 +85,7 @@ export const ArticleText = styled.p`
     grid-row: 2;
     grid-column: 1 / span 2;
   }
-`;
+`
 
 export const TitleText = styled.p`
   grid-row: 1;
@@ -106,7 +105,7 @@ export const TitleText = styled.p`
     font-size: 1.5rem;
     height: 3.8rem;
   }
-`;
+`
 
 export const Item = styled.li`
   display: grid;
@@ -123,7 +122,7 @@ export const Item = styled.li`
     padding-top: 2rem;
     padding-bottom: 2.4rem;
   }
-`;
+`
 
 export const Wrapper = styled.div`
   display: grid;
@@ -136,16 +135,16 @@ export const Wrapper = styled.div`
     grid-template-rows: 3.8rem 1.9rem 1.9rem;
     grid-row-gap: 2.4rem;
   }
-`;
+`
 
 export const SubTitle = styled.p`
   font-size: 1.4rem;
   font-weight: 500;
-`;
+`
 
 export const Text = styled.p`
   font-size: 1.4rem;
-`;
+`
 
 export const SumWrapper = styled.div`
   display: grid;
@@ -153,7 +152,7 @@ export const SumWrapper = styled.div`
   grid-template-rows: repeat(2, 1fr);
   justify-content: space-between;
   width: 100%;
-`;
+`
 
 export const CanButton = styled.button`
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
@@ -161,4 +160,4 @@ export const CanButton = styled.button`
     grid-column: 2;
     justify-self: flex-end;
   }
-`;
+`
