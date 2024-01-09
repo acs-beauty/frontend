@@ -3,7 +3,6 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Container } from "@/styles/commonStyles"
-import { IGood } from "@/types/components"
 import { deleteItem, decreaseItemAmount, increaseItemAmount } from "@/redux/cart/slice"
 import RemoveItemIcon from "@/UI/icons/RemoveItemIcon"
 import AddItemIcon from "@/UI/icons/AddItemIcon"
@@ -42,15 +41,15 @@ const Cart: NextPage<HomePageProps> = () => {
   const totalPrice = useTotalPrice()
   const imageSizes = generateImageSizesString("86px", "105px", "109px")
 
-  const handleDeleteItem = (id: string) => {
+  const handleDeleteItem = (id: number) => {
     dispatch(deleteItem(id))
   }
 
-  const handleDecreaseItemAmount = (id: string) => {
+  const handleDecreaseItemAmount = (id: number) => {
     dispatch(decreaseItemAmount(id))
   }
 
-  const handleIncreaseItemAmount = (id: string) => {
+  const handleIncreaseItemAmount = (id: number) => {
     dispatch(increaseItemAmount(id))
   }
   return (
@@ -60,7 +59,7 @@ const Cart: NextPage<HomePageProps> = () => {
           <Title>Кошик</Title>
           {goods.length > 0 && (
             <ul>
-              {goods.map((item: IGood) => (
+              {goods.map(item => (
                 <Item key={item.id}>
                   <ImageContainer>
                     <Image src={item.image} alt={item.title} fill sizes={imageSizes} />

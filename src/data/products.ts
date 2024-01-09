@@ -2,8 +2,8 @@ export const allProducts = {
   totalProducts: 10,
   products: [
     {
-      productId: "1",
-      titleName:
+      id: 1,
+      name:
         "Ензимна пудра Papa Recipe Blemish Enzyme Powder Cleanser 50 g",
       article: "2278GH",
       mainImageName: "/images/product.png",
@@ -11,14 +11,14 @@ export const allProducts = {
       discountPrice: null,
       quantityStatus: "available",
       novelty: true,
-      hit: false,
+      hit: false,      
       subcategoryLinkKey: "test-subcategory",
       categoryLinkKey: "test-category",
       slug: "papar-recipe"
     },
     {
-      productId: "2",
-      titleName:
+      id: 2,
+      name:
         "Заспокійливий крем-гель з водою насіння вівса PURITO Oat-in Calming Gel Cream 100 ml",
       article: "1278GH",
       mainImageName: "/images/product.png",
@@ -32,8 +32,8 @@ export const allProducts = {
       slug: "calming-gel"
     },
     {
-      productId: "3",
-      titleName: "Product 3",
+      id: 3,
+      name: "Product 3",
       article: "1358GH",
       mainImageName: "/images/product.png",
       price: 620,
@@ -46,8 +46,8 @@ export const allProducts = {
       slug: "product-3"
     },
     {
-      productId: "4",
-      titleName: "Product 4",
+      id: 4,
+      name: "Product 4",
       article: "1458GH",
       mainImageName: "/images/product.png",
       price: 620,
@@ -60,8 +60,8 @@ export const allProducts = {
       slug: "product-4"
     },
     {
-      productId: "5",
-      titleName: "Product 5",
+      id: 5,
+      name: "Product 5",
       article: "5678GH",
       mainImageName: "/images/product.png",
       price: 620,

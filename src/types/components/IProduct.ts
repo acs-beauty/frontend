@@ -1,6 +1,6 @@
 export interface IProduct {
-  productId: string
-  titleName: string
+  id: number
+  name: string
   article: string
   mainImageName: string
   price: number
@@ -8,7 +8,7 @@ export interface IProduct {
   quantityStatus: string
   novelty: boolean
   hit: boolean
-  subcategoryLinkKey: string
+  subcategoryId: number
   categoryLinkKey: string
   slug: string
 }

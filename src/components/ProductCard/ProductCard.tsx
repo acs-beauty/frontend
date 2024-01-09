@@ -24,7 +24,7 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({
   product,
   isHeartIcon,
 }) => {
-  const { productId, titleName, mainImageName, price, discountPrice, novelty, article, hit, slug } =
+  const { id, name, mainImageName, price, discountPrice, novelty, article, hit, slug } =
     product
 
   const iconProps = {
@@ -40,8 +40,8 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({
     event.preventDefault()
     dispatch(
       addItem({
-        id: productId,
-        title: titleName,
+        id: id,
+        title: name,
         article: article,
         price: price,
         discountPrice: discountPrice,
@@ -64,7 +64,7 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({
         )}
 
         <ImageContainer>
-          <Image src={mainImageName} alt={titleName} fill sizes={imageSizes} />
+          <Image src={mainImageName} alt={name} fill sizes={imageSizes} />
         </ImageContainer>
         {isHeartIcon && (
           <HeartContainer>
@@ -73,7 +73,7 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({
         )}
 
         <ContentWrapper>
-          <Title>{titleName}</Title>
+          <Title>{name}</Title>
           <Price>{price} грн</Price>
           <CartButton role="button" onClick={handleAddToCart}>
             <CartIcon {...iconProps} />В кошик

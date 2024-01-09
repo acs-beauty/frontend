@@ -1,7 +1,7 @@
-import { IGoodsItem } from ".";
+import { IGood } from ".";
 
 export interface ICartState {
-  goods: IGoodsItem[];
+  goods: IGood[];
   totalAmount: number;
   totalPrice: number;
 }

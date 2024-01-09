@@ -1,5 +1,5 @@
 export interface IGood {
-  id: string
+  id: number
   title: string
   article: string
   price: number
