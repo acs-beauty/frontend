@@ -1,6 +1,5 @@
 import { FC } from "react";
 
-
 import { Container } from "@/styles/commonStyles";
 import { Wrapper, Title, Section } from "./DeliveryBanner.styled";
 

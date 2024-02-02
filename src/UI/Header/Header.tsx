@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import Image from "next/image";
 
-import { useScreen } from "@/hooks";
+import { useScreen, useTotalAmount } from "@/hooks";
 import {
   GridContainer,
   StyledHeader,
@@ -9,6 +9,8 @@ import {
   MenuContainer,
   SearchWrapper,
   ImageBox,
+  AmountContainer,
+  AmountText
 } from "./Header.styled";
 import { IconWrapper } from "@/styles/commonStyles";
 import SearchForm from "../../components/SearchForm";
@@ -20,11 +22,13 @@ import BurgerMenuIcon from "../icons/BurgerMenuIcon";
 import CloseIcon from "../icons/CloseIcon";
 import AccountIcon from "../icons/AccountIcon";
 import { generateImageSizesString } from "@/helpers";
+import Link from "next/link";
 import { categories } from "@/data/categories";
 
 const Header: FC = () => {
   const { isTablet } = useScreen();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const amount = useTotalAmount();
 
   const props = {
     width: isTablet ? "32" : "24",
@@ -66,10 +70,13 @@ const Header: FC = () => {
             <IconWrapper>
               <HeartIcon color="#575A57" opacity="1" {...props} />
             </IconWrapper>
+            <Link href={"/cart"}>
             <IconWrapper>
-              <CartIcon {...props} />
-            </IconWrapper>
-          </IconsWrapper>
+                <CartIcon {...props} />
+                <AmountContainer><AmountText>{amount}</AmountText></AmountContainer>
+              </IconWrapper>
+            </Link>
+        </IconsWrapper>
 
           <SearchWrapper>
             <SearchForm />

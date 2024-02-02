@@ -31,10 +31,11 @@ export const global = css`
 
   button {
     cursor: pointer;
-    outline: none;
+    display: block;
     background-color: transparent;
     border: none;
-
+    outline: none;
+      
     &:focus {
       -webkit-tap-highlight-color: transparent;
       outline: none;
