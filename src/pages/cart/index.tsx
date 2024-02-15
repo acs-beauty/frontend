@@ -36,12 +36,16 @@ export const getStaticProps = async () => {
 
 const Cart: NextPage<HomePageProps> = () => {
   const goods = useCartGoods()
-  
+
   const dispatch = useAppDispatch()
+
   const totalAmount = useTotalAmount()
   const totalPrice = useTotalPrice()
   const imageSizes = generateImageSizesString("86px", "105px", "109px")
 
+
+
+  
   const handleDeleteItem = (id: number) => {
     dispatch(deleteItem(id))
   }
