@@ -36,6 +36,7 @@ export const getStaticProps = async () => {
 
 const Cart: NextPage<HomePageProps> = () => {
   const goods = useCartGoods()
+  
   const dispatch = useAppDispatch()
   const totalAmount = useTotalAmount()
   const totalPrice = useTotalPrice()
