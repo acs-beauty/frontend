@@ -1,0 +1,41 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+  aws-deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: SSH to Instance
+        env:
+          AWS_PRIVATE_KEY: acs-beauty.pem
+          AWS_HOSTNAME: 51.21.134.189
+          AWS_USERNAME: ubuntu
+
+        run: |
+          chmod 600 ${AWS_PRIVATE_KEY}
+          ssh -o StrictHostKeyChecking=no -i acs-beauty.pem ${AWS_USERNAME}@${AWS_HOSTNAME} '
+
+            # 📌 Start your instance/server related tasks form here.
+            bash ~/.scripts/acs-beauty.sh
+          '
