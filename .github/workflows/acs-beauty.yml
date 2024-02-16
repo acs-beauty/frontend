@@ -30,7 +30,7 @@ jobs:
         env:
           AWS_PRIVATE_KEY: acs-beauty.pem
           AWS_HOSTNAME: 51.21.134.189
-          AWS_USERNAME: ec2-user
+          AWS_USERNAME: root
 
         run: |
           chmod 600 ${AWS_PRIVATE_KEY}
