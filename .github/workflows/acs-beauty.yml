@@ -34,7 +34,7 @@ jobs:
 
         run: |
           chmod 600 ${AWS_PRIVATE_KEY}
-          ssh -i acs-beauty.pem ${AWS_USERNAME}@${AWS_HOSTNAME} '
+          ssh -o StrictHostKeyChecking=no -i acs-beauty.pem ${AWS_USERNAME}@${AWS_HOSTNAME} '
 
             # 📌 Start your instance/server related tasks form here.
             bash ~/.scripts/acs-beauty.sh
