@@ -5,6 +5,7 @@ import CreditCardIcon from "../icons/CreditCardIcon";
 import { Text, Section, Title, TitleWrapper, Wrapper } from "./Payment.styled";
 import { IconWrapper } from "@/styles/commonStyles";
 
+
 const Payment: FC = () => {
   const { isTablet } = useScreen();
   return (
