@@ -33,7 +33,7 @@ jobs:
           AWS_USERNAME: ubuntu
 
         run: |
-          chmod 600 ${AWS_PRIVATE_KEY}
+          sudo chmod 600 ${AWS_PRIVATE_KEY}
           ssh -i acs-beauty.pem ${AWS_USERNAME}@${AWS_HOSTNAME} '
 
             # 📌 Start your instance/server related tasks form here.
