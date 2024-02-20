@@ -33,8 +33,8 @@ jobs:
           AWS_USERNAME: ubuntu
 
         run: |
-          sudo chmod 777 ${AWS_PRIVATE_KEY}
-          ssh -i acs-beauty.pem ${AWS_USERNAME}@${AWS_HOSTNAME} '
+          sudo chmod 600 ${AWS_PRIVATE_KEY}
+          ssh -i acsbeauty.pem ${AWS_USERNAME}@${AWS_HOSTNAME} '
 
             # 📌 Start your instance/server related tasks form here.
             bash ~/.scripts/acs-beauty.sh
