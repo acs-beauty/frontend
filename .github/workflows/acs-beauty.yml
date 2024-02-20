@@ -28,7 +28,7 @@ jobs:
 
       - name: SSH to Instance
         env:
-          AWS_PRIVATE_KEY: acs-beauty.pem
+          AWS_PRIVATE_KEY: acsbeauty.pem
           AWS_HOSTNAME: 13.60.24.60
           AWS_USERNAME: ubuntu
 
