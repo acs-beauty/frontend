@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { IRootState } from "../store"
-import { IUserAuth } from "src/types/users"
-import { usersApi } from "src/api/users/usersApi"
+import { IUserAuth } from "@/types/users"
+import { usersApi } from "@/api/users/usersApi"
 
 const createUsersAsyncThunk = createAsyncThunk.withTypes<{
   state: IRootState
