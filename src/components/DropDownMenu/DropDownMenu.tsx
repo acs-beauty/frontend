@@ -21,7 +21,7 @@ const DropDownMenu: FC<{
   text: string;
 }> = ({ menuItems, href, text }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
+console.log("menuItems", menuItems)
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     setDropdownOpen(!dropdownOpen);

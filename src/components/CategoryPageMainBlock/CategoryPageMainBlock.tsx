@@ -39,7 +39,7 @@ const CategoryPageMainBlock: FC<{ category: ICategoryData }> = ({
                 <PageSelect />
               </MenuWrapper>
             </MenuContainer>
-            <ProductGallery {...allProducts} />
+            {/* <ProductGallery {...allProducts} /> */}
           </div>
         </BlockWrapper>
       </Container>

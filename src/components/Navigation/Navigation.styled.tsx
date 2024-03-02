@@ -2,10 +2,10 @@ import styled from "@emotion/styled";
 
 export const NavList = styled.ul`
   display: flex; 
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
   column-gap: 4.8rem;
-  row-gap: 1.8rem;
+  padding-bottom: 1rem;
 `;
 export const Button = styled.button`
   display: flex;

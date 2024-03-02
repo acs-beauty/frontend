@@ -8,7 +8,8 @@ export interface IProduct {
   quantityStatus: string
   novelty: boolean
   hit: boolean
-  subcategoryId: number
+  subcategoryLinkKey: string
   categoryLinkKey: string
   slug: string
+  productId?: number
 }

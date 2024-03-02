@@ -15,3 +15,5 @@ export type { IGood } from "./IGood"
 export type { ICartState } from "./ICartState"
 export type { RootState } from "./RootState"
 export type { AppDispatch } from "./AppDispatch"
+export type { IPreviewProduct } from "./IPreviewProduct"
+
