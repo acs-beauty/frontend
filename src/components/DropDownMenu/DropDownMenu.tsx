@@ -19,14 +19,14 @@ const DropDownMenu: FC<{
   menuId: number;
   href: string;
   text: string;
-}> = ({ menuItems, href, text }) => {
+}> = ({ menuItems, href, text }) => {  
   const [dropdownOpen, setDropdownOpen] = useState(false);
 console.log("menuItems", menuItems)
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     setDropdownOpen(!dropdownOpen);
   };
-
+  console.log("href", href)
   return (
     <NavItem>
       <NavLinkContainer>

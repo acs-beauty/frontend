@@ -15,7 +15,7 @@ export const category = {
     {
       subcategoryId: 2,
       name: "Маски",
-      categoryLinkKey: "hair",
+      categoryLinkKey: "masks",
       linkKey: "masks",
     },
     {
@@ -33,7 +33,7 @@ export const category = {
     {
       subcategoryId: 5,
       name: "Бальзами, кондиціонери",
-      categoryLinkKey: "hair",
+      categoryLinkKey: "balms",
       linkKey: "balms",
     },
     {

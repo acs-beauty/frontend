@@ -6,7 +6,13 @@ export const categories = [
     subcategory: [
       {
         subcategoryId: 1,
-        name: "тест",
+        name: "Крем",
+        categoryLinkKey: "care",
+        linkKey: "care-subcategory",
+      },
+      {
+        subcategoryId: 2,
+        name: "Паста",
         categoryLinkKey: "care",
         linkKey: "care-subcategory",
       },
@@ -19,7 +25,13 @@ export const categories = [
     subcategory: [
       {
         subcategoryId: 1,
-        name: "тест",
+        name: "Пудра",
+        categoryLinkKey: "makeup",
+        linkKey: "makeup-subcategory",
+      },
+      {
+        subcategoryId: 2,
+        name: "Помада",
         categoryLinkKey: "makeup",
         linkKey: "makeup-subcategory",
       },
@@ -99,7 +111,13 @@ export const categories = [
     subcategory: [
       {
         subcategoryId: 1,
-        name: "тест",
+        name: "тест1",
+        categoryLinkKey: "body",
+        linkKey: "body-subcategory",
+      },
+      {
+        subcategoryId: 2,
+        name: "тест2",
         categoryLinkKey: "body",
         linkKey: "body-subcategory",
       },
@@ -112,7 +130,13 @@ export const categories = [
     subcategory: [
       {
         subcategoryId: 1,
-        name: "тест",
+        name: "тест1",
+        categoryLinkKey: "accessories",
+        linkKey: "accessories-subcategory",
+      },
+      {
+        subcategoryId: 2,
+        name: "Ножици",
         categoryLinkKey: "accessories",
         linkKey: "accessories-subcategory",
       },

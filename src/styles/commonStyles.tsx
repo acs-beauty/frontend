@@ -26,7 +26,7 @@ export const Container = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  margin-bottom: 1.6rem;
+  margin-bottom: 3.2rem;
   text-align: center;
   text-transform: uppercase;
   font-size: 1.8rem;
@@ -35,14 +35,15 @@ export const SectionTitle = styled.h2`
   color: ${({ theme }) => theme.colors.grey[300]};
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    margin-bottom: 2.4rem;
-    font-size: 3.2rem;
+    margin-bottom: 4.8rem;
+    font-size: 2.4rem;
     line-height: normal;
     letter-spacing: 3.2px;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-    margin-bottom: 3.6rem;
+    margin-bottom: 6.4rem;
+    font-size: 2.8rem;
   }
 `;
 

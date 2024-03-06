@@ -14,6 +14,7 @@ export const StyledSlider = styled(Slider)`
     }
     .slick-track {
       display: flex;
+      flex-grow: 1;
     }
   }
 `;
