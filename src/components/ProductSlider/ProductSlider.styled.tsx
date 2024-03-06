@@ -6,15 +6,19 @@ export const StyledSlider = styled(Slider)`
     position: relative;
 
     .slick-slide > div {
-      width: 100%;
-
-      @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-        width: 32.5rem !important;
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-right: 1.6rem;
+      &:not(:last-child) {
+    margin-right: 1.6rem;
       }
-    }
-    .slick-track {
-      display: flex;
-      flex-grow: 1;
-    }
+      @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+        margin-right: 2rem;
+      &:not(:last-child) {
+    margin-right: 2rem;
+      }
+      }
+    
   }
+}
 `;

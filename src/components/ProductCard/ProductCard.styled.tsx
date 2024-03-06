@@ -4,7 +4,7 @@ import Link from "next/link"
 export const ImageContainer = styled.div`
   position: relative;
   overflow: hidden;
-  width: 15.7rem;
+  width: 100%;
   height: 10.6rem;
   margin-top: 0.4rem;
 
@@ -18,7 +18,7 @@ export const CardWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  width: calc(100% - 1.6rem);
+  width: calc(100%);
   align-items: stretch;
   border-radius: 4px;
   border: 1px solid ${({ theme }) => theme.colors.grey[200]};
@@ -27,11 +27,11 @@ export const CardWrapper = styled.div`
   }
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-    width: calc(100% - 2rem);
-
+    width: calc(100%);
+    /* margin-right: 2rem;
     &:not(:last-child) {
-      margin-left: 2rem;
-    }
+      margin-right: 2rem;
+    } */
   }
 `
 
