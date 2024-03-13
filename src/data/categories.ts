@@ -3,6 +3,9 @@ export const categories = [
     categoryId: 1,
     name: "Догляд",
     linkKey: "care",
+    minPrice: "50.00",
+    maxPrice: "999.00",
+    imageBannerName: "category_banner_test.webp",
     subcategory: [
       {
         subcategoryId: 1,
@@ -22,6 +25,9 @@ export const categories = [
     categoryId: 2,
     name: "Макіяж",
     linkKey: "makeup",
+    minPrice: "50.00",
+    maxPrice: "999.00",
+    imageBannerName: "category_banner_test.webp",
     subcategory: [
       {
         subcategoryId: 1,
@@ -41,6 +47,9 @@ export const categories = [
     categoryId: 3,
     name: "Волосся",
     linkKey: "hair",
+    minPrice: "50.00",
+    maxPrice: "999.00",
+    imageBannerName: "category_banner_test.webp",
     subcategory: [
       {
         subcategoryId: 1,
@@ -108,6 +117,9 @@ export const categories = [
     categoryId: 4,
     name: "Тіло",
     linkKey: "body",
+    minPrice: "50.00",
+    maxPrice: "999.00",
+    imageBannerName: "category_banner_test.webp",
     subcategory: [
       {
         subcategoryId: 1,
@@ -120,6 +132,8 @@ export const categories = [
         name: "тест2",
         categoryLinkKey: "body",
         linkKey: "body-subcategory",
+        minPrice: "50.00",
+        maxPrice: "999.00",
       },
     ],
   },
@@ -127,6 +141,9 @@ export const categories = [
     categoryId: 5,
     name: "Аксесуари",
     linkKey: "accessories",
+    minPrice: "50.00",
+    maxPrice: "999.00",
+    imageBannerName: "category_banner_test.webp",
     subcategory: [
       {
         subcategoryId: 1,
@@ -142,4 +159,4 @@ export const categories = [
       },
     ],
   },
-];
+]

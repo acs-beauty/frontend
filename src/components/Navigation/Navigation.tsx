@@ -7,7 +7,6 @@ import { Container } from "@/styles/commonStyles";
 import { NavWrapper, NavList, NavItem, Button } from "./Navigation.styled";
 
 const Navigation: FC<{ categories: ICategory[] }> = ({ categories }) => {
-  console.log("category", categories)
   return (
     <NavWrapper>
       <Container>

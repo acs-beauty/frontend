@@ -4,7 +4,8 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
-  margin-bottom: 3rem;
+  justify-content: space-around;
+  /* margin-bottom: 3rem; */
 `;
 
 export const Item = styled.li`
@@ -23,7 +24,7 @@ export const Item = styled.li`
 `;
 
 export const LinkText = styled.a`
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.48px;
 `;

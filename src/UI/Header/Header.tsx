@@ -36,7 +36,6 @@ const Header: FC = () => {
   }
 
   const imageSizes = generateImageSizesString("40px", "60px", "108px")
-  console.log("imageSizes", imageSizes)
   const onMenuToggle = () => {
     setIsMenuOpen(prev => !prev)
   }

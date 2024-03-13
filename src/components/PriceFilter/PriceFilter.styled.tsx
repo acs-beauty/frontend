@@ -1,27 +1,46 @@
 import styled from "@emotion/styled";
 
 export const Text = styled.p`
+ margin-bottom: 16px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.72px;
+    color: #5A5757;
+  
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    margin-bottom: 16px;
     font-size: 2.4rem;
     font-weight: 500;
     letter-spacing: 0.72px;
-    color: ${({ theme }) => theme.colors.grey[300]};
+    color: #5A5757;
   }
 `;
 
 export const Input = styled.input`
+    padding: 1.5rem 2.7rem;
+    text-align: center;
+    border: 1px solid #C1BABA;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.6px;
+    color: #5A5757;
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 11.2rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     text-align: center;
-    border: 1px solid ${({ theme }) => theme.colors.grey[200]};
+    border: 1px solid #C1BABA;
     font-size: 2rem;
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.6px;
-    color: ${({ theme }) => theme.colors.grey[300]};
+    color: #5A5757;
     -moz-appearance: textfield;
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
@@ -31,11 +50,9 @@ export const Input = styled.input`
 `;
 
 export const InputWrapper = styled.div`
-  @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    display: flex;
-    gap: 4.4rem;
+display: flex;
+gap: 4.4rem;
     margin-bottom: 1.6rem;
-  }
 `;
 
 export const SliderWrapper = styled.div`
@@ -47,14 +64,14 @@ export const SliderWrapper = styled.div`
 `;
 
 export const SliderInnerWrapper = styled.div`
-  max-width: 26.6rem;
+  max-width: 90%;
   position: absolute;
   height: 2.4rem;
 `;
 
 export const SliderInput = styled.input`
   position: absolute;
-  width: 26.6rem;
+  width: 100%;
   height: 2px;
   top: 2.7rem;
   background: transparent;
@@ -139,7 +156,7 @@ export const SliderInput = styled.input`
 `;
 
 export const ControlWrapper = styled.div`
-  width: 24.2rem;
+  width: 90%;
   position: absolute;
   top: 12rem;
   left: 1.2rem;
@@ -151,7 +168,7 @@ export const Control = styled.div`
   height: 2.4rem;
   border-radius: 50%;
   position: absolute;
-  background: ${({ theme }) => theme.colors.red[100]};
+  background: #F4DCE3;
   top: 50%;
   margin-left: calc(2.4rem / -2);
   transform: translate3d(0, -50%, 0);
@@ -160,19 +177,20 @@ export const Control = styled.div`
 
 export const Rail = styled.div`
   position: absolute;
-  width: 24.2rem;
+  width: 100%;
   top: 50%;
   transform: translateY(-50%);
   height: 2px;
-  background: ${({ theme }) => theme.colors.grey[100]};
+  background: #D9D9D9;
 `;
 
 export const InnerRail = styled.div`
   position: absolute;
   height: 100%;
-  background: ${({ theme }) => theme.colors.red[100]};
+  background: #F4DCE3;
 `;
 
 export const PriceFilterWrapper = styled.div`
   position: relative;
+  margin-bottom: 20px;
 `;
