@@ -46,5 +46,5 @@ export const OrderItemText400Mb12 = styled(OrderItemText400)`
   margin-bottom: 12px;
 `
 export const ColoredStatus = styled(OrderItemText600)<{ $status?: string }>`
-  color: ${props => (props.$status === "Повернення" ? "red" : "green")};
+  color: ${props => (props.$status === "Повернення" ? "#F52323" : "#1CF158")};
 `

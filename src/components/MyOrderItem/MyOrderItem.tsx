@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { IOrder } from "../MyOrdersList/orders"
 import OpenSubMenuIcon from "@/UI/icons/OpenSubMenuIcon"
 import {
@@ -13,8 +13,15 @@ import {
   Details,
 } from "./MyOrderItem.styled"
 import { declOfNum } from "@/helpers"
+import OrderDetailsList from "../OrderDetailsList"
 
 const MyOrderItem = ({ order }: { order: IOrder }) => {
+  const [isDetailsListOpen, setIsDetailsListOpen] = useState<boolean>(false)
+
+  const handleOpenDetailsToggle = () => {
+    setIsDetailsListOpen(!isDetailsListOpen)
+  }
+
   return (
     <OrderItemWrapper>
       <FlexDivSpaceBetweenMb12>
@@ -28,10 +35,11 @@ const MyOrderItem = ({ order }: { order: IOrder }) => {
         </OrderItemText500>
         <OrderItemText600>{order.total} грн</OrderItemText600>
       </FlexDivSpaceBetweenMb9>
-      <Details>
+      <Details onClick={handleOpenDetailsToggle}>
         <OrderItemText400>Деталі</OrderItemText400>
         <OpenSubMenuIcon />
       </Details>
+      {isDetailsListOpen && <OrderDetailsList />}
     </OrderItemWrapper>
   )
 }
