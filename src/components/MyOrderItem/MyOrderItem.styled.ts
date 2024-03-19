@@ -32,6 +32,9 @@ export const Details = styled.div`
   display: flex;
   align-items: center;
   justify-content: end;
+  cursor: pointer;
+  width: 80px;
+  align-self: flex-end;
 `
 export const FlexDivSpaceBetweenMb12 = styled(FlexDivSpaceBetween)`
   margin-bottom: 12px;
@@ -41,4 +44,7 @@ export const FlexDivSpaceBetweenMb9 = styled(FlexDivSpaceBetween)`
 `
 export const OrderItemText400Mb12 = styled(OrderItemText400)`
   margin-bottom: 12px;
+`
+export const ColoredStatus = styled(OrderItemText600)<{ $status?: string }>`
+  color: ${props => (props.$status === "Повернення" ? "red" : "green")};
 `

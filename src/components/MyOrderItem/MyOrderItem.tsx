@@ -9,6 +9,7 @@ import {
   OrderItemText400,
   OrderItemText500,
   OrderItemText600,
+  ColoredStatus,
   Details,
 } from "./MyOrderItem.styled"
 
@@ -17,7 +18,7 @@ const MyOrderItem = ({ order }: { order: IOrder }) => {
     <OrderItemWrapper>
       <FlexDivSpaceBetweenMb12>
         <OrderItemText500>Замовлення № {order.id}</OrderItemText500>
-        <OrderItemText600>{order.status}</OrderItemText600>
+        <ColoredStatus $status={order.status}>{order.status}</ColoredStatus>
       </FlexDivSpaceBetweenMb12>
       <OrderItemText400Mb12>{order.date}</OrderItemText400Mb12>
       <FlexDivSpaceBetweenMb9>
