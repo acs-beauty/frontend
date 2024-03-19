@@ -12,6 +12,7 @@ import {
   ColoredStatus,
   Details,
 } from "./MyOrderItem.styled"
+import { declOfNum } from "@/helpers"
 
 const MyOrderItem = ({ order }: { order: IOrder }) => {
   return (
@@ -22,7 +23,9 @@ const MyOrderItem = ({ order }: { order: IOrder }) => {
       </FlexDivSpaceBetweenMb12>
       <OrderItemText400Mb12>{order.date}</OrderItemText400Mb12>
       <FlexDivSpaceBetweenMb9>
-        <OrderItemText500>{order.count} товари</OrderItemText500>
+        <OrderItemText500>
+          {order.count} {declOfNum(order.count, ["товар", "товари", "товарів"])}
+        </OrderItemText500>
         <OrderItemText600>{order.total} грн</OrderItemText600>
       </FlexDivSpaceBetweenMb9>
       <Details>
