@@ -23,7 +23,7 @@ export const DetailsTitle = styled.p`
 `
 export const DetailsVendor = styled.p`
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 14.63px;
 `
 export const CountTotalWrapper = styled.div`
