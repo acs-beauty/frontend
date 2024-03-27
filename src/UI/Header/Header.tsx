@@ -1,7 +1,7 @@
-import { FC, useState } from "react";
-import Image from "next/image";
+import { FC, useState } from "react"
+import Image from "next/image"
 
-import { useScreen, useTotalAmount } from "@/hooks";
+import { useScreen, useTotalAmount } from "@/hooks"
 import {
   GridContainer,
   StyledHeader,
@@ -10,43 +10,46 @@ import {
   SearchWrapper,
   ImageBox,
   AmountContainer,
-  AmountText
-} from "./Header.styled";
-import { IconWrapper } from "@/styles/commonStyles";
-import SearchForm from "../../components/SearchForm";
-import ModalPortal from "@/components/ModalPortal";
-import BurgerMenu from "../BurgerMenu";
-import HeartIcon from "../icons/HeartIcon";
-import CartIcon from "../icons/CartIcon";
-import BurgerMenuIcon from "../icons/BurgerMenuIcon";
-import CloseIcon from "../icons/CloseIcon";
-import AccountIcon from "../icons/AccountIcon";
-import { generateImageSizesString } from "@/helpers";
-import Link from "next/link";
-import { categories } from "@/data/categories";
+  AmountText,
+} from "./Header.styled"
+import { IconWrapper } from "@/styles/commonStyles"
+import SearchForm from "../../components/SearchForm"
+import ModalPortal from "@/components/ModalPortal"
+import BurgerMenu from "../BurgerMenu"
+import HeartIcon from "../icons/HeartIcon"
+import CartIcon from "../icons/CartIcon"
+import BurgerMenuIcon from "../icons/BurgerMenuIcon"
+import CloseIcon from "../icons/CloseIcon"
+import AccountIcon from "../icons/AccountIcon"
+import { generateImageSizesString } from "@/helpers"
+import Link from "next/link"
+import { categories } from "@/data/categories"
 
 const Header: FC = () => {
-  const { isTablet } = useScreen();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const amount = useTotalAmount();
+  const { isTablet } = useScreen()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const amount = useTotalAmount()
 
   const props = {
     width: isTablet ? "32" : "24",
     height: isTablet ? "32" : "24",
-  };
+  }
 
-  const imageSizes = generateImageSizesString("108px", "108px", "108px");
-
+  const imageSizes = generateImageSizesString("40px", "60px", "108px")
   const onMenuToggle = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
+    setIsMenuOpen(prev => !prev)
+  }
   return (
     <>
       <StyledHeader>
-        <GridContainer>
+        <GridContainer>          
+          <MenuContainer>
+            <button onClick={onMenuToggle}>
+              {isMenuOpen ? <CloseIcon {...props} /> : <BurgerMenuIcon {...props} />}
+            </button>           
+          </MenuContainer>
           <ImageBox>
-            <Image
+          <Image
               src="/icons/logo_header.svg"
               alt="логотип Acs beauty"
               fill
@@ -54,15 +57,6 @@ const Header: FC = () => {
               sizes={imageSizes}
             />
           </ImageBox>
-          <MenuContainer>
-            <button onClick={onMenuToggle}>
-              {isMenuOpen ? (
-                <CloseIcon {...props} />
-              ) : (
-                <BurgerMenuIcon {...props} />
-              )}
-            </button>
-          </MenuContainer>
           <IconsWrapper>
             <IconWrapper>
               <AccountIcon {...props} />
@@ -71,13 +65,14 @@ const Header: FC = () => {
               <HeartIcon color="#575A57" opacity="1" {...props} />
             </IconWrapper>
             <Link href={"/cart"}>
-            <IconWrapper>
+              <IconWrapper>
                 <CartIcon {...props} />
-                <AmountContainer><AmountText>{amount}</AmountText></AmountContainer>
+                <AmountContainer>
+                  <AmountText>{amount}</AmountText>
+                </AmountContainer>
               </IconWrapper>
             </Link>
-        </IconsWrapper>
-
+          </IconsWrapper>
           <SearchWrapper>
             <SearchForm />
           </SearchWrapper>
@@ -89,7 +84,7 @@ const Header: FC = () => {
         </ModalPortal>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

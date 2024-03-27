@@ -17,19 +17,17 @@ import {
   StyledLink,
 } from "./ProductCard.styled"
 import { generateImageSizesString } from "@/helpers"
-import { useAppDispatch } from "@/hooks"
+import { useAppDispatch, useScreen } from "@/hooks"
 import { addItem } from "@/redux/cart/slice"
 
-const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({
-  product,
-  isHeartIcon,
-}) => {
-  const { id, name, mainImageName, price, discountPrice, novelty, article, hit, slug } =
-    product
+const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({ product, isHeartIcon }) => {
+  const { id, name, mainImageName, price, discountPrice, novelty, article, hit, slug } = product
+
+  const { isTablet } = useScreen()
 
   const iconProps = {
-    width: "24",
-    height: "24",
+    width: isTablet ? "24" : "20",
+    height: isTablet ? "24" : "20",
   }
 
   const dispatch = useAppDispatch()
@@ -66,11 +64,10 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({
         <ImageContainer>
           <Image src={mainImageName} alt={name} fill sizes={imageSizes} />
         </ImageContainer>
-        {isHeartIcon && (
-          <HeartContainer>
-            <HeartIcon color="black" opacity="0.5" {...iconProps} />
-          </HeartContainer>
-        )}
+
+        <HeartContainer>
+          <HeartIcon color="black" opacity="0.5" {...iconProps} />
+        </HeartContainer>
 
         <ContentWrapper>
           <Title>{name}</Title>

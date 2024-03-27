@@ -21,7 +21,7 @@ const imagePaths = [
   },
 ];
 
-const HomePageMainBlock: FC<{ productList: IProducts }> = ({ productList }) => {
+const HomePageMainBlock: FC<{ productList: IProducts}> = ({ productList }) => {
   return (
     <Wrapper>
       <CarouselBanner images={imagePaths} />

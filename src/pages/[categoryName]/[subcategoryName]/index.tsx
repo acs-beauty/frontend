@@ -2,12 +2,14 @@ import type { NextPage, GetStaticPropsContext, GetStaticPaths } from "next";
 
 import UserLayout from "@/components/UserLayout";
 import { categories } from "@/data/categories";
+import { category } from "@/data/category";
 import { subcategory } from "@/data/subcategory";
 import Banner from "@/components/Banner";
 import FilterBlock from "@/components/FilterBlock/FilterBlock";
 import { Container, SectionTitle } from "@/styles/commonStyles";
-import { getSubcategoryPageData } from "@/services/pageOperations";
-import { getCategories } from "@/services/operations";
+import LinkRoute  from "@/components/LinkRoute"
+// import { getSubcategoryPageData } from "@/services/pageOperations";
+// import { getCategories } from "@/services/operations";
 
 
 // export const getStaticProps = async (context: GetStaticPropsContext) => {
@@ -38,9 +40,13 @@ import { getCategories } from "@/services/operations";
 // };
 
 const Subcategory: NextPage = () => {
+  console.log("first", category.name)
   return (
     <UserLayout title={"Шампуні"} categories={categories}>
       <Container>
+      <LinkRoute > 
+      {category.name}  
+      </LinkRoute>  
         <SectionTitle>{subcategory.name}</SectionTitle>
         <Banner />
         <div>

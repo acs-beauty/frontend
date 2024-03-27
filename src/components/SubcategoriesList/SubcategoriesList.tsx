@@ -2,13 +2,13 @@ import { FC } from "react";
 import Link from "next/link";
 
 import { IMenu } from "@/types/components";
-import { List, Item, LinkText } from "./SubcategoriesList.styled";
+import { List, Item, LinkText, ListWrapper } from "./SubcategoriesList.styled";
 
-const SubcategoriesList: FC<{ subcategories: IMenu[] }> = ({
-  subcategories,
+const SubcategoriesList: FC<{ subcategories: IMenu[], categoryId: number }> = ({
+  subcategories, categoryId
 }) => {
   return (
-    <div>
+    <ListWrapper>
       <List>
         {subcategories.map((subcategory) => (
           <Item key={subcategory.subcategoryId}>
@@ -22,7 +22,7 @@ const SubcategoriesList: FC<{ subcategories: IMenu[] }> = ({
           </Item>
         ))}
       </List>
-    </div>
+    </ListWrapper>
   );
 };
 

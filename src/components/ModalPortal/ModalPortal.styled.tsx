@@ -8,6 +8,7 @@ export const Overlay = styled.div`
   width: 100%; 
   height: calc(100% - 8.6rem);
   background-color: rgba(128, 128, 128, 0.3);  
+  overflow-y: auto;
   z-index: 10;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {

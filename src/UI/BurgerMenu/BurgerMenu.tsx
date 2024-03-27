@@ -5,8 +5,17 @@ import DropDownMenu from "@/components/DropDownMenu";
 import { ICategory } from "@/types/components";
 import { Container } from "@/styles/commonStyles";
 import { MenuWrapper, NavWrapper, NavItem, NavList } from "./BurgerMenu.styled";
+import { useAppDispatch } from "@/hooks";
+import { setCategories } from "@/redux/catalog/slice";
 
 const BurgerMenu: FC<{ categories: ICategory[] }> = ({ categories }) => {
+
+  // const dispatch = useAppDispatch()
+
+  // const handleMenuItemClick = ( name: string, menuId: number) => {    
+  //   dispatch(setCategories({name, menuId} )); // Отправляем действие в Redux
+  //   console.log(`Clicked item name: ${name}, menuId: ${menuId}`);
+  // };
   return (
     <MenuWrapper>
       <Container>

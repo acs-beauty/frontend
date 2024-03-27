@@ -13,22 +13,29 @@ import {
   NavLinkContainer,
   SubMenuLink
 } from "./DropDownMenu.styled";
+import { useAppDispatch } from "@/hooks";
+import { setCategories } from "@/redux/catalog/slice";
 
 const DropDownMenu: FC<{
   menuItems: IMenu[];
-  menuId: number;
   href: string;
   text: string;
-}> = ({ menuItems, href, text }) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  menuId: number
+}> = ({ menuItems, href, text, menuId }) => {  
 
+  const dispatch = useAppDispatch()
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     setDropdownOpen(!dropdownOpen);
   };
 
+  const handleMenuItemClick = ( menuId: number) => {    
+    dispatch(setCategories( menuId )); 
+  };
+
   return (
-    <NavItem>
+    <NavItem onClick={() => handleMenuItemClick( menuId)}>
       <NavLinkContainer>
         <NavLink href={`/${href}`} text={text} />
         <Button type="button" onClick={handleButtonClick}>
@@ -39,11 +46,11 @@ const DropDownMenu: FC<{
         <DropDownList>
           {menuItems.map((item, index) => (
             <SubMenuItem key={index}>
-              <Link href={`/${href}/${item.linkKey}`} passHref legacyBehavior>
-                <SubMenuLink>{item.name}</SubMenuLink>
+              <Link href={`/${href}/${item.linkKey}`} passHref legacyBehavior >
+               <SubMenuLink >{item.name}</SubMenuLink>
               </Link>
             </SubMenuItem>
-          ))}
+          )) }
         </DropDownList>
       )}
     </NavItem>

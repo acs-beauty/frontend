@@ -1,6 +1,21 @@
 export const theme = {
   tablet_768: "768px",
-  desktop_1440: "1440px",
+  desktop_1240: "1240px",
+  desktop_1440: "1240px",
+  
+  palette: {
+    primary: {
+      main: '#453E42',
+    },
+    secondary: {
+      main: '#D9D9D9',
+    },
+    grey: {
+      400: 'gba(90, 87, 87, 0.80)',
+    },
+
+  },
+
 
   radii: {
     sm: "1.2rem",
@@ -12,6 +27,7 @@ export const theme = {
     white: {
       100: "#FFFFFF", //background, light font
     },
+    
 
     grey: {
       100: "#D9D9D9", //dots in slider

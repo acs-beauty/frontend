@@ -2,34 +2,33 @@ import styled from "@emotion/styled"
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: 2.4rem auto;
-  grid-template-rows: 2.4rem 3.8rem;
+  grid-template-columns: 2.4rem 4rem auto;
+  grid-column-gap: 2.4rem;
   grid-row-gap: 1.6rem;
   margin: 0 auto;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
+  padding: 1.6rem;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    grid-template-columns: 3.2rem 53.6rem 13.6rem;
-    grid-template-rows: 4.4rem;
-    padding-left: 3.2rem;
-    padding-right: 3.2rem;
-    width: 76.8rem;
+    grid-template-columns: 1fr 1fr 8fr 2fr ;
+    padding: 1.6rem 3.2rem;
+    grid-row-gap: 2rem;
+    min-width: 76.8rem;
+    width: auto;
+
   }
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-    grid-template-columns: 10.8rem 99rem 18.2rem;
-    grid-template-rows: 9.5rem;
-    padding-left: 8rem;
-    padding-right: 8rem;
-    width: 144rem;
+    grid-template-columns: 1fr 0 9fr 2fr;
+    gap: 0;
+    padding: 1.6rem 8rem;
+    min-width: 124rem;
+    max-width: 144rem;
+    width: auto;
   }
 `
 
 export const StyledHeader = styled.header`
-  padding-top: 1.6rem;
-  padding-bottom: 2rem;
-
+  
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     padding-top: 2rem;
     padding-bottom: 4rem;
@@ -46,20 +45,20 @@ export const IconsWrapper = styled.div`
   display: flex;
   gap: 1.6rem;
   grid-row: 1;
-  grid-column: 2;
+  grid-column: 3;
   justify-content: end;
   align-self: center;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     gap: 2rem;
     grid-row: 1;
-    grid-column: 3;
+    grid-column: 4;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     gap: 4.3rem;
     grid-row: 1;
-    grid-column: 3;
+    grid-column: 4;
   }
 `
 
@@ -74,20 +73,29 @@ export const MenuContainer = styled.div`
 `
 
 export const SearchWrapper = styled.div`
-  grid-column: 1 / span 2;
-  grid-row: 2;
+  grid-column: 1 / span 3;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+    grid-row: 1;
+    grid-column: 3;
+    justify-self: center;
+    align-self: center;
+  }
+ 
+`
+
+export const ImageBox = styled.div`
+  position: relative;  
+  width: 4rem;
+    height: 3.5rem;
+    @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     grid-row: 1;
     grid-column: 2;
     justify-self: center;
     align-self: center;
-  }
-`
-
-export const ImageBox = styled.div`
-  display: none;
-
+    width: 6rem;
+    height: 5.4rem;
+  } 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     position: relative;
     display: block;
