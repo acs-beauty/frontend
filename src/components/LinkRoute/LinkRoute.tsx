@@ -1,19 +1,17 @@
 import React, { ReactNode} from "react";
 import Link from "next/link"
-import { ContainerLink,  } from "./LinkRoute.styled"
+import { ContainerLink, SpanStyle } from "./LinkRoute.styled"
 
 const LinkRoute: React.FC<{ children: ReactNode }> =({children}) => {
   return (
     <>
       <ContainerLink>
-        <Link href="/">
-          Головна
-          {/* <StyleArrowForwardIosIcon /> */}
+      <Link href="/" passHref>
+      <SpanStyle>Головна</SpanStyle>
         </Link>
-        <p>/</p>
-        <Link href="/">
-          {children}
-          {/* <StyleArrowForwardIosIcon /> */}
+        <SpanStyle>/</SpanStyle>
+        <Link href={`/${children}`} passHref>
+         <SpanStyle>{children}</SpanStyle> 
         </Link>
       </ContainerLink>
     </>

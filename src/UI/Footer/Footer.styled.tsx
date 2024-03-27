@@ -9,11 +9,14 @@ export const FooterContainer = styled.div`
   width: 100%;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    width: 76.8rem;
+    min-width: 76.8rem;
+    width: auto;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-    width: 144rem;
+    width: auto;
+    min-width: 124rem;
+    max-width: 144rem;
   }
 `
 export const FlexContainer = styled.div`

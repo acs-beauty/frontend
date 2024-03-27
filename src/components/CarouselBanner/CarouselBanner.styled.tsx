@@ -8,11 +8,15 @@ export const ImageContainer = styled.div`
   background-color: #453e42;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    width: 76.8rem;
+    width: auto;
+    min-width: 76.8rem;
+    max-width: 124rem;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-    width: 144rem;
+    width: auto;
+    min-width: 124rem;
+    max-width: 144rem;
   }
 `;
 
@@ -23,15 +27,15 @@ export const Section = styled.section`
   margin-bottom: 8rem;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    width: 76.8rem;
+    width: auto;
     min-width: 76.8rem;
-    max-width: 76.8rem;
+    max-width: 120rem;
     margin-bottom: 10rem;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-    width: 144rem;
-    min-width: 144rem;
+    width: auto;
+    min-width: 124rem;
     max-width: 144rem;
     margin-bottom: 16rem;
   }

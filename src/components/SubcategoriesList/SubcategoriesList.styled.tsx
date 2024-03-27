@@ -1,11 +1,17 @@
 import styled from "@emotion/styled";
 
+export const ListWrapper = styled.div`
+   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}){
+   display: none;
+  }
+`
+
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
   justify-content: space-around;
-  /* margin-bottom: 3rem; */
+ 
 `;
 
 export const Item = styled.li`

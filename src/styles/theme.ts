@@ -1,6 +1,7 @@
 export const theme = {
   tablet_768: "768px",
-  desktop_1440: "1440px",
+  desktop_1240: "1240px",
+  desktop_1440: "1240px",
   
   palette: {
     primary: {

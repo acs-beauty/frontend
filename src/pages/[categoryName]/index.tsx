@@ -36,8 +36,9 @@ import { selectCategoryName } from "@/redux/catalog/selector";
 
 const Category: NextPage<CategoryPageProps> = () => {
 const categories = useSelector(selectCategoryName);
+// console.log("categories", categories)
 const category = categories[0]; 
-// console.log("first", category)
+console.log("first", category)
   return (
     <UserLayout title={category.name} categories={categories}>
       <Container>
@@ -47,7 +48,7 @@ const category = categories[0];
         <SectionTitle>{category.name}</SectionTitle>
       </Container>
       <Banner />
-      <CategoryPageMainBlock category={category} />
+      <CategoryPageMainBlock category={category} categoryId={category.categoryId}/>
     </UserLayout>
   )
 }

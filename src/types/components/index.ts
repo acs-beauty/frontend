@@ -17,4 +17,5 @@ export type { RootState } from "./RootState"
 export type { AppDispatch } from "./AppDispatch"
 export type { IPreviewProduct } from "./IPreviewProduct"
 export type { IProps } from "./IProps"
+export type { IRangeSliderProps } from "./IRangeSliderProps"
 

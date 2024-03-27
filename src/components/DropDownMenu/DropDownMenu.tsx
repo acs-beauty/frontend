@@ -31,7 +31,7 @@ const DropDownMenu: FC<{
   };
 
   const handleMenuItemClick = ( menuId: number) => {    
-    dispatch(setCategories( menuId )); // Отправляем действие в Redux
+    dispatch(setCategories( menuId )); 
   };
 
   return (

@@ -9,16 +9,16 @@ export const Container = styled.div`
   padding-right: 1.6rem;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    width: 76.8rem;
+    width: auto;
     min-width: 76.8rem;
-    max-width: 76.8rem;
+    max-width: 120rem;
     padding-left: 3rem;
     padding-right: 3rem;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-    width: 144rem;
-    min-width: 144rem;
+    width: auto;
+    min-width: 124rem;
     max-width: 144rem;
     padding-left: 8rem;
     padding-right: 8rem;

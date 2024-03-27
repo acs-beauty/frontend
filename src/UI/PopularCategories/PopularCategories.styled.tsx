@@ -14,14 +14,10 @@ export const Section = styled.section`
 `
 
 export const FlexContainer = styled.div`
-  /* display: grid; */
-  /* flex-direction: column;
-  flex-wrap: nowrap; */
-  /* gap: 1.6rem; */
+ 
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     flex-direction: row;
-    gap: 6.1rem;
   }
 `
 
@@ -32,7 +28,6 @@ export const List = styled.ul`
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     display: flex;
     justify-content: space-between;
-    gap: 6.1rem;
   }
 `
 

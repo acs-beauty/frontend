@@ -39,7 +39,6 @@ const Header: FC = () => {
   const onMenuToggle = () => {
     setIsMenuOpen(prev => !prev)
   }
-
   return (
     <>
       <StyledHeader>

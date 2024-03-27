@@ -12,14 +12,18 @@ export const GridContainer = styled.div`
     grid-template-columns: 1fr 1fr 8fr 2fr ;
     padding: 1.6rem 3.2rem;
     grid-row-gap: 2rem;
-    width: 76.8rem;
+    min-width: 76.8rem;
+    width: auto;
+
   }
 
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     grid-template-columns: 1fr 0 9fr 2fr;
     gap: 0;
     padding: 1.6rem 8rem;
-    width: 144rem;
+    min-width: 124rem;
+    max-width: 144rem;
+    width: auto;
   }
 `
 

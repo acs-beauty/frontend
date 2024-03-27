@@ -6,8 +6,16 @@ export const ProductList = styled.ul`
   row-gap: 1.6rem;
   column-gap: 1.6rem;
   margin-bottom: 24px;
+  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}){
+    grid-template-columns: repeat( 3, 1fr);
+}
 `;
 
+
+
+export const ProductListItem = styled.li`
+  
+`
 export const Button = styled.button`
 padding: 14px 8px;
 border: 1px solid  #453E42;
