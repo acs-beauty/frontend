@@ -23,6 +23,7 @@ export const theme = {
     },
     black: {
       100: "#453E42", // new and hit color
+      200: "#453E42", // border color
     },
     red: {
       100: "#F4DCE3", //button-up background
@@ -36,4 +37,4 @@ export const theme = {
       100: "rgba(231, 229, 223, 0.30)", // footer background
     },
   },
-};
+}
