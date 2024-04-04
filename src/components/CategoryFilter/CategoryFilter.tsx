@@ -1,10 +1,10 @@
 import MinusIcon from "@/UI/icons/MinusIcon"
 import PlusIcon from "@/UI/icons/PlusIcon/PlusIcon"
-import React, { FC, useState } from "react"
+import React, { FC, useState, useEffect } from "react"
 import { IMenu } from "@/types/components"
 import CheckBoxIcon from "@/UI/icons/CheckBoxIcon"
-import { selectCategoryName } from "@/redux/catalog/selector";
-import { checkedCategories } from "@/redux/catalog/slice";
+import { selectCategoryName } from "@/redux/catalog/selector"
+import { checkedCategories } from "@/redux/catalog/slice"
 import {
   TitleContainer,
   Title,
@@ -15,19 +15,26 @@ import {
   StyledBiChevronDownSquare,
 } from "./CategoryFilter.styled"
 import { useSelector } from "react-redux"
-import { useAppDispatch } from "@/hooks";
-
+import { useAppDispatch } from "@/hooks"
 
 const CategoryFilter: FC<{ subcategories: IMenu[] }> = ({ subcategories }) => {
   const [brandOpen, setBrandOpen] = useState(false)
   const [typeOpen, setTypeOpen] = useState(false)
   const [appointmentsOpen, setAppointmentsOpen] = useState(false)
   const [checkedItems, setCheckedItems] = useState<{ [key: string]: boolean }>({})
-  const [checkedSubcategories, setCheckedSubcategories] = useState<{ [key: number]: boolean }>({});
+  const [checkedSubcategories, setCheckedSubcategories] = useState<{ [key: number]: boolean }>({})
 
   const category = useSelector(selectCategoryName)
 
   const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    if (!checkedSubcategories || Object.keys(checkedSubcategories).length === 0) {
+      // Если нет чекнутых субкатегорий, устанавливаем пустой объект
+      setCheckedItems({});
+    }
+  }, [checkedSubcategories]);
+  console.log("checkedSubcategories", checkedSubcategories)
 
   const handleBrandClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation()
@@ -48,15 +55,23 @@ const CategoryFilter: FC<{ subcategories: IMenu[] }> = ({ subcategories }) => {
     setCheckedItems(prevState => ({
       ...prevState,
       [subcategoryId]: !prevState[subcategoryId],
-    }));
+    }))
     setCheckedSubcategories(prevState => ({
       ...prevState,
       [subcategoryId]: !prevState[subcategoryId],
-    }));
+    }))
 
-    dispatch(checkedCategories({ checkedSubcategories: {...checkedSubcategories, [subcategoryId]: !checkedSubcategories[subcategoryId]}, categoryId: category[0].categoryId }));
-}
-console.log("checkedSubcategories", checkedSubcategories)
+    dispatch(
+      checkedCategories({
+        checkedSubcategories: {
+          ...checkedSubcategories,
+          [subcategoryId]: !checkedSubcategories[subcategoryId],
+        },
+        categoryId: category[0].categoryId,
+      })
+    )
+  }
+  console.log("checkedSubcategories", checkedSubcategories)
   return (
     <>
       <TitleContainer>

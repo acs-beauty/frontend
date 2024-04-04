@@ -13,7 +13,7 @@ const ProductGallery: FC<IProducts> = (props) => {
     setDisplayedProducts((prevCount) => prevCount + 4); // Увеличиваем количество отображаемых продуктов на 4
   };
   return (
-    <div>
+    <>
       <ProductList>
         
         {products.slice(0, displayedProducts).map((item, index) => (
@@ -28,7 +28,7 @@ const ProductGallery: FC<IProducts> = (props) => {
       {products.length > 4 ? <Button type="button" onClick={handleShowMore}>Показати більше</Button> : ""}
 
       </BtnContainer>
-    </div>
+    </>
   );
 };
 

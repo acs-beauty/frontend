@@ -26,4 +26,12 @@ font-weight: 400;
 export const BtnContainer = styled.div`
 display: flex;
 justify-content: center;
+margin-bottom: 87px;
+@media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
+  margin-bottom: 100px;
+
+  }
+@media screen and (min-width: ${({ theme }) => theme.desktop_1440}){
+margin-bottom: 160px;}
+
 `
