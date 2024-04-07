@@ -12,6 +12,8 @@ export const StyledInput = styled.div`
   input {
     padding: 16px;
     width: 100%;
+    border-radius: 4px;
+    border: 1px solid #c1baba;
   }
 `
 
@@ -25,4 +27,11 @@ export const StyledSubmit = styled.button`
   text-transform: uppercase;
   margin-bottom: 20px;
   margin-top: 20px;
+`
+export const StyledErrorMessage = styled.div`
+  color: #f52323;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.63px;
+  margin-top: 8px;
 `
