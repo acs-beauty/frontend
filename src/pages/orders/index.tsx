@@ -5,9 +5,10 @@ import { categories } from "@/data/categories"
 import { getHomePageData } from "@/services/pageOperations"
 import { HomePageProps } from "@/types/pages"
 import { Container, SectionTitle } from "@/styles/commonStyles"
-import { Chosen, Logout, MyOrders } from "@/components/Order"
-import { OptionLink, OptionTitle, OptionsWrapper } from "./orderPage.styled"
+import { OptionLink, OptionTitle, OptionsWrapper } from "./ordersPage.styled"
 import OpenSubMenuIcon from "@/UI/icons/OpenSubMenuIcon"
+import { MyOrders } from "@/components/MyOrders"
+import { Logout } from "@/components/Logout"
 
 export const getStaticProps = async () => {
   const result = await getHomePageData()
@@ -15,9 +16,9 @@ export const getStaticProps = async () => {
   return result
 }
 
-const Order: NextPage<HomePageProps> = () => {
+const Orders: NextPage<HomePageProps> = () => {
   return (
-    <UserLayout title={"Оформити замовлення"} categories={categories}>
+    <UserLayout title={"Мої замовлення"} categories={categories}>
       <Container>
         <SectionTitle>ЗАМОВЛЕННЯ</SectionTitle>
         <OptionsWrapper>
@@ -37,4 +38,4 @@ const Order: NextPage<HomePageProps> = () => {
   )
 }
 
-export default Order
+export default Orders
