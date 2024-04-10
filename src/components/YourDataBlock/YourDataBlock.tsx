@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from "react"
 import { Formik, Form, ErrorMessage } from "formik"
+import Select from "react-select"
 import {
   Label,
   FormSectionTitle,
@@ -18,8 +19,13 @@ import {
   InfoIconWrapper,
   FormTextAreaField,
   MakeOrderBtn,
+  selectStyles,
+  SelectLabel,
+  //   FormSelectOption,
 } from "./YourDataBlock.styled"
 import InfoIcon from "@/UI/icons/InfoIcon"
+import { OptionType } from "@/types/components"
+import { COUNTRY_OPTIONS } from "@/constants"
 
 interface IInitialValues {
   firstName: string
@@ -37,8 +43,10 @@ interface IInitialValues {
   comment: string
 }
 
+const options: OptionType[] = COUNTRY_OPTIONS
+
 const YourDataBlock = () => {
-  const [country, setCountry] = useState<string>("")
+  const [country, setCountry] = useState<OptionType | null>(null)
   const [region, setRegion] = useState<string>("")
   const [locality, setLocality] = useState<string>("")
   const [depNum, setDepNum] = useState<string>("")
@@ -60,22 +68,23 @@ const YourDataBlock = () => {
   }
 
   const handleFormSubmit = (values: IInitialValues, { resetForm }: { resetForm: () => void }) => {
-    console.log("VALUES", {
-      firstName: values.firstName,
-      lastName: values.lastName,
-      email: values.email,
-      phone: values.phone,
-      status: "",
-      deliveryType: values.deliveryType,
-      address: `${values.country}, ${values.region}, ${values.locality}, ${values.depNum}`,
-      paymentType: values.paymentType,
-      tth: 0,
-      comment: values.comment,
-      //   "productIds": "1, 2, 3, 23",
-      //   "productCounts": "1, 2, 3, 23"
-    })
+    console.log("COUNTRY", country)
+    // console.log("VALUES", {
+    //   firstName: values.firstName,
+    //   lastName: values.lastName,
+    //   email: values.email,
+    //   phone: values.phone,
+    //   status: "",
+    //   deliveryType: values.deliveryType,
+    //   address: `${values.country}, ${values.region}, ${values.locality}, ${values.depNum}`,
+    //   paymentType: values.paymentType,
+    //   tth: 0,
+    //   comment: values.comment,
+    //   //   "productIds": "1, 2, 3, 23",
+    //   //   "productCounts": "1, 2, 3, 23"
+    // })
     resetForm()
-    setCountry("")
+    setCountry(options[0])
     setRegion("")
     setLocality("")
     setDepNum("")
@@ -140,7 +149,7 @@ const YourDataBlock = () => {
               </RadioLabel>
             </div>
           </RadioFieldsGroup>
-          <FieldWrapper>
+          {/* <FieldWrapper>
             <Label htmlFor="country">Країна*</Label>
             <FormSelectInput
               as="select"
@@ -162,6 +171,19 @@ const YourDataBlock = () => {
             <div>
               <ErrorMessage name="country" />
             </div>
+          </FieldWrapper> */}
+          <FieldWrapper>
+            <SelectLabel>Країна*</SelectLabel>
+            <Select<OptionType>
+              defaultValue={country}
+              onChange={(option: OptionType | null) => {
+                setCountry(option)
+                setFieldValue("country", option)
+              }}
+              options={options}
+              placeholder="Оберіть країну"
+              styles={selectStyles}
+            />
           </FieldWrapper>
 
           <FieldWrapper>

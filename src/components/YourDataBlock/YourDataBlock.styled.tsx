@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import { Field } from "formik"
+import { montserrat } from "@/utils/fonts"
 
 export const Label = styled.label`
   display: block;
@@ -71,6 +72,13 @@ export const RadioFieldsGroup = styled.div`
 `
 export const FormSelectInput = styled(FormInput)`
   background-color: #fff;
+
+  option[value=""] {
+    color: ${({ theme }) => theme.colors.grey[300]};
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+  }
 `
 export const NotificationDiv = styled.div`
   display: flex;
@@ -114,3 +122,78 @@ export const MakeOrderBtn = styled.button`
 
   border-radius: 4px;
 `
+// export const FormSelectOption = styled.option`
+//   font-family: ${montserrat.style.fontFamily};
+//   color: ${({ theme }) => theme.colors.grey[300]};
+//   font-size: 14px;
+//   font-weight: 500;
+//   line-height: 16px;
+// `
+
+export const SelectLabel = styled.p`
+  color: ${({ theme }) => theme.colors.grey[300]};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  margin-bottom: 12px;
+`
+export const selectStyles = {
+  control: (baseStyles: any) => ({
+    ...baseStyles,
+    padding: 0,
+    outline: "none",
+    backgroundColor: "none",
+    // border: "none",
+    fontSize: "14px",
+    fontWeight: 400,
+    lineHeight: "normal",
+    letterSpacing: "0.48px",
+
+    // boxShadow: "none",
+  }),
+  // container: (provided: any) => ({
+  //   ...provided,
+  //   "&:focus": {
+  //     border: "none",
+  //     borderColor: "transparent",
+  //   },
+  // }),
+  // indicatorSeparator: () => ({
+  //   display: "none",
+  // }),
+  // dropdownIndicator: (provided: any) => ({
+  //   ...provided,
+  //   padding: "4px",
+  //   color: "#5A5757",
+  //   "&:hover": {
+  //     color: "#5A5757",
+  //   },
+  // }),
+  // valueContainer: (provided: any) => ({
+  //   ...provided,
+  //   padding: "0",
+  // }),
+  menu: (provided: any) => ({
+    ...provided,
+    // width: "21rem",
+    margin: 0,
+    fontSize: "14px",
+    fontWeight: 400,
+    // letterSpacing: "0.6px",
+    borderRadius: "0px",
+    border: "1px solid #C1BABA",
+    boxShadow: "none",
+  }),
+  menuList: (provided: any) => ({
+    ...provided,
+    "& > div": {
+      backgroundColor: "#fff",
+      color: "#5A5757",
+      cursor: "pointer",
+    },
+
+    "& > div:hover": {
+      cursor: "pointer",
+    },
+  }),
+}
