@@ -40,7 +40,6 @@ import LinkRoute  from "@/components/LinkRoute"
 // };
 
 const Subcategory: NextPage = () => {
-  console.log("first", category.name)
   return (
     <UserLayout title={"Шампуні"} categories={categories}>
       <Container>

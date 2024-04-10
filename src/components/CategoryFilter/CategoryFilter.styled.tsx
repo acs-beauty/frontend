@@ -10,6 +10,12 @@ export const StyledBiChevronDownSquare = styled(BiChevronDownSquare)`
 
 export const TitleContainer = styled.div`
     display: flex;
+    
+    justify-content: space-between;
+`
+export const FilterContainer = styled.div`
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 `
 

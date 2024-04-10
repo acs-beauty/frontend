@@ -15,6 +15,7 @@ import {
   Price,
   CartButton,
   StyledLink,
+  StyledImage
 } from "./ProductCard.styled"
 import { generateImageSizesString } from "@/helpers"
 import { useAppDispatch, useScreen } from "@/hooks"
@@ -32,7 +33,7 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({ product,
 
   const dispatch = useAppDispatch()
 
-  const imageSizes = generateImageSizesString("156px", "305px", "305px")
+  const imageSizes = generateImageSizesString("156px", "256px", "256px")
 
   const handleAddToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
@@ -53,6 +54,9 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({ product,
   return (
     <CardWrapper>
       <StyledLink href={`/product/${slug}`}>
+        
+
+        <ImageContainer>
         {(novelty || hit || discountPrice) && (
           <LabelWrapper>
             {novelty && <CardLabel text="New" isSale={false} />}
@@ -60,9 +64,7 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({ product,
             {discountPrice && <CardLabel text="Sale" isSale={true} />}
           </LabelWrapper>
         )}
-
-        <ImageContainer>
-          <Image src={mainImageName} alt={name} fill sizes={imageSizes} />
+          <StyledImage src={mainImageName} alt={name} fill sizes={imageSizes} />
         </ImageContainer>
 
         <HeartContainer>

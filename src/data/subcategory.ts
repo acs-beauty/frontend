@@ -1,5 +1,5 @@
 export const subcategory = {
-    "subcategoryId": 1,
+    "id": 1,
     "name": "тест",
     "linkKey": "test-subcategory",
     "imageBannerName": "subcategory_banner_test.webp",

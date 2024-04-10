@@ -47,7 +47,7 @@ export const ProductContainer = styled.div`
   grid-column: 1/3;
   grid-row: 2/3;
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-    grid-column: 2/4;
+    grid-column: 2/5;
     grid-row: 3/4;
   }
 `
@@ -59,7 +59,7 @@ export const CountProductWrapper = styled.div`
   @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
     position: relative;
     display: block;
-    grid-column: 3/4;
+    grid-column: 4/5;
     grid-row: 2/3;
   }
 `

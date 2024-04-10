@@ -2,17 +2,15 @@ import MinusIcon from "@/UI/icons/MinusIcon"
 import PlusIcon from "@/UI/icons/PlusIcon/PlusIcon"
 import React, { FC, useState, useEffect } from "react"
 import { IMenu } from "@/types/components"
-import CheckBoxIcon from "@/UI/icons/CheckBoxIcon"
-import { selectCategoryName } from "@/redux/catalog/selector"
+import { selectCategoryName, selectNewCategories } from "@/redux/catalog/selector"
+import { selectBrands } from "@/redux/brands/selector"
+import { selectProducts } from "@/redux/products/selector"
 import { checkedCategories } from "@/redux/catalog/slice"
+import FilterList from "./FilterList"
 import {
-  TitleContainer,
+  FilterContainer,
   Title,
-  Button,
-  Label,
-  Input,
-  SubcategoryItem,
-  StyledBiChevronDownSquare,
+  Button,  
 } from "./CategoryFilter.styled"
 import { useSelector } from "react-redux"
 import { useAppDispatch } from "@/hooks"
@@ -25,23 +23,29 @@ const CategoryFilter: FC<{ subcategories: IMenu[] }> = ({ subcategories }) => {
   const [checkedSubcategories, setCheckedSubcategories] = useState<{ [key: number]: boolean }>({})
 
   const category = useSelector(selectCategoryName)
+  // console.log("category123", category)
+  const categoryName = useSelector(selectNewCategories)
+  // console.log("categoryName123", categoryName)
+  const brands = useSelector(selectBrands)
+  // console.log("brands", brands)
+  const products = useSelector(selectProducts)
+  // console.log("products", products)
 
   const dispatch = useAppDispatch()
 
   useEffect(() => {
     if (!checkedSubcategories || Object.keys(checkedSubcategories).length === 0) {
       // Если нет чекнутых субкатегорий, устанавливаем пустой объект
-      setCheckedItems({});
+      setCheckedItems({})
     }
-  }, [checkedSubcategories]);
-  console.log("checkedSubcategories", checkedSubcategories)
+  }, [checkedSubcategories])
 
-  const handleBrandClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleBrandClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.stopPropagation()
     setBrandOpen(!brandOpen)
   }
 
-  const handleTypeClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleTypeClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.stopPropagation()
     setTypeOpen(!typeOpen)
   }
@@ -51,69 +55,53 @@ const CategoryFilter: FC<{ subcategories: IMenu[] }> = ({ subcategories }) => {
     setAppointmentsOpen(!appointmentsOpen)
   }
 
-  const handleCheckboxClick = (subcategoryId: number) => {
+  const handleCheckboxClick = (id: number) => {
     setCheckedItems(prevState => ({
       ...prevState,
-      [subcategoryId]: !prevState[subcategoryId],
+      [id]: !prevState[id],
     }))
     setCheckedSubcategories(prevState => ({
       ...prevState,
-      [subcategoryId]: !prevState[subcategoryId],
+      [id]: !prevState[id],
     }))
 
     dispatch(
       checkedCategories({
         checkedSubcategories: {
           ...checkedSubcategories,
-          [subcategoryId]: !checkedSubcategories[subcategoryId],
+          [id]: !checkedSubcategories[id],
         },
-        categoryId: category[0].categoryId,
+        categoryId: category[0].id,
       })
     )
   }
-  console.log("checkedSubcategories", checkedSubcategories)
   return (
     <>
-      <TitleContainer>
-        <Title>Бренд</Title>
-        <Button type="button" onClick={handleBrandClick}>
-          {brandOpen ? <MinusIcon /> : <PlusIcon />}
-        </Button>
-      </TitleContainer>
-      <TitleContainer onClick={e => e.stopPropagation()}>
-        <Title>Тип</Title>
-        <Button type="button" onClick={handleTypeClick}>
-          {typeOpen ? <MinusIcon /> : <PlusIcon />}
-        </Button>
-      </TitleContainer>
-      <ul>
-        {typeOpen &&
-          Array.isArray(subcategories) &&
-          subcategories.map(subcategory => (
-            <SubcategoryItem key={subcategory.subcategoryId} onClick={e => e.stopPropagation()}>
-              <Label>
-                {checkedItems[subcategory.subcategoryId] ? (
-                  <StyledBiChevronDownSquare />
-                ) : (
-                  <CheckBoxIcon />
-                )}
+      <FilterContainer>
+       
+        <FilterList
+          title="Бренд"
+          items={brands}
+          isOpen={brandOpen}
+          toggleOpen={handleBrandClick}
+          checkedItems={checkedItems}
+          handleCheckboxClick={handleCheckboxClick}
+        />
 
-                <Input
-                  type="checkbox"
-                  checked={checkedItems[subcategory.subcategoryId] || false}
-                  onChange={() => handleCheckboxClick(subcategory.subcategoryId)}
-                />
-                {subcategory.name}
-              </Label>
-            </SubcategoryItem>
-          ))}
-      </ul>
-      <TitleContainer>
+        <FilterList
+          title="Тип"
+          items={subcategories}
+          isOpen={typeOpen}
+          toggleOpen={handleTypeClick}
+          checkedItems={checkedItems}
+          handleCheckboxClick={handleCheckboxClick}
+        />
+       
         <Title>Призначення</Title>
         <Button type="button" onClick={handleAppointmentsClick}>
           {appointmentsOpen ? <MinusIcon /> : <PlusIcon />}
         </Button>
-      </TitleContainer>
+      </FilterContainer>
     </>
   )
 }

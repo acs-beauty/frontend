@@ -1,13 +1,18 @@
 import styled from "@emotion/styled"
 import Link from "next/link"
+import Image from "next/image";
+
+export const StyledImage = styled(Image)`
+  width: 100%;
+  height: 100%; // Заполнить всю доступную область
+`;
 
 export const ImageContainer = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 10.6rem;
-  margin-top: 0.4rem;
-
+  
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     width: 100%;
     height: 23.9rem;
@@ -18,7 +23,7 @@ export const CardWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  width: calc(100%);
+  width: 100%;
   align-items: stretch;
   border-radius: 4px;
   border: 1px solid ${({ theme }) => theme.colors.grey[200]};
@@ -26,13 +31,6 @@ export const CardWrapper = styled.div`
     margin-right: 1.6rem;
   }
 
-  @media screen and (min-width: ${({ theme }) => theme.desktop_1440}) {
-    width: calc(100%);
-    /* margin-right: 2rem;
-    &:not(:last-child) {
-      margin-right: 2rem;
-    } */
-  }
 `
 
 export const ContentWrapper = styled.div`

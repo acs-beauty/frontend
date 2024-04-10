@@ -1,27 +1,62 @@
-import { AxiosResponse } from "axios";
+import { AxiosResponse } from "axios"
+import { createAsyncThunk } from "@reduxjs/toolkit"
+import { categoriesApi } from "@/components/api"
+import { brandsApi } from "@/components/api"
+import axios from "axios"
+import { ICategory, ICategoryName } from "@/types/components"
+import { axiosPublic } from "../axios"
 
-import { ICategory } from "@/types/components";
-import { axiosPublic } from "../axios";
+export const getCategories = async (): Promise<ICategoryName[]> => {
+  try {
+    const response: AxiosResponse = await categoriesApi.getCategories()
+    const data: ICategoryName[] = response.data
+    //   console.log("data", data);
+    return data
+  } catch (error) {
+    console.error("Error fetching categories:", error)
+    throw error
+  }
+}
 
-// export const getCategories = async (): Promise<ICategory[]> => {
+
+// const createCategoriesAsyncThunk = createAsyncThunk.withTypes<{
+//   state: ICategoryName
+//   rejectValue: unknown
+// }>()
+
+// export const getCategories = createCategoriesAsyncThunk(
+//   "categories/getAll",
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       const {data} = await categoriesApi.getCategories()
+
+//       console.log("res", data)
+//       return data;
+//     } catch (error) {
+//       return rejectWithValue(error)
+//     }
+//   }
+// )
+
+// export const getCategories = async () => {
 //   try {
-//     const { data }: AxiosResponse = await axiosPublic.get<ICategory[]>("/category");
-//     console.log("data", data);
-//     return data;
+//     const response = await axios.get('http://16.170.202.154:5000/api/category');
+//     console.log("response", response)
+//     return response.data;
 //   } catch (error) {
-//     console.error("Error fetching categories:", error);
-//     throw error; // Можно обработать ошибку дальше или просто пробросить её дальше
+//     console.error('Error fetching categories:', error);
+//     throw error;
 //   }
 // };
-
-
 
 // import axios from "axios";
 // import 'dotenv/config';
 
-// const BASE_URL = "http://13.48.46.250:5000/api"; // Прямое указание URL
+// // const BASE_URL = " http://16.170.202.154:5000/api"; // Прямое указание URL
+// const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 // const API_AUTH_TOKEN = process.env.NEXT_PUBLIC_API_AUTH_TOKEN;
 
+// console.log("API_AUTH_TOKEN ", API_AUTH_TOKEN );
 //  const getCategoriesWithToken = async (): Promise<ICategory[]> => {
 //   try {
 //     const { data }: AxiosResponse = await axios.get<ICategory[]>(`${BASE_URL}/category`, {
@@ -30,14 +65,14 @@ import { axiosPublic } from "../axios";
 //         "Content-Type": "application/json"
 //       }
 //     });
-//     console.log("data", data);
+//     console.log("data12", data);
 //     return data;
 //   } catch (error) {
 //     console.error("Error fetching categories:", error);
 //     throw error;
 //   }
 // };
-// getCategories()
+// getCategoriesWithToken()
 // export const getReviews = createAsyncThunk<IResponse, IGetReviewsParams>(
 //   "reviews/getReviews",
 //   async (params: IGetReviewsParams = {}, { rejectWithValue }) => {

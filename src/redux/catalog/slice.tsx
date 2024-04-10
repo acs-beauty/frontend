@@ -1,17 +1,22 @@
 import { categories } from "@/data/categories"
-import { subcategory } from "@/data/subcategory"
 import { getCategories } from "@/services/operations"
-import { ICategoryData } from "@/types/components"
+import { ICategoryData, ICategoryName } from "@/types/components"
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
-import { build, number } from "joi"
 
-export const fetchCategories = createAsyncThunk("categories/fetchCategories", async () => {
-  // Мы считаем, что getCategories будет возвращать Promise с массивом категорий
-  const categories = await getCategories()
-  console.log("categories", categories)
-  return categories
-})
+export const fetchCategories = createAsyncThunk<ICategoryName[], void>(
+  "categories/fetchCategories",
+  async (_, { rejectWithValue }) => {
+    try {
+    
+      const data = await getCategories();
+      return data;
+    } catch (error) {
+      
+      return rejectWithValue(error);
+    }
+  }
+);
 
 export const deleteSubcategory = createAsyncThunk(
   "categories/deleteSubcategory",
@@ -28,6 +33,7 @@ export const deleteSubcategory = createAsyncThunk(
 
 export interface CategoriesState {
   categories: ICategoryData[]
+  newCategories: ICategoryName[]
   selectedSubcategory: { id: number; name: string }[] | null
   isLoading: boolean
   error: unknown | null
@@ -35,6 +41,7 @@ export interface CategoriesState {
 
 const initialState: CategoriesState = {
   categories: [],
+  newCategories: [],
   selectedSubcategory: [],
   isLoading: false,
   error: null,
@@ -47,33 +54,31 @@ const categoriesSlice = createSlice({
    
     setCategories: (state, action) => {
       const menuId = action.payload
-      const foundCategory = categories.find(category => category.categoryId === menuId)
+      const foundCategory = categories.find(category => category.id === menuId)
       if (foundCategory) {
         state.categories = [foundCategory] // Записываем найденный объект в состояние
       } else {
         state.categories = [] // Если объект не найден, очищаем состояние
       }
-      console.log("state.categories", state.categories)
     },
 
     checkedCategories: (state, action) => {
       const { checkedSubcategories, categoryId } = action.payload;
-    console.log("action.payload", action.payload)
-      const foundCategory = categories.find(category => category.categoryId === categoryId);
+      console.log("action.payload", action.payload)
+      const foundCategory = categories.find(category => category.id === categoryId);
     
       if (foundCategory) {
         const selectedSubcategories = foundCategory.subcategory.filter(
-          subcategory => checkedSubcategories[subcategory.subcategoryId]
+          subcategory => checkedSubcategories[subcategory.id]
         );
     
         state.selectedSubcategory = selectedSubcategories.map(subcategory => ({
-          id: subcategory.subcategoryId,
+          id: subcategory.id,
           name: subcategory.name,
         }));
       } else {
         state.selectedSubcategory = [];
       }
-      console.log("state.selectedSubcategory", state.selectedSubcategory);
     },
   },
 
@@ -88,7 +93,13 @@ const categoriesSlice = createSlice({
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(deleteSubcategory.rejected, handleRejected)
+      .addCase(fetchCategories.pending, handlePending)
+      .addCase(fetchCategories.fulfilled, (state, action) => {   
+        
+        state.newCategories = action.payload;
+        state.isLoading = false;
+        state.error = null;
+      });
   },
 })
 

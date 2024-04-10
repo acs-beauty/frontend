@@ -6,8 +6,8 @@ import { List, Item, LinkText, ListWrapper } from "./SubcategoriesList.styled";
 import { useSelector } from "react-redux";
 import { selectCheckedCategories } from "@/redux/catalog/selector";
 
-const SubcategoriesList: FC<{ subcategories: IMenu[], categoryId: number }> = ({
-  subcategories, categoryId
+const SubcategoriesList: FC<{ subcategories: IMenu[], id: number }> = ({
+  subcategories
 }) => {
   const subcategoryNames = useSelector(selectCheckedCategories)
   console.log("checkedSubcategories", subcategoryNames)
@@ -15,10 +15,10 @@ const SubcategoriesList: FC<{ subcategories: IMenu[], categoryId: number }> = ({
     <ListWrapper>
     <List>
       {subcategories.map((subcategory) => {
-        const isChecked = subcategoryNames?.some(item => item.id === subcategory.subcategoryId);
+        const isChecked = subcategoryNames?.some(item => item.id === subcategory.id);
         return (
           <Item 
-            key={subcategory.subcategoryId} 
+            key={subcategory.id} 
             style={{ background: isChecked ? 'black' : '' , color: isChecked ? "white" : ""}}
           >
             <Link

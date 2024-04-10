@@ -8,11 +8,13 @@ import { IMenu } from "@/types/components"
 const FilterBlock: FC<{
   minPrice: string
   maxPrice: string
-  subcategories: IMenu[]
-  onCloseMenu: () => void
-}> = ({ minPrice, maxPrice, subcategories, onCloseMenu }) => {
+  subcategories?: IMenu[]
+  onCloseMenu?: () => void
+}> = ({ minPrice, maxPrice, subcategories=[], onCloseMenu }) => {
   const handleCloseMenu = () => {
-    onCloseMenu()
+    if (onCloseMenu) {
+      onCloseMenu(); 
+    }
   }
 
   return (

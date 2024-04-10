@@ -1,5 +1,5 @@
 export const category = {
-  categoryId: 1,
+  id: 1,
   name: "Волосся",
   linkKey: "hair",
   imageBannerName: "category_banner_test.webp",

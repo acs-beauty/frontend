@@ -31,9 +31,9 @@ import {
   SelectContainer,
 } from "./CategoryPageMainBlock.styled"
 
-const CategoryPageMainBlock: FC<{ category: ICategoryData; categoryId: number }> = ({
+const CategoryPageMainBlock: FC<{ category: ICategoryData; id: number }> = ({
   category,
-  categoryId,
+  id,
 }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [sortMenuOpen, setSortMenuOpen] = useState(false)
@@ -75,7 +75,7 @@ const CategoryPageMainBlock: FC<{ category: ICategoryData; categoryId: number }>
     <>
       <Container>
         <BlockWrapper>
-          <SubcategoriesList subcategories={category.subcategory} categoryId={categoryId} />
+          <SubcategoriesList subcategories={category.subcategory} id={id} />
 
           <MenuContainer ref={sortRef}>
             <FilterContainer>
