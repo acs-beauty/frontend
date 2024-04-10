@@ -26,4 +26,5 @@ export const GoodsNumText = styled.p`
   font-size: 16px;
   font-weight: 500;
   line-height: 19.5px;
+  cursor: pointer;
 `

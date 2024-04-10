@@ -59,7 +59,7 @@ const YourDataBlock = () => {
     comment: "",
   }
 
-  const handleFormSubmit = (values: IInitialValues) => {
+  const handleFormSubmit = (values: IInitialValues, { resetForm }: { resetForm: () => void }) => {
     console.log("VALUES", {
       firstName: values.firstName,
       lastName: values.lastName,
@@ -74,6 +74,11 @@ const YourDataBlock = () => {
       //   "productIds": "1, 2, 3, 23",
       //   "productCounts": "1, 2, 3, 23"
     })
+    resetForm()
+    setCountry("")
+    setRegion("")
+    setLocality("")
+    setDepNum("")
   }
 
   return (
