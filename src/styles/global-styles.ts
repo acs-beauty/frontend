@@ -1,7 +1,7 @@
-import "normalize.css";
-import { css } from "@emotion/react";
+import "normalize.css"
+import { css } from "@emotion/react"
 
-import { montserrat } from "@/utils/fonts";
+import { montserrat } from "@/utils/fonts"
 
 export const global = css`
   html,
@@ -35,7 +35,7 @@ export const global = css`
     background-color: transparent;
     border: none;
     outline: none;
-      
+
     &:focus {
       -webkit-tap-highlight-color: transparent;
       outline: none;
@@ -43,6 +43,4 @@ export const global = css`
       touch-action: manipulation;
     }
   }
-
- 
-`;
+`

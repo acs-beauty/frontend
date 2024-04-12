@@ -1,3 +1,7 @@
-export { SORTING_OPTIONS } from "./sortingOptions";
-export { SORT_PAGE } from "./pageSortingOptions";
-export { SCREENS } from "./screens";
+export { SORTING_OPTIONS } from "./sortingOptions"
+export { SORT_PAGE } from "./pageSortingOptions"
+export { SCREENS } from "./screens"
+export { COUNTRY_OPTIONS } from "./countryOptions"
+export { REGION_OPTIONS } from "./regionOptions"
+export { LOCALITY_OPTIONS } from "./localityOptions"
+export { DEPNUM_OPTIONS } from "./depNumOptions"
