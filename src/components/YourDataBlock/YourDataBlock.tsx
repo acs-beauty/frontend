@@ -25,7 +25,7 @@ import {
 } from "./YourDataBlock.styled"
 import InfoIcon from "@/UI/icons/InfoIcon"
 import { OptionType } from "@/types/components"
-import { COUNTRY_OPTIONS } from "@/constants"
+import { COUNTRY_OPTIONS, DEPNUM_OPTIONS, LOCALITY_OPTIONS, REGION_OPTIONS } from "@/constants"
 
 interface IInitialValues {
   firstName: string
@@ -34,22 +34,25 @@ interface IInitialValues {
   phone: string
   status: string
   deliveryType: string
-  country: string
-  region: string
-  locality: string
-  depNum: string
+  country: null
+  region: null
+  locality: null
+  depNum: null
   paymentType: string
   //   tth: number
   comment: string
 }
 
-const options: OptionType[] = COUNTRY_OPTIONS
+const counrtyOptions: OptionType[] = COUNTRY_OPTIONS
+const regionOptions: OptionType[] = REGION_OPTIONS
+const localityOptions: OptionType[] = LOCALITY_OPTIONS
+const depNumOptions: OptionType[] = DEPNUM_OPTIONS
 
 const YourDataBlock = () => {
   const [country, setCountry] = useState<OptionType | null>(null)
-  const [region, setRegion] = useState<string>("")
-  const [locality, setLocality] = useState<string>("")
-  const [depNum, setDepNum] = useState<string>("")
+  const [region, setRegion] = useState<OptionType | null>(null)
+  const [locality, setLocality] = useState<OptionType | null>(null)
+  const [depNum, setDepNum] = useState<OptionType | null>(null)
 
   const initialValues: IInitialValues = {
     firstName: "",
@@ -58,37 +61,41 @@ const YourDataBlock = () => {
     phone: "",
     status: "",
     deliveryType: "novaPoshta",
-    country: "",
-    region: "",
-    locality: "",
-    depNum: "",
+    country: null,
+    region: null,
+    locality: null,
+    depNum: null,
     paymentType: "bankAccount",
     // tth: 0,
     comment: "",
   }
 
   const handleFormSubmit = (values: IInitialValues, { resetForm }: { resetForm: () => void }) => {
-    console.log("COUNTRY", country)
-    // console.log("VALUES", {
-    //   firstName: values.firstName,
-    //   lastName: values.lastName,
-    //   email: values.email,
-    //   phone: values.phone,
-    //   status: "",
-    //   deliveryType: values.deliveryType,
-    //   address: `${values.country}, ${values.region}, ${values.locality}, ${values.depNum}`,
-    //   paymentType: values.paymentType,
-    //   tth: 0,
-    //   comment: values.comment,
-    //   //   "productIds": "1, 2, 3, 23",
-    //   //   "productCounts": "1, 2, 3, 23"
-    // })
+    console.log("VALUES", {
+      firstName: values.firstName,
+      lastName: values.lastName,
+      email: values.email,
+      phone: values.phone,
+      status: "",
+      deliveryType: values.deliveryType,
+      address: `${country?.value}, ${region?.value}, ${locality?.value}, ${depNum?.value}`,
+      paymentType: values.paymentType,
+      tth: 0,
+      comment: values.comment,
+      //   "productIds": "1, 2, 3, 23",
+      //   "productCounts": "1, 2, 3, 23"
+    })
     resetForm()
-    setCountry(options[0])
-    setRegion("")
-    setLocality("")
-    setDepNum("")
+    setCountry(null)
+    setRegion(null)
+    setLocality(null)
+    setDepNum(null)
   }
+
+  // console.log("COUNTRY", country)
+  // console.log("REGION", region)
+  // console.log("LOCALITY", locality)
+  // console.log("DEPNUM", depNum)
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleFormSubmit}>
@@ -149,6 +156,7 @@ const YourDataBlock = () => {
               </RadioLabel>
             </div>
           </RadioFieldsGroup>
+
           {/* <FieldWrapper>
             <Label htmlFor="country">Країна*</Label>
             <FormSelectInput
@@ -172,21 +180,26 @@ const YourDataBlock = () => {
               <ErrorMessage name="country" />
             </div>
           </FieldWrapper> */}
+
           <FieldWrapper>
             <SelectLabel>Країна*</SelectLabel>
             <Select<OptionType>
+              name="country"
               defaultValue={country}
               onChange={(option: OptionType | null) => {
                 setCountry(option)
                 setFieldValue("country", option)
               }}
-              options={options}
+              options={counrtyOptions}
               placeholder="Оберіть країну"
               styles={selectStyles}
             />
+            <div>
+              <ErrorMessage name="country" />
+            </div>
           </FieldWrapper>
 
-          <FieldWrapper>
+          {/* <FieldWrapper>
             <Label htmlFor="region">Область*</Label>
             <FormSelectInput
               as="select"
@@ -208,9 +221,26 @@ const YourDataBlock = () => {
             <div>
               <ErrorMessage name="region" />
             </div>
-          </FieldWrapper>
+          </FieldWrapper> */}
 
           <FieldWrapper>
+            <SelectLabel>Область*</SelectLabel>
+            <Select<OptionType>
+              defaultValue={region}
+              onChange={(option: OptionType | null) => {
+                setRegion(option)
+                setFieldValue("region", option)
+              }}
+              options={regionOptions}
+              placeholder="Оберіть область"
+              styles={selectStyles}
+            />
+            <div>
+              <ErrorMessage name="region" />
+            </div>
+          </FieldWrapper>
+
+          {/* <FieldWrapper>
             <Label htmlFor="locality">Населений пункт*</Label>
             <FormSelectInput
               as="select"
@@ -232,9 +262,23 @@ const YourDataBlock = () => {
             <div>
               <ErrorMessage name="locality" />
             </div>
+          </FieldWrapper> */}
+
+          <FieldWrapper>
+            <SelectLabel>Населений пункт*</SelectLabel>
+            <Select<OptionType>
+              defaultValue={locality}
+              onChange={(option: OptionType | null) => {
+                setLocality(option)
+                setFieldValue("locality", option)
+              }}
+              options={localityOptions}
+              placeholder="Оберіть населений пункт"
+              styles={selectStyles}
+            />
           </FieldWrapper>
 
-          <FieldWrapperDepNum>
+          {/* <FieldWrapperDepNum>
             <Label htmlFor="depNum">Номер відділення*</Label>
             <FormSelectInput
               as="select"
@@ -256,8 +300,24 @@ const YourDataBlock = () => {
             <div>
               <ErrorMessage name="depNum" />
             </div>
+          </FieldWrapperDepNum> */}
+
+          <FieldWrapperDepNum>
+            <SelectLabel>Номер відділення*</SelectLabel>
+            <Select<OptionType>
+              defaultValue={depNum}
+              onChange={(option: OptionType | null) => {
+                setDepNum(option)
+                setFieldValue("depNum", option)
+              }}
+              options={depNumOptions}
+              placeholder="Оберіть номер відділення"
+              styles={selectStyles}
+            />
           </FieldWrapperDepNum>
+
           <FormSectionTitle>Оплата</FormSectionTitle>
+
           <RadioFieldsGroup role="group">
             <RadioBankAccountWrapper>
               <RadioLabel>
