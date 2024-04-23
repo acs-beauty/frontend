@@ -8,7 +8,8 @@ import ProductCard from "../ProductCard";
 import ArrowButtonNext from "@/UI/ArrowButtonNext";
 import ArrowButtonPrevious from "@/UI/ArrowButtonPrevious";
 import { SCREENS } from "@/constants";
-import { StyledSlider } from "./ProductSlider.styled";
+import { StyledCardSlider } from "./ProductSlider.styled";
+import { truncate } from "fs";
 
 const settings = {
   speed: 500,
@@ -30,6 +31,7 @@ const settings = {
         slidesToScroll: 1,
         initialSlide: 0,
         arrows: false,
+        dots: true,
       },
     },
   ],
@@ -38,11 +40,11 @@ const settings = {
 const ProductSlider: FC<{ productList: IProducts }> = ({ productList }) => {
   const { products } = productList;
   return (
-    <StyledSlider {...settings}>
+    <StyledCardSlider {...settings}>
       {products.map((item, index) => (
         <ProductCard product={item} isHeartIcon={false} key={index} />
       ))}
-    </StyledSlider>
+    </StyledCardSlider>
   );
 };
 

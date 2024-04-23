@@ -14,25 +14,23 @@ import {
 } from "./CategoryFilter.styled"
 
 interface FilterListProps {
-    title: string;
-    items: IBrand[] | IMenu[]; 
-    isOpen: boolean;
-    toggleOpen: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-    // toggleOpen: () => void;
-    checkedItems: { [key: string]: boolean };
-    handleCheckboxClick: (itemId: number) => void; // Принимает аргумент
-  }
-  
+  title: string
+  items: IBrand[] | IMenu[]
+  isOpen: boolean
+  toggleOpen: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  // toggleOpen: () => void;
+  checkedItems: { [key: string]: boolean }
+  handleCheckboxClick: (itemId: number) => void // Принимает аргумент
+}
 
 const FilterList: FC<FilterListProps> = ({
-    title,
-    items,
-    isOpen,
-    toggleOpen,
-    checkedItems,
-    handleCheckboxClick,
-  }) => {
-    
+  title,
+  items,
+  isOpen,
+  toggleOpen,
+  checkedItems,
+  handleCheckboxClick,
+}) => {
   return (
     <>
       <TitleContainer onClick={toggleOpen}>

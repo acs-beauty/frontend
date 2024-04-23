@@ -29,13 +29,12 @@ const CategoryFilter: FC<{ subcategories: IMenu[] }> = ({ subcategories }) => {
   const brands = useSelector(selectBrands)
   // console.log("brands", brands)
   const products = useSelector(selectProducts)
-  // console.log("products", products)
+  console.log("products", products)
 
   const dispatch = useAppDispatch()
 
   useEffect(() => {
     if (!checkedSubcategories || Object.keys(checkedSubcategories).length === 0) {
-      // Если нет чекнутых субкатегорий, устанавливаем пустой объект
       setCheckedItems({})
     }
   }, [checkedSubcategories])

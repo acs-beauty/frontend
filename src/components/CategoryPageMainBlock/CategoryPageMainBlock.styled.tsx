@@ -108,7 +108,7 @@ export const Text = styled.p`
 export const ContainerMenuSort = styled.div`
   position: absolute;
   top: 32px;
-  right: 0;
+  left: 0;
   min-width: 240px;
   border: 1px solid #c1baba;
   background: #fff;

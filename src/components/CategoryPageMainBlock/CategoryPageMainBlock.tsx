@@ -15,7 +15,6 @@ import SelectedElement from "../SelectedElement"
 import {
   BlockWrapper,
   MenuContainer,
-  Wrapper,
   Button,
   ContainerText,
   Text,
@@ -31,10 +30,7 @@ import {
   SelectContainer,
 } from "./CategoryPageMainBlock.styled"
 
-const CategoryPageMainBlock: FC<{ category: ICategoryData; id: number }> = ({
-  category,
-  id,
-}) => {
+const CategoryPageMainBlock: FC<{ category: ICategoryData; id: number }> = ({ category, id }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [sortMenuOpen, setSortMenuOpen] = useState(false)
   const [countMenuOpen, setCountMenuOpen] = useState(false)

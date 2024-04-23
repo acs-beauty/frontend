@@ -83,8 +83,7 @@ export const Title = styled.h3`
   text-align: center;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
-    width: 23.6rem;
-
+    width: 100%;
     font-size: 1.4rem;
   }
 `
