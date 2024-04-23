@@ -1,12 +1,11 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
 export const NavList = styled.ul`
-  display: flex; 
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  column-gap: 4.8rem;
-  row-gap: 1.8rem;
-`;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 1rem;
+`
 export const Button = styled.button`
   display: flex;
   justify-content: center;
@@ -15,13 +14,13 @@ export const Button = styled.button`
   height: 3.2rem;
   border: none;
   background-color: transparent;
-`;
+`
 
 export const NavItem = styled.li`
   position: relative;
   display: flex;
   align-items: center;
-`;
+`
 
 export const NavWrapper = styled.div`
   display: none;
@@ -31,4 +30,4 @@ export const NavWrapper = styled.div`
     display: block;
     margin-bottom: 4.2rem;
   }
-`;
+`

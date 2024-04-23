@@ -9,5 +9,6 @@ export const getCategoryByLinkKey = async (
   const { data }: AxiosResponse = await axiosPublic.get<ICategoryData>(
     `/category/getCategoryByLinkKey/${linkKey}`
   );
+  console.log("data", data)
   return data;
 };

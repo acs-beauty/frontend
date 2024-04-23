@@ -31,7 +31,7 @@ export const DropDownList = styled.ul`
     font-size: 2.4rem;
     letter-spacing: 0.72px;
     font-weight: 500;
-    background-color: ${({ theme }) => theme.colors.grey[500]};
+    background-color: #F8F8F8;
     width: 100%;
     max-width: 144rem;
     padding-left: 8rem;

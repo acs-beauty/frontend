@@ -1,14 +1,21 @@
 import { IMenu } from ".";
 
 export interface ICategory {
-  categoryId: number;
+  id: number;
   name: string;
   linkKey: string;
   subcategory: IMenu[];
 }
 
+export interface ICategoryName {
+  id: number
+  name: string
+  slug: string
+  image: string
+  subcategory: IMenu[];
+}
 export interface ICategoryData {
-  categoryId: number;
+  id: number;
   name: string;
   linkKey: string;
   imageBannerName: string;

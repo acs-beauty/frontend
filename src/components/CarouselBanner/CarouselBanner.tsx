@@ -17,7 +17,7 @@ type CarouselProps = {
 };
 
 const CarouselBanner: FC<CarouselProps> = ({ images }) => {
-  const imageSizes = generateImageSizesString("100%", "768px", "1440px");
+  const imageSizes = generateImageSizesString("100%", "768px", "1240px");
 
   const settings = {
     slidesToShow: 1,

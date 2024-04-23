@@ -15,26 +15,26 @@ import {
   Price,
   CartButton,
   StyledLink,
+  StyledImage,
 } from "./ProductCard.styled"
 import { generateImageSizesString } from "@/helpers"
-import { useAppDispatch } from "@/hooks"
+import { useAppDispatch, useScreen } from "@/hooks"
 import { addItem } from "@/redux/cart/slice"
 
-const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({
-  product,
-  isHeartIcon,
-}) => {
-  const { id, name, mainImageName, price, discountPrice, novelty, article, hit, slug } =
-    product
+const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({ product, isHeartIcon }) => {
+  const { id, name, mainImageName, price, discountPrice, novelty, article, hit, slug } = product
+
+  const { isTablet } = useScreen()
 
   const iconProps = {
-    width: "24",
-    height: "24",
+    width: isTablet ? "24" : "20",
+    height: isTablet ? "24" : "20",
   }
 
   const dispatch = useAppDispatch()
 
-  const imageSizes = generateImageSizesString("156px", "305px", "305px")
+  const imageSizes = generateImageSizesString("156px", "256px", "100px")
+  console.log("imageSizes" , imageSizes)
 
   const handleAddToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
@@ -55,22 +55,20 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({
   return (
     <CardWrapper>
       <StyledLink href={`/product/${slug}`}>
-        {(novelty || hit || discountPrice) && (
-          <LabelWrapper>
-            {novelty && <CardLabel text="New" isSale={false} />}
-            {hit && <CardLabel text="Hit" isSale={false} />}
-            {discountPrice && <CardLabel text="Sale" isSale={true} />}
-          </LabelWrapper>
-        )}
-
         <ImageContainer>
-          <Image src={mainImageName} alt={name} fill sizes={imageSizes} />
+          {(novelty || hit || discountPrice) && (
+            <LabelWrapper>
+              {novelty && <CardLabel text="New" isSale={false} />}
+              {hit && <CardLabel text="Hit" isSale={false} />}
+              {discountPrice && <CardLabel text="Sale" isSale={true} />}
+            </LabelWrapper>
+          )}
+          <StyledImage src={mainImageName} alt={name} fill sizes={imageSizes} />
         </ImageContainer>
-        {isHeartIcon && (
-          <HeartContainer>
-            <HeartIcon color="black" opacity="0.5" {...iconProps} />
-          </HeartContainer>
-        )}
+
+        <HeartContainer>
+          <HeartIcon color="black" opacity="0.5" {...iconProps} />
+        </HeartContainer>
 
         <ContentWrapper>
           <Title>{name}</Title>

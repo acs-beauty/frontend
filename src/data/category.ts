@@ -1,5 +1,5 @@
 export const category = {
-  categoryId: 1,
+  id: 1,
   name: "Волосся",
   linkKey: "hair",
   imageBannerName: "category_banner_test.webp",
@@ -15,7 +15,7 @@ export const category = {
     {
       subcategoryId: 2,
       name: "Маски",
-      categoryLinkKey: "hair",
+      categoryLinkKey: "masks",
       linkKey: "masks",
     },
     {
@@ -33,7 +33,7 @@ export const category = {
     {
       subcategoryId: 5,
       name: "Бальзами, кондиціонери",
-      categoryLinkKey: "hair",
+      categoryLinkKey: "balms",
       linkKey: "balms",
     },
     {

@@ -1,6 +1,10 @@
-import { IPreviewProduct } from ".";
+import { IProduct } from ".";
 
 export interface IProducts {
-  totalProducts: number;
-  products: IPreviewProduct[];
+  totalProducts?: number;
+  // quantityStatus?: string;
+  id?: string;
+  // categoryLinkKey?: string;
+  products: IProduct[];
+  // productId?: number
 }

@@ -19,6 +19,7 @@ export const Wrapper = styled.div<{ isSale: boolean }>`
   height: 2.7rem;
   font-size: 1.2rem;
   font-weight: 500;
+  border-radius: 4px;
   text-transform: uppercase;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {

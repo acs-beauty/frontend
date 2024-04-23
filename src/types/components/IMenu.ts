@@ -1,5 +1,5 @@
 export interface IMenu {
-  subcategoryId: number;
+  id: number;
   name: string;
   categoryLinkKey: string;
   linkKey: string;

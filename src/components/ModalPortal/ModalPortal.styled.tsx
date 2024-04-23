@@ -6,13 +6,18 @@ export const Overlay = styled.div`
   top: 8.6rem;
   left: 0;
   width: 100%; 
-  height: calc(100% - 8.6rem);
+  height: calc(100hw - 8.6rem);
   background-color: rgba(128, 128, 128, 0.3);  
+  overflow-y: auto;
   z-index: 10;
 
   @media screen and (min-width: ${({ theme }) => theme.tablet_768}) {
     top: 14.8rem;
-    height: calc(100% - 14.8rem);
+    height: calc(100hw - 14.8rem);
+  }
+
+  @media screen and (min-width: ${({ theme }) => parseInt(theme.desktop_1440, 10)}px) {
+    display: none;
   }
  
 `;

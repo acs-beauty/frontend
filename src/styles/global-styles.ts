@@ -29,6 +29,10 @@ export const global = css`
     list-style: none;
   }
 
+  li {
+    list-style-type: none;
+  }
+
   button {
     cursor: pointer;
     display: block;

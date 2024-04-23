@@ -42,9 +42,7 @@ const PopularCategories: FC = () => {
                 <FaceCreamCategoryIcon {...props}/>
                 <Text>Креми для обличчя</Text>
               </StyledLink>
-            </li>
-          </List>
-          <List>
+            </li>          
             <li>
               <StyledLink href={"/test-category/test-subcategory"}>
                 <SunProtectionCategoryIcon {...props}/>

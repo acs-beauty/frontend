@@ -10,7 +10,7 @@ const Novelties: NextPage = () => {
     <UserLayout title={"Новинки"} categories={categories}>
       <Container>
         <br />
-        <p>Новинки</p>
+        <h1>Новинки</h1>
       </Container>
     </UserLayout>
   );

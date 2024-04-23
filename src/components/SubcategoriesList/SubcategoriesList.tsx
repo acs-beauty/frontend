@@ -2,16 +2,25 @@ import { FC } from "react";
 import Link from "next/link";
 
 import { IMenu } from "@/types/components";
-import { List, Item, LinkText } from "./SubcategoriesList.styled";
+import { List, Item, LinkText, ListWrapper } from "./SubcategoriesList.styled";
+import { useSelector } from "react-redux";
+import { selectCheckedCategories } from "@/redux/catalog/selector";
 
-const SubcategoriesList: FC<{ subcategories: IMenu[] }> = ({
-  subcategories,
+const SubcategoriesList: FC<{ subcategories: IMenu[], id: number }> = ({
+  subcategories
 }) => {
+  const subcategoryNames = useSelector(selectCheckedCategories)
+  console.log("checkedSubcategories", subcategoryNames)
   return (
-    <div>
-      <List>
-        {subcategories.map((subcategory) => (
-          <Item key={subcategory.subcategoryId}>
+    <ListWrapper>
+    <List>
+      {subcategories.map((subcategory) => {
+        const isChecked = subcategoryNames?.some(item => item.id === subcategory.id);
+        return (
+          <Item 
+            key={subcategory.id} 
+            style={{ background: isChecked ? 'black' : '' , color: isChecked ? "white" : ""}}
+          >
             <Link
               href={`/${subcategory.categoryLinkKey}/${subcategory.linkKey}`}
               passHref
@@ -20,9 +29,10 @@ const SubcategoriesList: FC<{ subcategories: IMenu[] }> = ({
               <LinkText>{subcategory.name}</LinkText>
             </Link>
           </Item>
-        ))}
-      </List>
-    </div>
+        );
+      })}
+    </List>
+  </ListWrapper>
   );
 };
 

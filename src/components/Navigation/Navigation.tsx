@@ -16,11 +16,11 @@ const Navigation: FC<{ categories: ICategory[] }> = ({ categories }) => {
           </NavItem>
           {categories.map((category) => (
             <DropDownMenu
-              key={category.categoryId}
+              key={category.id}
               href={category.linkKey}
               text={category.name}
               menuItems={category.subcategory}
-              menuId={category.categoryId}
+              menuId={category.id}
             />
           ))}
           <NavItem>
