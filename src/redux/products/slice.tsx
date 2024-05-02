@@ -19,14 +19,19 @@ export interface ProductsState {
   const productsSlice = createSlice({
     name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+
+    checkedCart: (state, action) => {
+      state.products = action.payload
+     
+    }
+  },
   extraReducers: builder => {
     builder
     .addCase(getProducts.pending, handlePending)
     .addCase(getProducts.fulfilled, (state, action) => {
       state.count = action.payload.count
       state.products = action.payload.rows
-      console.log("state.products", state.products)
       state.isLoading = false
       state.error = null
     })
@@ -47,5 +52,6 @@ export interface ProductsState {
     state.error = action.payload
   }
 
+  export const { checkedCart } = productsSlice.actions
   export const products = productsSlice.reducer
 

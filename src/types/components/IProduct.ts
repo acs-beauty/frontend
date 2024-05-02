@@ -10,6 +10,15 @@ export interface IProduct {
   hit: boolean
   subcategoryLinkKey: string
   categoryLinkKey: string
+  brand: string
   slug: string
-  
+  description: string
+  reviews: []
+  rating: number
+  appointments: string
+  age: string
+  volume: string
+  application: string
+  skinType: string
+  country: string
 }

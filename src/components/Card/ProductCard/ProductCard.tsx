@@ -4,7 +4,7 @@ import Image from "next/image"
 import CartIcon from "@/UI/icons/CartIcon"
 import HeartIcon from "@/UI/icons/HeartIcon"
 import { IProduct } from "@/types/components"
-import CardLabel from "../../UI/CardLabel"
+import CardLabel from "../../../UI/CardLabel"
 import {
   ImageContainer,
   CardWrapper,
@@ -20,6 +20,8 @@ import {
 import { generateImageSizesString } from "@/helpers"
 import { useAppDispatch, useScreen } from "@/hooks"
 import { addItem } from "@/redux/cart/slice"
+import { checkedCart } from "@/redux/products/slice"
+import { number } from "joi"
 
 const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({ product, isHeartIcon }) => {
   const { id, name, mainImageName, price, discountPrice, novelty, article, hit, slug } = product
@@ -34,7 +36,6 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({ product,
   const dispatch = useAppDispatch()
 
   const imageSizes = generateImageSizesString("156px", "256px", "100px")
-  console.log("imageSizes" , imageSizes)
 
   const handleAddToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
@@ -51,10 +52,13 @@ const ProductCard: FC<{ product: IProduct; isHeartIcon: boolean }> = ({ product,
     )
     alert("Товар доданий в кошик!")
   }
+  const handleCartClick = (product: IProduct) => {
+    dispatch(checkedCart(product))
+  }
 
   return (
     <CardWrapper>
-      <StyledLink href={`/product/${slug}`}>
+      <StyledLink href={`/product/${slug}`} onClick={() => handleCartClick(product)}>
         <ImageContainer>
           {(novelty || hit || discountPrice) && (
             <LabelWrapper>

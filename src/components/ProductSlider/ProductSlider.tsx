@@ -1,15 +1,15 @@
-import { FC } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { FC } from "react"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
-import { IProducts } from "@/types/components";
-import ProductCard from "../ProductCard";
-import ArrowButtonNext from "@/UI/ArrowButtonNext";
-import ArrowButtonPrevious from "@/UI/ArrowButtonPrevious";
-import { SCREENS } from "@/constants";
-import { StyledCardSlider } from "./ProductSlider.styled";
-import { truncate } from "fs";
+import { IProducts } from "@/types/components"
+import ProductCard from "../Card/ProductCard"
+import ArrowButtonNext from "@/UI/ArrowButtonNext"
+import ArrowButtonPrevious from "@/UI/ArrowButtonPrevious"
+import { SCREENS } from "@/constants"
+import { StyledCardSlider } from "./ProductSlider.styled"
+import { truncate } from "fs"
 
 const settings = {
   speed: 500,
@@ -35,17 +35,17 @@ const settings = {
       },
     },
   ],
-};
+}
 
 const ProductSlider: FC<{ productList: IProducts }> = ({ productList }) => {
-  const { products } = productList;
+  const { products } = productList
   return (
     <StyledCardSlider {...settings}>
       {products.map((item, index) => (
         <ProductCard product={item} isHeartIcon={false} key={index} />
       ))}
     </StyledCardSlider>
-  );
-};
+  )
+}
 
-export default ProductSlider;
+export default ProductSlider

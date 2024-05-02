@@ -1,6 +1,6 @@
 import { FC, useState } from "react"
 
-import ProductCard from "../ProductCard"
+import ProductCard from "../Card/ProductCard"
 import { IProducts } from "@/types/components"
 import { ProductList, Button, BtnContainer, ProductListItem } from "./ProductGallery.styled"
 

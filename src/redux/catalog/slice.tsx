@@ -64,7 +64,6 @@ const categoriesSlice = createSlice({
 
     checkedCategories: (state, action) => {
       const { checkedSubcategories, categoryId } = action.payload;
-      console.log("action.payload", action.payload)
       const foundCategory = categories.find(category => category.id === categoryId);
     
       if (foundCategory) {
@@ -80,6 +79,7 @@ const categoriesSlice = createSlice({
         state.selectedSubcategory = [];
       }
     },
+
   },
 
   extraReducers: builder => {

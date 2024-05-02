@@ -3,23 +3,45 @@ export const allProducts = {
   products: [
     {
       id: 1,
-      name:
-        "Ензимна пудра Papa Recipe Blemish Enzyme Powder Cleanser 50 g",
+      name: "Ензимна пудра Papa Recipe Blemish Enzyme Powder Cleanser 50 g",
       article: "2278GH",
       mainImageName: "/images/product.png",
       price: 750,
       discountPrice: null,
       quantityStatus: "available",
       novelty: true,
-      hit: false,      
+      hit: false,
       subcategoryLinkKey: "test-subcategory",
       categoryLinkKey: "test-category",
-      slug: "papar-recipe"
+      brand: "Medi-peel",
+      country: "Угорщина",
+      description:
+        "Enzym Complex & Vitamin C Enzyme Powder — інноваційний засіб для м’якого очищення, що надає шкірі сяяння. Після додавання кількох крапель води пудра перетворюється на легку піну, яка добре очищає шкіру від забруднень, залишків косметики, надлишків себуму.",
+      slug: "papar-recipe",
+      appointments: "Очищення Заспокоєння Від чорних цяток",
+      age: "+18",
+      reviews: [
+        {
+          id: 1,
+          firstName: "Тетяна",
+          lastName: "Федорів",
+          rating: 3,
+          review:
+            "Не дуже сподобалось. Чекала кращого ефекту. Однак за таку ціну можна спробувати!",
+        },
+        {
+          id: 2,
+          firstName: "Марія",
+          lastName: "Андрющенко",
+          rating: 4,
+          review: "Чудовий засіб! Мені дуже допоміг. Рекомендую!",
+        },
+      ],
+      rating: 1,
     },
     {
       id: 2,
-      name:
-        "Заспокійливий крем-гель з водою насіння вівса PURITO Oat-in Calming Gel Cream 100 ml",
+      name: "Заспокійливий крем-гель з водою насіння вівса PURITO Oat-in Calming Gel Cream 100 ml",
       article: "1278GH",
       mainImageName: "/images/product.png",
       price: 620,
@@ -29,39 +51,113 @@ export const allProducts = {
       hit: true,
       subcategoryLinkKey: "test-subcategory",
       categoryLinkKey: "test-category",
-      slug: "calming-gel"
+      brand: "Medi-peel",
+      country: "Угорщина",
+      description: "description product 2",
+      slug: "calming-gel",
+      appointments: "Очищення Заспокоєння Від чорних цяток",
+      age: "+18",
+      reviews: [
+        {
+          id: 1,
+          firstName: "Тетяна",
+          lastName: "Федорів",
+          rating: 3,
+          review:
+            "Не дуже сподобалось. Чекала кращого ефекту. Однак за таку ціну можна спробувати!",
+        },
+        {
+          id: 2,
+          firstName: "Марія",
+          lastName: "Андрющенко",
+          rating: 4,
+          review: "Чудовий засіб! Мені дуже допоміг. Рекомендую!",
+        },
+      ],
+      rating: 2,
     },
     {
       id: 3,
-      name: "Product 3",
+      name: "Гіпоалергенна ензимна пудра для вмивання Elizavecca Milky Piggy Hell-Pore Clean Up Enzyme Powder Wash, 80 г",
       article: "1358GH",
       mainImageName: "/images/product.png",
-      price: 620,
+      price: 377,
       discountPrice: 590,
       quantityStatus: "available",
       novelty: true,
       hit: true,
       subcategoryLinkKey: "test-subcategory",
       categoryLinkKey: "test-category",
-      slug: "product-3"
+      brand: "Elizavecca",
+      country: "Угорщина",
+      slug: "Milky Piggy",
+      appointments: "Очищення Заспокоєння Від чорних цяток",
+      age: "+18",
+      description:
+        "Enzym Complex & Vitamin C Enzyme Powder — інноваційний засіб для м’якого очищення, що надає шкірі сяяння. Після додавання кількох крапель води пудра перетворюється на легку піну, яка добре очищає шкіру від забруднень, залишків косметики, надлишків себуму.",
+      reviews: [
+        {
+          id: 1,
+          firstName: "Тетяна",
+          lastName: "Федорів",
+          rating: 3,
+          review:
+            "Не дуже сподобалось. Чекала кращого ефекту. Однак за таку ціну можна спробувати!",
+        },
+        {
+          id: 2,
+          firstName: "Марія",
+          lastName: "Андрющенко",
+          rating: 4,
+          review: "Чудовий засіб! Мені дуже допоміг. Рекомендую!",
+        },
+      ],
+      rating: 5,
     },
     {
       id: 4,
-      name: "Product 4",
+      name: "Ензимна пудра для вмивання Benton Goodbye Redness Centella Powder Wash з центелою, 80 г",
       article: "1458GH",
       mainImageName: "/images/product.png",
-      price: 620,
+      price: 842,
       discountPrice: 590,
       quantityStatus: "available",
       novelty: true,
       hit: true,
       subcategoryLinkKey: "test-subcategory",
       categoryLinkKey: "test-category",
-      slug: "product-4"
+      brand: "Benton",
+      country: "Угорщина",
+      slug: "Goodbye Redness Centella",
+      appointments: "Очищення Заспокоєння Від чорних цяток",
+      age: "+18",
+      volume: "110 мл",
+      application: "Вранці, ввечері",
+      skinType: "Для всіх типів шкіри",
+      description:
+        "Enzym Complex & Vitamin C Enzyme Powder — інноваційний засіб для м’якого очищення, що надає шкірі сяяння. Після додавання кількох крапель води пудра перетворюється на легку піну, яка добре очищає шкіру від забруднень, залишків косметики, надлишків себуму.",
+      reviews: [
+        {
+          id: 1,
+          firstName: "Тетяна",
+          lastName: "Федорів",
+          rating: 3,
+          review:
+            "Не дуже сподобалось. Чекала кращого ефекту. Однак за таку ціну можна спробувати!",
+        },
+        {
+          id: 2,
+          firstName: "Марія",
+          lastName: "Андрющенко",
+          rating: 4,
+          review: "Чудовий засіб! Мені дуже допоміг. Рекомендую!",
+        },
+      ],
+      rating: 3,
     },
     {
       id: 5,
-      name: "Product 5",
+      name: "Ензимна пудра для вмивання Petitfee & Koelf Beta-Glucan Enzyme Powder Wash з бета-глюканом, 80 г",
       article: "5678GH",
       mainImageName: "/images/product.png",
       price: 620,
@@ -71,7 +167,34 @@ export const allProducts = {
       hit: true,
       subcategoryLinkKey: "test-subcategory",
       categoryLinkKey: "test-category",
-      slug: "product-5"
+      brand: "Petitfee & Koelf",
+      country: "Угорщина",
+      slug: "Натуральна косметика для обличчя Petitfee & Koelf",
+      appointments: "Очищення Заспокоєння Від чорних цяток",
+      age: "+18",
+      volume: "110 мл",
+      application: "Вранці, ввечері",
+      skinType: "Для всіх типів шкіри",
+      description:
+        "Enzym Complex & Vitamin C Enzyme Powder — інноваційний засіб для м’якого очищення, що надає шкірі сяяння. Після додавання кількох крапель води пудра перетворюється на легку піну, яка добре очищає шкіру від забруднень, залишків косметики, надлишків себуму.",
+      reviews: [
+        {
+          id: 1,
+          firstName: "Тетяна",
+          lastName: "Федорів",
+          rating: 3,
+          review:
+            "Не дуже сподобалось. Чекала кращого ефекту. Однак за таку ціну можна спробувати!",
+        },
+        {
+          id: 2,
+          firstName: "Марія",
+          lastName: "Андрющенко",
+          rating: 4,
+          review: "Чудовий засіб! Мені дуже допоміг. Рекомендую!",
+        },
+      ],
+      rating: 4,
     },
   ],
-};
+}
